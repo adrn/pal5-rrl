@@ -27,7 +27,7 @@
 \author{Giuliano~Iorio}
 \affiliation{Institute of Astronomy, University of Cambridge, Madingley Road, Cambridge CB3 0HA, UK}
 
-\author{Sarah~Pearson}
+\author[0000-0003-0256-5446]{Sarah~Pearson}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute,
              Simons Foundation, 162 Fifth Avenue, New York, NY 10010, USA}
 
@@ -40,10 +40,10 @@
 \begin{abstract}
 % Context
 Thin stellar streams, formed from the tidal disruption of globular clusters, are important gravitational tools, sensitive to both global and small-scale properties of dark matter.
-The Palomar 5 stellar stream (Pal 5) is an exemplar stream within the Milky Way: Its $\approx 20\degr$ tidal tails connect back to the progenitor cluster, and it has been used to study the shape and total mass of, along with substructure in, the dark matter distribution of the Galaxy.
+The Palomar 5 stellar stream (Pal 5) is an exemplar stream within the Milky Way: Its $\approx 20\degr$ tidal tails connect back to the progenitor cluster, and the stream has been used to study the shape and total mass of, along with substructure in, the dark matter distribution of the Galaxy.
 However, most details of the phase-space distribution of the stream are not fully explained, and dynamical models that use the stream for other inferences are therefore incomplete.
 % Aims
-Here we aim to measure distance and kinematic properties along the Pal 5 stream in order to motivate improved models of the Pal 5 stream.
+Here we aim to measure distance and kinematic properties along the Pal 5 stream in order to motivate improved models of the system. %Pal 5 stream.
 We use a large catalog of RR Lyrae-type stars (RRLs) with astrometric data from the \Gaia\ mission to probabilistically identify RRLs in the Pal 5 stream.
 RRLs are useful because they are intrinsically-luminous standard candles and their distances can be inferred with small relative precision ($\sim3\%$).
 % Methods
@@ -86,12 +86,18 @@ However, at its present distance, main sequence stars are barely detected and ha
 % Enter RR Lyrae-type stars.
 
 \todo{Cecilia: write this paragraph? you probably have some canned text? - (In progress, CM.}
-RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence stars, but about $\sim 10,000$ time less numerous. They can be reliably identified based on their photometric variability alone, with little to no contamination from other types of variable stars, and are well known standard candles. Their distances can be estimated based on photometric data alone by means of their period-luminosity relation, with distance errors that go from $\sim8\%$ in the optical to as low as 3\% in the infrared \citep{Neeley:2017, Sesar:2017a}. At its current distance, Pal~5's horizontal branch is bright enough $\G\sim17.3$ to be observed by \Gaia, so it's full extent can be traced and kinematic properties measured with RRLs.
+
+RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence turn-off stars. Although about $\sim 10,000$ time less numerous than main sequence stars, RRLs are extremely useful probes of the Galactic halo as they can be observed to large distances \citep{Medina2018,Sesar2017c}; they are reliably identified based on their photometric variability, with little to no contamination from other types of variable stars \citep[e.g.]{Holl2018,Drake2017,Mateu2012}; and are well established as standard candles.  Their distances can be estimated based on photometric data alone, with errors that go from $\sim8\%$ in the optical to as low as 3\% in the infrared \citep{Neeley:2017, Sesar:2017a}. 
+
+Previous studies have found RRLs in Pal5's tails: the first two were found by \citet{Vivas2005} in the QUEST survey; more recently, \citep{Ibata:2017} found about ten new RRLs using the catalogue of PS1 candidate RRLs from \citet{Hernitschek2015}. At its current distance, Pal~5's horizontal branch is bright enough ($\G\sim17.3$) to be observed by \Gaia. Combining \Gaia~DR2 proper motions with the newer PS1 RRL catalogue from \citet{Sesar2017b} --with improved classification probabilities and light curve periods--  will allows to make precise distance and proper motion measurements along the full extent of the Pal~5 stream. Both, key ingredients for dynamical modelling of the Pal~5 stream...  
 %meaning we can measure kinematic properties of the full stream...
 \citep{Ibata:2017} found some RRL in pal 5, but no proper motions.
 This is useful for modeling...
 Many stream candidates found in RRL alone \citep{Mateu:2018}.
 
+
+%---yes, I rewrite things many times. C.---
+%RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence stars, but about $\sim 10,000$ time less numerous. At its current distance, Pal~5's horizontal branch is bright enough ($\G\sim17.3$) to be observed by \Gaia, so it's full extent can be traced and it's kinematic properties measured using RRLs. These stars can be reliably identified based on their photometric variability, with little to no contamination from other types of variable stars \citep[e.g.]{Holl2018,Drake2017,Mateu2012}, and are well known standard candles. Their distances can be estimated based on photometric data alone by means of their period-luminosity relation, with distance errors that go from $\sim8\%$ in the optical to as low as 3\% in the infrared \citep{Neeley:2017, Sesar:2017a}.  Previous studies have found RRLs in Pal5's tails: In the QUEST survey, \citet{Vivas2005} found 2 RRLs; while  \citep{Ibata:2017} found 12 RRLs using the catalogue of PS1 candidate RRLs from \citet{Hernitschek2015}. Combining \Gaia~DR2 proper motions with the newer PS1 RRL catalogue from \citet{Sesar2017b} --with improved classification probabilities and light curve periods--  will allow for precise distance and proper motion measurements along the full extent of the Pal~5 stream. 
 In this Article, we construct a probabilistic model for kinematic properties of RRLs in the vicinity of the Pal 5 stream to determine membership probabilities and thus map the distance and proper motion trends in the stream.
 In \sectionname~\ref{sec:data}, we describe the source RR Lyrae catalog we use to search for Pal 5 members.
 In \sectionname~\ref{sec:membership}, we implement a probabilistic membership model to identify candidate members of the stream using distance and astrometric information.
