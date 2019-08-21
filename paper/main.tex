@@ -82,12 +82,11 @@ For example, the leading and trailing tails have significantly different total s
 Given that Pal 5's pericenter is well within the Galactic disk ($r_{\textrm{peri}} \sim 7$--$8~\kpc$), these features could be a sign of perturbations from molecular clouds \citep[e.g.,][]{Amorisco:2016}, interaction with the Galactic bar \citep[e.g.,][]{Pearson:2017}, signatures of past dark matter subhalo encounters \citep[e.g.,][]{Erkal:2017}, or some combination of all of these effects.
 Mapping the stream in all six phase-space dimensions---i.e., combining deep photometry with radial velocity, distance, and proper motion measurements---will enable and motivate improved dynamical models of the stream and more precise constraints on the Galactic mass distribution \citep[e.g.,][]{PriceWhelan:2013}.
 However, at its present distance, main sequence stars are barely detected and have large astrometric uncertainties in \Gaia\ \DR{2}, and other stellar tracers (e.g., giant branch stars) are not numerous enough or precise enough distance indicators to provide useful relative distance information along the stream.
-Enter RR Lyrae-type stars.
+% Enter RR Lyrae-type stars.
 
-\todo{Cecilia: write this paragraph? you probably have some canned text?}
-RR Lyrae stars (RRLs) are pulsating horizontal branch stars that are intrinsically more luminous than main sequence stars, but about $\sim 10,000$ time less numerous. 
-HB = good distance indicator.
-The horizontal branch in Pal 5 is bright enough to be observed by Gaia, meaning we can measure kinematic properties of the full stream...
+\todo{Cecilia: write this paragraph? you probably have some canned text? - (In progress, CM.}
+RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence stars, but about $\sim 10,000$ time less numerous. They can be reliably identified based on their photometric variability alone, with little to no contamination from other types of variable stars, and are well known standard candles. Their distances can be estimated based on photometric data alone by means of their period-luminosity relation, with distance errors that go from $\sim8\%$ in the optical to as low as 3\% in the infrared \citep{Neely2017,Sesar2017a}. At its current distance, Pal~5's horizontal branch is bright enough $\G\sim17.3$ to be observed by \Gaia, so it's full extent can be traced and kinematic properties measured with RRLs.
+%meaning we can measure kinematic properties of the full stream...
 \citep{Ibata:2017} found some RRL in pal 5, but no proper motions.
 This is useful for modeling...
 Many stream candidates found in RRL alone \citep{Mateu:2018}.
@@ -200,7 +199,11 @@ For each star, we also compute posterior membership probabilities using the samp
 \begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\textwidth]{paper/tracks.pdf}
-\caption{todo}
+\caption{RRL stars in the vicinity of the Pal 5 stream (with $\textrm{prob.} > 0.01$), colored by membership probability, and under-plotted with the inferred stream trends used in the membership model.
+\textbf{Upper left}: Sky positions (in the Pal 5 stream coordinate frame) of RRLs, with arrows showing the \Gaia\ \DR{2} proper motion vector direction.
+\textbf{Upper right}: Distance as a function of Pal 5 longitude, $\phi_1$, for the RRLs. The shaded (orange) band shows the 16--84th percentile confidence region for the inferred distance trend of the stream, and the solid line shows the median posterior sample, all assuming a quadratic function of $\phi_1$.
+\textbf{Lower panels}: Same as upper right, but for the proper motion in right ascension, $\mu_\alpha$, and declination, $\mu_\delta$.
+}
 \label{fig:trackmembers}
 \end{center}
 \end{figure*}
@@ -216,7 +219,22 @@ For each star, we also compute posterior membership probabilities using the samp
 \end{center}
 \end{figure*}
 
+\subsection{RR Lyrae stars associated with Pal 5 and its tails}
+
+\todo{How many we find, what their types are}
+
+
+\subsection{Kinematics of the stream and cluster}
+
+\todo{Summarize mean dist and pm from RRLs, and trend parameters}
+
+\todo{Make a table with summary information}
+
+
+
 \subsection{RR Lyrae stars known to be associated with Pal 5 or it's tails}
+
+\todo{move some of this to discussion?}
 
 Pal~5 has 5 known RRL stars (V1-V5), all of type \typec, as reported in the \citet{Clement2001} compilation of variable stars in Galactic globular clusters and dating back to \citet{SawyerHogg1973}. Star V2 has a  systemic radial velocity of  $-65\pm16$~\kms~measured by \citet{Vivas2005}. 
 
