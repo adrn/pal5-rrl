@@ -85,11 +85,9 @@ Mapping the stream in all six phase-space dimensions---i.e., combining deep phot
 However, at its present distance, main sequence stars are barely detected and have large astrometric uncertainties in \Gaia\ \DR{2}, and other stellar tracers (e.g., giant branch stars) are not numerous enough or precise enough distance indicators to provide useful relative distance information along the stream.
 % Enter: RR Lyrae-type stars.
 
-\todo{Cecilia: write this paragraph? you probably have some canned text? - (In progress, CM.}
+RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence turn-off stars. Although about $\sim 10,000$ time less numerous than main sequence stars, RRLs are extremely useful probes of the Galactic halo as they are well established as standard candles; they can be observed to large distances \citep{Medina2018,Sesar2017c}; and are reliably identified based on their photometric variability, with little to no contamination from other types of variable stars \citep[e.g.]{Holl2018,Drake2017,Mateu2012}.  Their distances can be estimated based on photometric data alone, with errors that go from $\sim8\%$ in the optical to as low as 3\% in the infrared \citep{Neeley:2017, Sesar:2017a}.
 
-RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence turn-off stars. Although about $\sim 10,000$ time less numerous than main sequence stars, RRLs are extremely useful probes of the Galactic halo as they can be observed to large distances \citep{Medina2018,Sesar2017c}; they are reliably identified based on their photometric variability, with little to no contamination from other types of variable stars \citep[e.g.]{Holl2018,Drake2017,Mateu2012}; and are well established as standard candles.  Their distances can be estimated based on photometric data alone, with errors that go from $\sim8\%$ in the optical to as low as 3\% in the infrared \citep{Neeley:2017, Sesar:2017a}.
-
-Previous studies have found RRLs in Pal5's tails: the first two were found by \citet{Vivas2005} in the QUEST survey; more recently, \citep{Ibata:2017} found about ten new RRLs using the catalogue of PS1 candidate RRLs from \citet{Hernitschek2015}. At its current distance, Pal~5's horizontal branch is bright enough ($\G\sim17.3$) to be observed by \Gaia. Combining \Gaia~DR2 proper motions with the newer PS1 RRL catalogue from \citet{Sesar2017b} --with improved classification probabilities and light curve periods--  will allows to make precise distance and proper motion measurements along the full extent of the Pal~5 stream. Both, key ingredients for dynamical modelling of the Pal~5 stream...
+Previous studies have found RRLs in Pal5's tails: the first two were found by \citet{Vivas2005} in the QUEST survey; and more recently \citep{Ibata:2017} found about ten new RRLs using the catalogue of PS1 candidate RRLs from \citet{Hernitschek2015}. At its current distance, Pal~5's horizontal branch is bright enough ($\G\sim17.3$) to be observed by \Gaia. Therefore, combining \Gaia~DR2 proper motions with the newer PS1 RRL catalogue from \citet{Sesar2017b} --with improved classification probabilities and light curve periods--  will allows to make precise distance and proper motion measurements along the full extent of the Pal~5 stream. Both, key ingredients for dynamical modelling of the Pal~5 stream...
 %meaning we can measure kinematic properties of the full stream...
 \citep{Ibata:2017} found some RRL in pal 5, but no proper motions.
 This is useful for modeling...
@@ -282,7 +280,7 @@ Correcting the observed number of 25~RRLs by the median completeness of 92\%, we
 
 
 - there are $\sim4$-XX times as many RRLs in the tails as there are in the cluster.
-- how much mass did we already know to be in the tails compared to the cluster? (\sa{according to Ibata 2016 the mass in the present day cluster is 4297 $\pm~ 98$ M$_{\odot}$, and the streams excluding the cluster have $\sim$7903 M$_{\odot}$. So under a factor of 2 more stars in the tails than in the remnant cluster}. The cluster is thought to have had an initial mass of $\sim47000$ M$_{\odot}$). Probably not as much as a factor of 4. This makes it unexpected to have found this many RRLs in the tails. Based on prior knowledge of the mass loss undergone by the cluster we would have expected this to be XX (Sarah?/Adrian?) \sa{Not sure, the lowest mass stars should have been lost first...}. Similarly,
+- how much mass did we already know to be in the tails compared to the cluster? (\sa{according to Ibata 2016 the mass in the present day cluster is 4297 $\pm~ 98$ M$_{\odot}$, and the streams excluding the cluster have $\sim$7903 M$_{\odot}$. So under a factor of 2 more stars in the tails than in the remnant cluster}. The cluster is thought to have had an initial mass of $\sim47000$ M$_{\odot}$). Probably not as much as a factor of 4. This makes it unexpected to have found this many RRLs in the tails. Based on prior knowledge of the mass loss undergone by the cluster we would have expected this to be XX (Sarah?/Adrian?) Similarly,
 
 
 \section{Discussion}
@@ -349,6 +347,8 @@ Star \verb+source_id=4418731829516302848+ is reported in PS1 and \Gaia~as an \rr
 
 \todo{what did we do}
 
+\acknowledgments
+This work was performed in part during the Gaia19 workshop and the 2019 Santa Barbara Gaia Sprint (also supported by the Heising-Simons Foundation), both hosted by the Kavli Institute for Theoretical Physics at the University of California, Santa Barbara. The Flatiron Institute is supported by the Simons Foundation. CM acknowledges funding from the MIA program at Universidad de la Republica, Uruguay.
 
 \software{
     Astropy \citep{astropy, astropy:2018},
@@ -356,6 +356,7 @@ Star \verb+source_id=4418731829516302848+ is reported in PS1 and \Gaia~as an \rr
     gala \citep{gala},
     IPython \citep{ipython}
 }
+
 
 \bibliographystyle{aasjournal}
 \bibliography{refs}
