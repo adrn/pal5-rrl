@@ -10,7 +10,7 @@ NAME = main
 
 all: ${NAME}.pdf
 
-${NAME}.pdf: ${NAME}.tex ${NAME}.bib
+${NAME}.pdf: ${NAME}.tex refs.bib
 	${LATEX} ${NAME}
 	bibtex ${NAME}
 	${LATEX} ${NAME}
