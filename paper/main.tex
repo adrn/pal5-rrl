@@ -54,15 +54,15 @@ The number of Pal 5 RRL is therefore XX times larger in the tails than in the re
 Stuff.
 \end{abstract}
 
-\keywords{globular clusters: individual: Palomar 5 --
-Galaxy: halo --
-stars: variables: RR Lyrae --
+\keywords{globular clusters: individual: Palomar 5 ---
+Galaxy: halo ---
+stars: variables: RR Lyrae ---
 Galaxy: structure}
 
 \section{Introduction} \label{sec:intro}
 
 Globular clusters are destroyed as they orbit within the Milky Way.
-The $\sim$150 bound globular clusters we presently see throughout the Galaxy \citep{Harris2010} are therefore thought to be surviving relics of a much larger initial population, most of which were destroyed (primarily) through a combination of relaxation / evaporation and gravitational shocking from the disk and bulge \citep[e.g.,][]{Gnedin:1997, Gnedin:2014}.
+The $\sim$150 bound globular clusters we presently see throughout the Galaxy \citep{Harris:2010} are therefore thought to be surviving relics of a much larger initial population, most of which were destroyed (primarily) through a combination of relaxation / evaporation and gravitational shocking from the disk and bulge \citep[e.g.,][]{Gnedin:1997, Gnedin:2014}.
 As stellar systems are destroyed---i.e., as stars are tidally stripped from their progenitor---the tidal debris forms tails of matter that both lead and trail the remnant cluster, producing a stellar stream that may persist even after the progenitor is fully destroyed \citep[e.g.,][]{Johnston:1996, Eyre:2011}.
 
 Stellar streams are useful objects because they almost\footnote{More precisely, the phase-space distribution of stars along a stream encodes the orbital history of the progenitor system \citep[e.g.,][]{Sanders:2013}.} delineate the past and future trajectory of their progenitor system, offering information about orbits that can be used to infer the mass distribution from the single kinematic snapshot of the Galaxy that we are afforded \citep[e.g.,][]{Johnston:1999, Binney:2008, Eyre:2009, Sanders:2013, PriceWhelan:2014, Bonaca:2018}.
@@ -79,14 +79,14 @@ For example, using the sky track and radial velocity information, the stream has
 Using deep photometry, the density variations along the stream have been used to place limits on the abundance of massive substructures in the Galactic halo \citep{Erkal:2017}.
 
 However, a number of peculiar aspects of the stream still remain unexplained in detail.
-For example, the leading and trailing tails have significantly different total star counts and lengths \citep{Dehnen2004, Bernard:2016}, and the stream track, width, and density vary significantly over the full extent of the stream \citep{Ibata:2016, Bonaca:2019}.
+For example, the leading and trailing tails have significantly different total star counts and lengths \citep{Dehnen:2004, Bernard:2016}, and the stream track, width, and density vary significantly over the full extent of the stream \citep{Ibata:2016, Bonaca:2019}.
 Given that Pal 5's pericenter is well within the Galactic disk ($r_{\textrm{peri}} \sim 7$--$8~\kpc$), these features could be a sign of perturbations from molecular clouds \citep[e.g.,][]{Amorisco:2016}, interaction with the Galactic bar \citep[e.g.,][]{Pearson:2017}, signatures of past dark matter subhalo encounters \citep[e.g.,][]{Erkal:2017}, or some combination of all of these effects.
 Mapping the stream in all six phase-space dimensions---i.e., combining deep photometry with radial velocity, distance, and proper motion measurements---will enable and motivate improved dynamical models of the stream and more precise constraints on the Galactic mass distribution \citep[e.g.,][]{PriceWhelan:2013}.
 However, at its present distance, main sequence stars are barely detected and have large astrometric uncertainties in \Gaia\ \DR{2}, and other stellar tracers (e.g., giant branch stars) are not numerous enough or precise enough distance indicators to provide useful relative distance information along the stream.
 % Enter RR Lyrae-type stars.
 
 \todo{Cecilia: write this paragraph? you probably have some canned text? - (In progress, CM.}
-RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence stars, but about $\sim 10,000$ time less numerous. They can be reliably identified based on their photometric variability alone, with little to no contamination from other types of variable stars, and are well known standard candles. Their distances can be estimated based on photometric data alone by means of their period-luminosity relation, with distance errors that go from $\sim8\%$ in the optical to as low as 3\% in the infrared \citep{Neely2017,Sesar2017a}. At its current distance, Pal~5's horizontal branch is bright enough $\G\sim17.3$ to be observed by \Gaia, so it's full extent can be traced and kinematic properties measured with RRLs.
+RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence stars, but about $\sim 10,000$ time less numerous. They can be reliably identified based on their photometric variability alone, with little to no contamination from other types of variable stars, and are well known standard candles. Their distances can be estimated based on photometric data alone by means of their period-luminosity relation, with distance errors that go from $\sim8\%$ in the optical to as low as 3\% in the infrared \citep{Neeley:2017, Sesar:2017a}. At its current distance, Pal~5's horizontal branch is bright enough $\G\sim17.3$ to be observed by \Gaia, so it's full extent can be traced and kinematic properties measured with RRLs.
 %meaning we can measure kinematic properties of the full stream...
 \citep{Ibata:2017} found some RRL in pal 5, but no proper motions.
 This is useful for modeling...
@@ -102,18 +102,18 @@ In \sectionname~\ref{sec:results}, we ...
 
 % From \Gaia~DR2 we have combined the two available RRL catalogues: the Specific Objects Study \citep[SOS][]{Clementini2018} and vari-classifier \citep[VC][]{Holl2018,Rimoldini2018}. The resulting VC+SOS catalogue contains a total of 228\,904, with all-sky coverage down to the mission's limiting magnitude $G=20.7$. After filtering out stars with contaminated photometry \verb+phot_bp_rp_excess_factor+>2 or null, as recommended in \citep{Rimoldini2018}, the VC+SOS catalogue contains a total of 175\,164 RR Lyrae. For the 122\,747 in SOS, which have undergone extensive light curve fitting, periods, amplitudes and other fitting parameters have been provided by \citet{Clementini2018}. The remaining 52\,417 stars (from the VC catalogue) did not have enough data points in \Gaia~DR2 to go into the SOS pipeline, so periods and other fitting parameters are not yet available for these stars.
 
-To search for RRLs in the vicinity of Pal 5, we use a catalog of RRL stars from the PS1 survey that spans $\sim$3/4 of the sky (all sky north of declination $\delta > -30\degr$) and contains 61\,795 RRLs identified from their variability \citep{Sesar2017b}.
+To search for RRLs in the vicinity of Pal 5, we use a catalog of RRL stars from the PS1 survey that spans $\sim$3/4 of the sky (all sky north of declination $\delta > -30\degr$) and contains 61\,795 RRLs identified from their variability \citep{Sesar:2017b}.
 In detail, the \emph{bona fide} RRLs in the catalog were classified using multi-epoch data in the $grizy$ photometric bands, with a typical number of 12 observations per filter, and has a limiting magnitude $r\sim21$ (corresponding to $G~21$ for the typical colors of RRLs).
 Periods and amplitudes in all five bands are available for all stars in this catalog.
 We have chosen to use this catalog instead of the recently released \Gaia~RRL catalogs \citep[VariClassifier and Specific Object Studies][]{Holl2018, Rimoldini2018, Clementini2018} as these are subject to higher incompleteness in this particular area of the sky due to the \Gaia\ scanning law. Nevertheless, the vast majority (61\,625) of PS1's \emph{bona fide} RRLs have astrometric information available in \Gaia~\DR{2}.
 
-\citet{Sesar2017b} provide distances to the RRLs based on an $i$-band Period-Luminosity-Metallicity (PLZ) relation.
+\citet{Sesar:2017b} provide distances to the RRLs based on an $i$-band Period-Luminosity-Metallicity (PLZ) relation.
 This has two key advantages when compared to optical bands: The PLZ relation in the $i$-band only weakly depends on metallicity, and the impact of dust extinction is less severe at longer wavelengths.
-However, distances reported for the \rrc~stars in Table~5 of \citet{Sesar2017b} have a systematic offset with respect to the \typeab~stars.
+However, distances reported for the \rrc~stars in Table~5 of \citet{Sesar:2017b} have a systematic offset with respect to the \typeab~stars.
 This offset comes from having applied the same PLZ to \typeab~and \typec~stars.
 This is corrected by using the `fundamentalized' period in the PLZ relation for the \rrc~stars, which is computed as $\log{P_F} = \log P + 0.126$ \citep[following][]{Braga2016}.
 In what follows, we use the $i$-band PLZ distances for the RRLs.
-\citet{Sesar2017b} estimate their overall distance precision to be 3\%, of which $\sim2$\% and $\sim1$\% correspond to systematic and random uncertainties, respectively.
+\citet{Sesar:2017b} estimate their overall distance precision to be 3\%, of which $\sim2$\% and $\sim1$\% correspond to systematic and random uncertainties, respectively.
 
 We cross-match the full PS1 RRL catalog with \Gaia~DR2 \citep{Gaia:2018}, using a 3" sky separation tolerance, in order to retrieve astrometric information for these stars.
 Although not all PS1 RRLs have been identified as RRLs from \Gaia\ photometry, all of the PS1 RRL are present in the main point source catalog.
@@ -293,11 +293,11 @@ Star \verb+source_id=4418731829516302848+ is reported in PS1 and \Gaia~as an \rr
 
 \subsection{RR Lyrae population }
 
-Based on the paucity of RRL stars of type~\typeab~in the cluster, Pal~5  would have been expected to be classified as an Oosterhoff type II cluster (ref-XX, no one really seems to say this explicitly), at odds with the cluster's known spectroscopic metallicity of $\FeH=-1.32$ \citep{Kuijsen2018}, as OoII clusters are on average more metal-poor than OoI clusters.
+Based on the paucity of RRL stars of type~\typeab~in the cluster, Pal~5  would have been expected to be classified as an Oosterhoff type II cluster (ref-XX, no one really seems to say this explicitly), at odds with the cluster's known spectroscopic metallicity of $\FeH=-1.32$ \citep{TODO}, as OoII clusters are on average more metal-poor than OoI clusters.
 
 We find 15 RRLs in the cluster tails, $\sim11$ of \typeab\ and $\sim4$ of \typec. Combined with the 10~\rrc~in the cluster itself, there are 25 RRLs in total associated to Pal~5 and its tails with membership probabilities larger than 0.5. Figure~\ref{fig:PA_diagram} shows the period-amplitude diagram for the RRL stars in Pal~5. The full sample of PS1 RRLs is shown in the background for comparison, as a grayscale density histogram. The distribution of the \typeab~RRL clearly indicate Pal~5 to be an Oosterhoff I cluster, consistently with their mean period of 0.565~d(XX).  Our findings of the updated ratio of \rrab~to~\rrc, mean period and Period-Amplitude distribution of the \rrab, all support an OoI classification for Pal~5, consistent with the cluster's metallicity.
 
-Out of our newly found \rrab's three are High Amplitude Short Period (HASP, $P <0.48$~d, $A_V>0.75$~mag $=A_g>$) stars. This type of RRL is only found in relatively metal-rich globular clusters  \citep[$\FeH>-1.5$][]{Monelli2017} and the Sagittarius dwarf galaxy, but not in any other dwarf spheroidal galaxy. \todo{CM:( any other point to be made about this?)}.
+Out of our newly found \rrab's three are High Amplitude Short Period (HASP, $P <0.48$~d, $A_V>0.75$~mag $=A_g>$) stars. This type of RRL is only found in relatively metal-rich globular clusters  \citep[$\FeH>-1.5$][]{Monelli:2017} and the Sagittarius dwarf galaxy, but not in any other dwarf spheroidal galaxy. \todo{CM:( any other point to be made about this?)}.
 
 
 \begin{figure}
@@ -315,7 +315,7 @@ Out of our newly found \rrab's three are High Amplitude Short Period (HASP, $P <
 
 %we obtain the completeness map shown in Figure~\ref{fig:completeness_map}, for RRLs of type \typeab~and \typec. The mean completeness estimated this way is 92\% with a standard deviation of 16\% and, as the figure shows, there is no evident spatial trend. The two estimates are remarkably consistent and, in what follows, we will adopt a completeness of 90\%-XX.
 
-To estimate the expected absolute magnitude of Pal 5 we follow the same procedure as in \citet{Mateu2018}, who use a linear fit of the relation between the absolute magnitude $M_V$ and the number of \typeab\ RRL, based on data from Galactic dwarf galaxies and globular clusters. Here we use it including the data for the \typec~stars.
+To estimate the expected absolute magnitude of Pal 5 we follow the same procedure as in \citet{Mateu:2018}, who use a linear fit of the relation between the absolute magnitude $M_V$ and the number of \typeab\ RRL, based on data from Galactic dwarf galaxies and globular clusters. Here we use it including the data for the \typec~stars.
 Correcting the observed number of 25~RRLs by the median completeness of 92\%, we get a total expected number of 28~RRLs, for which find an absolute magnitude $M_V=-8.1\pm 1.1$.
 
 % \begin{figure}
@@ -329,7 +329,7 @@ Correcting the observed number of 25~RRLs by the median completeness of 92\%, we
 
 
 - there are $\sim4$-XX times as many RRLs in the tails as there are in the cluster.
-- how much mass did we already know to be in the tails compared to the cluster? (\sa{according to Ibata 2016 the mass in the present day cluster is 4297 $\pm~ 98$ M$_{\odot}$, and the streams excluding the cluster have $\sim$7903 M$_{\odot}$. So under a factor of 2 more stars in the tails than in the remnant cluster}. The cluter is thought to have had an initial mass of $\sim47000$ M$_{\odot}$). Probably not as much as a factor of 4. This makes it unexpected to have found this many RRLs in the tails. Based on prior knowledge of the mass loss undergone by the cluster we would have expected this to be XX (Sarah?/Adrian?) \sa{Not sure, the lowest mass stars should have been lost first...}. Similarly,
+- how much mass did we already know to be in the tails compared to the cluster? (\sa{according to Ibata 2016 the mass in the present day cluster is 4297 $\pm~ 98$ M$_{\odot}$, and the streams excluding the cluster have $\sim$7903 M$_{\odot}$. So under a factor of 2 more stars in the tails than in the remnant cluster}. The cluster is thought to have had an initial mass of $\sim47000$ M$_{\odot}$). Probably not as much as a factor of 4. This makes it unexpected to have found this many RRLs in the tails. Based on prior knowledge of the mass loss undergone by the cluster we would have expected this to be XX (Sarah?/Adrian?) \sa{Not sure, the lowest mass stars should have been lost first...}. Similarly,
 
 
 
@@ -351,6 +351,6 @@ Correcting the observed number of 25~RRLs by the median completeness of 92\%, we
 }
 
 \bibliographystyle{aasjournal}
-\bibliography{refs,cm1,cm2}
+\bibliography{refs}
 
 \end{document}
