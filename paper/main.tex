@@ -220,46 +220,7 @@ For each star, we also compute posterior membership probabilities using the samp
 \figurename~\ref{fig:trackmembers} shows a summary of the inferred membership model properties in sky position (shown in Pal 5 coordinates $\phi_1, \phi_2$), distance, and proper motion components.
 \tablename~\ref{t:rrl_members} shows an abbreviated version of our catalog of RRL in the region around Pal 5, with PS1 and \Gaia data and membership probabilities appended.
 
-\begin{table*}[t]
-\caption{RRL members of the Pal 5 stream.}\label{t:rrl_members}
-\begin{footnotesize}
-\begin{tabular}{llllllll}
-\toprule
-\Gaia~DR2               & Other & Period & Amp-$g$ & Type & D & member & sep  \\
-\verb+source_id+        & ID   & (d)    & (mag)   &     &(kpc)& prob & (") \\
-\midrule
-4418920808077110784 &  V5 & 0.337934& 0.46 & RRc  & 20.73 & 0.9982 &   1.9 \\
-4418920846732620032 &     & 0.643239& 0.27 & RRab & 21.71 & 0.9963 &   2.0 \\
-4418914863842345856 &  V1 & 0.293229& 0.56 & RRc  & 20.36 & 0.9696 &   2.0 \\
-4418726027016125056 &  V3 & 0.329948& 0.51 & RRc  & 20.65 & 0.9978 &   3.8 \\
-4418725889577171328 &  V4 & 0.286366& 0.59 & RRc  & 20.28 & 0.9915 &   4.5 \\
-4418731829516302848 &     & 0.28164 & 0.3  & RRc  & 18.14 & 0.9297 &   4.8 \\
-4418913218870688768 &  V2 & 0.332473& 0.4  & RRc  & 20.33 & 0.9977 &   5.0 \\
-4418734165978521728 &     & 0.380859& 0.52 & RRc  & 22.75 & 0.9850 &   7.6 \\
-4418724034151291776 & 403 & 0.551705& 1.14 & RRab & 21.23 & 0.9987 &   9.7 \\
-4418732791593809152 & 405 & 0.329670& 0.45 & RRc  & 20.74 & 0.9959 &  11.0 \\
-4419052204012341760 &     & 0.530006& 1.01 & RRab & 20.84 & 0.9960 &  44.5 \\
-4418142117622280192 & 393 & 0.462671& 1.36 & RRab & 19.95 & 0.9060 & 118.7 \\
-6339498589346000768 &     & 0.320110& 0.46 & RRc  & 18.89 & 0.9934 & 217.7 \\
-6339499379619987200 &     & 0.329577& 0.47 & RRc  & 19.35 & 0.9966 & 218.6 \\
-6339478312804685824 &     & 0.465883& 1.12 & RRab & 19.91 & 0.9970 & 242.8 \\
-4421078432143578496 &     & 0.520749& 1.11 & RRab & 21.98 & 0.9981 & 246.1 \\
-6339398155830632448 &     & 0.688316& 0.75 & RRab & 19.82 & 0.9982 & 258.9 \\
-4427253907921168000 &     & 0.496334& 1.35 & RRab & 21.81 & 0.9905 & 362.5 \\
-4427220338456828416 &     & 0.600796& 0.81 & RRab & 21.98 & 0.9974 & 384.4 \\
-4427234700827469952 &     & 0.517911& 1.24 & RRab & 21.94 & 0.9979 & 392.3 \\
-6337302795905934336 &     & 0.519462& 1.02 & RRab & 17.29 & 0.9808 & 404.5 \\
-6337233350579111680 &     & 0.542383& 0.96 & RRab & 18.98 & 0.9962 & 450.6 \\
-4427646704153765632 &     & 0.385552& 0.37 & RRc  & 19.90 & 0.9429 & 456.5 \\
-4424705647988505600 &     & 0.335502& 0.41 & RRc  & 20.87 & 0.9832 & 513.0 \\
-4426221707021159424 &     & 0.533313& 1.14 & RRab & 21.97 & 0.9728 & 550.1 \\
-\bottomrule
-\end{tabular}
-\end{footnotesize}
-\end{table*}
-
-
-\section{Results} \label{sec:results}
+\section{Results and Discussion} \label{sec:results}
 
 \subsection{RR Lyrae stars associated with Pal 5 and its tails}
 
@@ -287,7 +248,7 @@ While the proper motion in right ascension appears consistent with constant or o
 
 % Based on the prior existence of  paucity of type~\typeab\ RRL stars of in the cluster, Pal~5  would have been expected to be classified as an Oosterhoff type II cluster (ref-XX, no one really seems to say this explicitly), at odds with the cluster's known spectroscopic metallicity of $\FeH=-1.32$ \citep{TODO}, as OoII clusters are on average more metal-poor than OoI clusters.
 
-Assuming a Jacobi radius of $12^\prime$, we find 15 RRLs in the cluster tails, 11 classified as type~\typeab\ and 4 type~\typec.
+Assuming a Jacobi radius of $12^\prime$ (computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.4\times10^4~\msun$ and using the Milky Way mass model in \citealt{gala}), we find 15 RRLs in the cluster tails, 11 classified as type~\typeab\ and 4 type~\typec.
 Combined with the 2 type~\typeab\ and 7 type~\typec\ RRLs in the cluster itself, there are 24 RRLs in total associated to Pal~5 and its tails with membership probabilities larger than 0.5.
 In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.2$.
 \figurename~\ref{fig:PA_diagram} shows the period-amplitude diagram for the RRL stars in Pal~5.
@@ -329,20 +290,23 @@ We therefore find that the initial mass of Pal 5 \todo{...}.
 % - how much mass did we already know to be in the tails compared to the cluster? (\sa{according to Ibata 2016 the mass in the present day cluster is 4297 $\pm~ 98$ M$_{\odot}$, and the streams excluding the cluster have $\sim$7903 M$_{\odot}$. So under a factor of 2 more stars in the tails than in the remnant cluster}. The cluster is thought to have had an initial mass of $\sim47000$ M$_{\odot}$). Probably not as much as a factor of 4. This makes it unexpected to have found this many RRLs in the tails. Based on prior knowledge of the mass loss undergone by the cluster we would have expected this to be XX (Sarah?/Adrian?) Similarly,
 
 
-\section{Discussion}
+\subsection{Previously known Pal 5 RR Lyrae}
 
-The Pal~5 cluster has 5 previous known RRL stars (V1-V5), all of type \typec, as reported in the \citet{Clement2001} compilation of variable stars in Galactic globular clusters and dating back to \citet{SawyerHogg1973}. Star V2 has a  systemic radial velocity of  $-65\pm16$~\kms~measured by \citet{Vivas2005}.
+The Pal~5 cluster has 5 previous known RRL stars (named V1-V5), all of type \typec, as reported in the \citet{Clement:2001} compilation of variable stars in Galactic globular clusters and dating back to \citet{SawyerHogg:1973}.
+In their analysis of the halo density profile with RRLs, \citet{Vivas:2006} report an overdensity (``Group~6'') that they claim could be associated with Pal~5's tidal tails.
+% The QUEST IDs of the stars in their Group~6 are: 403, 405, 407, 411, 416 and 422.
+% The first two stars --403 and 405-- are located at distances of  $9\farcm8$ and $11'$ from the cluster's center, which \citet{Vivas2004} notes places them within the cluster's tidal radius, assuming the value of $r_t\sim16'$ reported by \citet{Odenkirchen:2002}.
+Two of these stars (IDs 403 and 405) are separated by just $\sim10'$ and $11'$ from the cluster's center, which places them within the cluster's Jacobi radius \citep{Vivas:2004}, and an additional star (star 393) outside of the Jacobi radius but at a similar distance could be associated with the stream \citep{Vivas:2006}.
+More recently, \citet{Ibata:2017} use a prior iteration of the PS1 RRL catalog \citep{Hernitschek:2016} to identify \todo{XX} candidate members of the Pal 5 cluster and tails based on sky position and distance alone.
+However, without a published catalog, we cannot compare our sample to theirs.
 
-In their analysis of the halo density profile \citet{Vivas2006} report an overdensity, dubbed Group~6, containing 6 previously unidentified RRLs. Based on the distance to the RRLs they claim many of these could be associated to Pal~5's tidal tails. The QUEST IDs of the stars in their Group~6 are: 403, 405, 407, 411, 416 and 422. The first two stars --403 and 405-- are located at distances of  $9\farcm8$ and $11'$ from the cluster's center, which \citet{Vivas2004} notes places them within the cluster's tidal radius, assuming the value of $r_t\sim16'$ reported by \citet{Odenkirchen:2002}.  \todo{Update this value}. \citet{Vivas2006} also note that star 393, not in Group~6, could also be associated to the cluster's tails, given it's distance and location along the known extent of the tails.
-
-In summary,  previous studies report 7 known RRLs associated to the cluster itself (1 \typeab~and 6 \typec) plus 5 more reported as possibly associated to the tails (4 \typeab~and 2 \typec).
-
-\todo{update this with a comparison to Ibata+2017?}
+% In summary,  previous studies report 7 known RRLs associated to the cluster itself (1 \typeab~and 6 \typec) plus 5 more reported as possibly associated to the tails (4 \typeab~and 2 \typec).
 
 
 \section{Conclusions} \label{sec:conclusions}
 
-\todo{what did we do}
+Using a catalog of RR Lyrae-type stars identified using multi-epoch, multi-band photometry from the Pan-STARRS PS1 survey and cross-matched to \Gaia\ \DR{2}, we XX.
+
 
 \acknowledgments
 This work was performed in part during the Gaia19 workshop and the 2019 Santa Barbara Gaia Sprint (also supported by the Heising-Simons Foundation), both hosted by the Kavli Institute for Theoretical Physics at the University of California, Santa Barbara. The Flatiron Institute is supported by the Simons Foundation. CM acknowledges funding from the MIA program at Universidad de la Republica, Uruguay.
@@ -364,6 +328,43 @@ Star \verb+source_id=6339498589346000768+ is reported both in PS1 and \Gaia~as a
 
 Star \verb+source_id=4418731829516302848+ is reported in PS1 and \Gaia~as an \rrab~with a period around 0.646 and a similarly low amplitude $A_G=0.2$ and $A_g=0.3$ in both surveys. This star is reported in CRTS \citep{Drake2014} (ID CSS\_J151623.2-000831) as an \rrc~with a period 0.28164~d. We adopt the CRTS period for this star in what follows, as it is based on many more observations ($\gtrsim200$) than \Gaia~and PS1's (about a dozen per filter in each case) and the \rrc~classification and short period are more likely for such a short amplitude star.
 
+\begin{table*}[t]
+\caption{RRL members of the Pal 5 stream.}\label{t:rrl_members}
+\begin{footnotesize}
+\begin{tabular}{llllllll}
+\toprule
+\Gaia~DR2               & Other & Period & Amp-$g$ & Type & D & member & sep  \\
+\verb+source_id+        & ID   & (d)    & (mag)   &     &(kpc)& prob & (") \\
+\midrule
+4418920808077110784 &  V5 & 0.337934& 0.46 & RRc  & 20.73 & 0.9982 &   1.9 \\
+4418920846732620032 &     & 0.643239& 0.27 & RRab & 21.71 & 0.9963 &   2.0 \\
+4418914863842345856 &  V1 & 0.293229& 0.56 & RRc  & 20.36 & 0.9696 &   2.0 \\
+4418726027016125056 &  V3 & 0.329948& 0.51 & RRc  & 20.65 & 0.9978 &   3.8 \\
+4418725889577171328 &  V4 & 0.286366& 0.59 & RRc  & 20.28 & 0.9915 &   4.5 \\
+4418731829516302848 &     & 0.28164 & 0.3  & RRc  & 18.14 & 0.9297 &   4.8 \\
+4418913218870688768 &  V2 & 0.332473& 0.4  & RRc  & 20.33 & 0.9977 &   5.0 \\
+4418734165978521728 &     & 0.380859& 0.52 & RRc  & 22.75 & 0.9850 &   7.6 \\
+4418724034151291776 & 403 & 0.551705& 1.14 & RRab & 21.23 & 0.9987 &   9.7 \\
+4418732791593809152 & 405 & 0.329670& 0.45 & RRc  & 20.74 & 0.9959 &  11.0 \\
+4419052204012341760 &     & 0.530006& 1.01 & RRab & 20.84 & 0.9960 &  44.5 \\
+4418142117622280192 & 393 & 0.462671& 1.36 & RRab & 19.95 & 0.9060 & 118.7 \\
+6339498589346000768 &     & 0.320110& 0.46 & RRc  & 18.89 & 0.9934 & 217.7 \\
+6339499379619987200 &     & 0.329577& 0.47 & RRc  & 19.35 & 0.9966 & 218.6 \\
+6339478312804685824 &     & 0.465883& 1.12 & RRab & 19.91 & 0.9970 & 242.8 \\
+4421078432143578496 &     & 0.520749& 1.11 & RRab & 21.98 & 0.9981 & 246.1 \\
+6339398155830632448 &     & 0.688316& 0.75 & RRab & 19.82 & 0.9982 & 258.9 \\
+4427253907921168000 &     & 0.496334& 1.35 & RRab & 21.81 & 0.9905 & 362.5 \\
+4427220338456828416 &     & 0.600796& 0.81 & RRab & 21.98 & 0.9974 & 384.4 \\
+4427234700827469952 &     & 0.517911& 1.24 & RRab & 21.94 & 0.9979 & 392.3 \\
+6337302795905934336 &     & 0.519462& 1.02 & RRab & 17.29 & 0.9808 & 404.5 \\
+6337233350579111680 &     & 0.542383& 0.96 & RRab & 18.98 & 0.9962 & 450.6 \\
+4427646704153765632 &     & 0.385552& 0.37 & RRc  & 19.90 & 0.9429 & 456.5 \\
+4424705647988505600 &     & 0.335502& 0.41 & RRc  & 20.87 & 0.9832 & 513.0 \\
+4426221707021159424 &     & 0.533313& 1.14 & RRab & 21.97 & 0.9728 & 550.1 \\
+\bottomrule
+\end{tabular}
+\end{footnotesize}
+\end{table*}
 
 \bibliographystyle{aasjournal}
 \bibliography{refs}
