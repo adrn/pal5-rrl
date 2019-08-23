@@ -133,7 +133,7 @@ The over-density of stars near $(-2.7, -2.7)$ is the stream, and the two colored
 
 The PanSTARRS-1 (PS1) catalog of RRLs \citep{Sesar:2017b} contains 229K stars spanning $\sim$3/4 of the sky (all sky north of declination $\delta > -30\degr$), with multi-epoch $grizy$ data up to a limiting magnitude $r\sim21$ (corresponding to $G \sim 21$ for the typical colors of RRLs). These stars were identified as RRLs using machine-learning methods based on a template fitting algorithm that can find pulsation periods overcoming the sparse sampling of the PS1 survey ($\sim12$ epochs per filter).
 
-Two all-sky RR Lyrae catalogs have also been released as part of \Gaia~\DR{2} \citep[VariClassifier and Specific Object Studies][]{Holl2018, Rimoldini2018, Clementini2018}. At present, however, these catalogs are subject to more significant and spatially-varying incompleteness in this particular area of the sky due to the \Gaia\ scanning law \citep[see][, though many of these issues will go away with future \Gaia\ data releases]{Rimoldini2018}.
+Two all-sky RR Lyrae catalogs have also been released as part of \Gaia~\DR{2} \citep[VariClassifier and Specific Object Studies][]{Holl2018, Rimoldini2018, Clementini2018}. At present, however, these catalogs are subject to more significant and spatially-varying incompleteness in this particular area of the sky due to the \Gaia\ scanning law \citep[see][though many of these issues will go away with future \Gaia\ data releases]{Rimoldini2018}.
 % \sa{Mention if DR3 will help?}
 % APW: done!
 
@@ -181,6 +181,7 @@ Although not all PS1 RRLs have been identified as RRLs from \Gaia\ photometry, a
 In order to search for new RRL stars in the Pal 5 stellar stream, we construct a probabilistic model of the stream and background stellar distribution (simultaneously) using proper motion $(\mu_\alpha, \mu_\delta)$ and distance $d$ data for all RRLs in the sky window $215^\circ < \alpha < 255^\circ$, $-15^\circ < \delta < 10^\circ$, where $(\alpha, \delta)$ are right ascension and declination.
 % \sa{Is it worth it to show the whole region in fig 3, and/or maybe extend to even more negative $\delta $?}
 % APW: I don't think so? And what do you mean by the "whole region"?
+%SP meant whether you found any RRLs below $\delta<-10$ (now found answer below so never mind)
 We \emph{do not} include the known spatial extent or morphology of the Pal 5 stream in our membership model for the stream: We instead later use the sky positions to validate the modeling procedure and selection criteria we then use to define a sample of probable Pal 5 stream RRLs.
 This model ultimately enables us to compute stream membership probabilities for RRL stars in a way that fully incorporates \Gaia\ error properties, while simultaneously modeling and marginalizing over uncertainties in the background RRL distribution.
 
@@ -345,6 +346,7 @@ We find 24 RRLs with membership probability $>0.5$ (13 type~\typeab\ and 11 type
 From these stars, we infer the distance to the cluster, finding a closer value, $d = 20.9 \pm 0.2~\kpc$, than many past studies, and detect a distance gradient of $\sim 0.4~\kpc~{\rm deg}^{-1}$ between the trailing and leading tail (between $-5^\circ < \phi_1 < 5^\circ$).
 % \sa{you mean only the cluster stars, right?}
 % APW: no, I mean all! Because of our quadratic model, even stars in the nearby part of the stream technically inform the cluster position
+%SP: cool, does the distance estimate change at all if you only use cluster stars?
 We also, for the first time, detect trends in proper motion along the stream, predicted by models of the stream \citep[e.g.,][]{Pearson:2017}.
 % \sa{which has been suggested in/reported in/consistent with modeling of the stream...? fig 2, pearson 17}
 % APW: Not really worth saying consistent or not because of the distance difference, but I added the citation!
