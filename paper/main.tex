@@ -47,7 +47,7 @@ We use a large catalog of RR Lyrae-type stars (RRLs) with astrometric data from 
 RRLs are useful because they are intrinsically-luminous standard candles and their distances can be inferred with small relative precision ($\sim3\%$).
 % Methods
 % Results
-By building a probabilistic model of the Pal 5 cluster and stream in proper motion and distance, we find 25 RRLs consistent with being members of the cluster (10) and stream (15).
+By building a probabilistic model of the Pal 5 cluster and stream in proper motion and distance, we find 24 RRLs consistent with being members of the cluster (9) and stream (15).
 Using these RRLs, we detect gradients in distance and proper motion along the stream, and provide an updated measurement of the distance to the Pal 5 cluster using the RRLs.
 % Conclusions
 We provide a catalog of Pal 5 RRLs with inferred membership probabilities for future modeling work.
@@ -283,22 +283,18 @@ While the proper motion in right ascension appears consistent with constant or o
 
 \subsection{RR Lyrae population }
 
-% Based on the prior existence of  paucity of type~\typeab\ RRL stars of in the cluster, Pal~5  would have been expected to be classified as an Oosterhoff type II cluster (ref-XX, no one really seems to say this explicitly), at odds with the cluster's known spectroscopic metallicity of $\FeH=-1.32$ \citep{TODO}, as OoII clusters are on average more metal-poor than OoI clusters.
-
-Assuming a Jacobi radius of $11'$ (computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.2\times10^4~\msun$ \citep{Kuepper:2015} and using the Milky Way mass model in \citealt{gala}), we find 16 RRLs in the cluster tails, 11 classified as type~\typeab\ and 5 type~\typec.
-Combined with the 2 type~\typeab\ and 6 type~\typec\ RRLs in the cluster itself, there are 24 RRLs in total associated to Pal~5 and its tails with membership probabilities larger than 0.5.
-In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.2$.
+Assuming a Jacobi radius of $11'$---computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.2\times10^4~\msun$ \citep{Kuepper:2015} and using the Milky Way mass model in \citet{gala}---we find 10 RRLs in the cluster itself (3 type~\typeab\ and 7 type~\typec) and 15 in the cluster tails (11 type~\typeab\ and 4 type~\typec), all  with membership probabilities larger than 0.5. In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.27$, the typical ratio found Oosterhoff I populations \citep{Smith1995}.  
 \figurename~\ref{fig:PA_diagram} shows the period-amplitude diagram for the RRL stars in Pal~5.
-The full sample of PS1 RRLs is shown in the background for comparison, as a grayscale density histogram. The distribution of the \typeab~RRLs clearly indicate that Pal~5 is an Oosterhoff I cluster, consistent with having a mean period of $0.565~d$ \todo{(XX) ?}.
-Our findings of the updated ratio of \rrab~to~\rrc, mean period, and Period-Amplitude distribution of the \rrab\ RRLs all support an OoI classification for Pal~5, consistent with the cluster's metallicity, $\FeH=-1.32$ \citep{TODO}.
-Out of our newly found \rrab\ RRLs, three are High Amplitude Short Period (HASP, $P <0.48$~d, $A_V>0.75$~mag $=A_g>$) stars.
-This type of RRL is only found in relatively metal-rich globular clusters  \citep[$\FeH>-1.5$;][]{Monelli:2017} and the Sagittarius dwarf galaxy, but not in any other dwarf spheroidal galaxy. \todo{CM:( any other point to be made about this?)}. \sa{as someone who doesn't know much about RRLs, how weird is the above? maybe some more discussion/elaboration? }
+The full sample of PS1 RRLs is shown in the background for comparison, as a grayscale density histogram. The distribution of the \typeab~RRLs clearly indicate that Pal~5 is an Oosterhoff I cluster, consistent with having a mean period of $0.53~d$.
+Our findings of the updated ratio of \rrab~to~\rrc, mean period, and Period-Amplitude distribution of the \rrab\ RRLs all support an Oosterhoff I classification for Pal~5, consistent with the cluster's metallicity, $\FeH=-1.32$ \citep{TODO}.
+Out of our newly found \rrab\ RRLs, three are High Amplitude Short Period (HASP, $P <0.48$~d, $A_V>0.75$~mag $=A_g>$) stars, again consistent with Pal~5's metallicity,  as this type of RRL is only found in relatively metal-rich globular clusters  \citep[$\FeH>-1.5$;][]{Monelli:2017}.
 
+%. and the Sagittarius dwarf galaxy, but not in any other dwarf spheroidal galaxy. \todo{CM:( any other point to be made about this?)}. \sa{as someone who doesn't know much about RRLs, how weird is the above? maybe some more discussion/elaboration? } \cm{well, it's not weird at all. I've added a sentence saying so.}
 
 \begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\textwidth]{rrls_PA.pdf}
-\caption{Amplitude ($g$-band) versus Period for RRLs in the Pal~5 field. \sa{some statement on what to take away from the figure... i.e. consistent with Pal 5 being an "x" type GC....}}
+\caption{Amplitude ($g$-band) versus Period for RRLs in the Pal~5 field. The distribution of the RRLs found in the cluster and it's tails is consistent with an Oosterhoff type I. }
 \label{fig:PA_diagram}
 \end{center}
 \end{figure*}
@@ -347,6 +343,7 @@ From these stars, we infer the distance to the cluster, finding a closer value, 
 % \sa{you mean only the cluster stars, right?}
 % APW: no, I mean all! Because of our quadratic model, even stars in the nearby part of the stream technically inform the cluster position
 %SP: cool, does the distance estimate change at all if you only use cluster stars?
+% APW: they are consistent
 We also, for the first time, detect trends in proper motion along the stream, predicted by models of the stream \citep[e.g.,][]{Pearson:2017}.
 % \sa{which has been suggested in/reported in/consistent with modeling of the stream...? fig 2, pearson 17}
 % APW: Not really worth saying consistent or not because of the distance difference, but I added the citation!
