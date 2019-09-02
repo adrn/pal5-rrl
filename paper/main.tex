@@ -1,7 +1,14 @@
+% TODO:
+% - Check whether I use p > 0.01 or p > 0.1 for sky plot figure
+% - Over-plot the sky track borders on MSTO plot
+% - Add PM and distance dispersion as parameters to fit, or cite out to the values I fix them to
+% - Compute the autocorrelation time for emcee instead, thin by the acor length
+%
+
 % \documentclass[modern]{aastex63}
 \documentclass[twocolumn]{aastex63}
 
-\shorttitle{RRL in the Pal 5 stream}
+\shorttitle{RR Lyrae stars in the Pal 5 stream}
 \shortauthors{People et al.}
 \newcommand{\sa}[1]{{\color{teal} SP: #1}}
 
@@ -10,7 +17,7 @@
 
 \begin{document}
 
-\title{Kinematics of the Palomar 5 stellar stream from RRLs}
+\title{Kinematics of the Palomar 5 stellar stream from RR Lyrae stars}
 
 
 \author[0000-0003-0872-7098]{Adrian~M.~Price-Whelan}
@@ -69,13 +76,9 @@ Many globular cluster stellar streams have been discovered over the last few dec
 A subset of the known streams have been precisely characterized and further studied \citep[e.g.,][]{PriceWhelan:2018, Malhan:2018, Shipp:2019} using kinematic data from the recent data release 2 (\DR{2}) of the \Gaia\ mission \citep{Gaia:2016, Gaia:2018}.
 Of the currently known $\sim$60 candidate stellar streams found throughout the Milky Way, few have known progenitor systems.
 Conversely, of the $\sim$150 known globular clusters, only $\lesssim 20\%$ have purported tidal tails \citep[e.g.,][]{Leon:2000, Kundu:2019}, but even these are mostly low density and tenuous \citep[as might be expected, e.g.,][]{Balbinot:2018}.
-% \sa{The above sentence makes it sound like $\lesssim 20\%$ of the 150 known GCs have streams, is it really that many?}
-% APW: Yep! According to the citations.
 A prominent exception to these statements is the Palomar 5 (Pal 5) globular cluster and stream.
 
 The Pal 5 stream---at a heliocentric distance of $d \sim 20~\kpc$---was discovered using early SDSS imaging, which reached well below the main sequence turnoff of the stream over a large area surrounding the cluster \citep{Odenkirchen:2001, Rockosi:2002}.
-% \sa{Maybe cite Dotter 2011 for previous distance? }
-% APW: It's just a qualitative statement to give a rough sense of its distance, so I'm not really quoting a measurement
 Since then, radial velocities have been measured for a handful of giant branch stars in the cluster and along the stream \citep{Odenkirchen:2002, Odenkirchen:2009, Ibata:2017}, and deeper imaging data has been used to map the tails at higher signal-to-noise \citep{Bernard:2016, Ibata:2016, Bonaca:2019}.
 The detailed but still limited kinematic data for Pal 5 has made it a canonical example of tidal destruction and a useful tool for constraining Galactic structure.
 For example, using the sky track and radial velocity information, the stream has been used to measure the enclosed mass of the Milky Way \citep{Kuepper:2015, Bovy:2016}.
@@ -83,27 +86,20 @@ Using deep photometry, the density variations along the stream have been used to
 
 However, a number of peculiar aspects of the stream still remain unexplained in detail.
 For example, the leading and trailing tails have significantly different total star counts and lengths \citep[both different by a factor of $\sim$2 between leading and trailing;][]{Dehnen:2004, Bernard:2016}, and the stream track, width, and density vary significantly over the full extent of the stream \citep{Ibata:2016, Bonaca:2019}.
-% \sa{Might be work stating how big the estimated mass difference is in the trailing, leading vs cluster, as many people seem to be curious about this.}
-% APW: Added a note above
 Given that Pal 5's pericenter is well within the Galactic disk ($r_{\textrm{peri}} \sim 7$--$8~\kpc$),
-% \sa{cite Erkal 2017 here (his fig 6)?}
-% APW: Again just a rough / qualtitative number to give a sense - I don't really see the need to cite given that this is from my own exploration with the orbit fits!
 these features could be a sign of perturbations from molecular clouds \citep[e.g.,][]{Amorisco:2016}, interaction with the Galactic bar \citep[e.g.,][]{Pearson:2017}, signatures of past dark matter subhalo encounters \citep[e.g.,][]{Erkal:2017}, or some combination of all of these effects.
 Mapping the stream in all six phase-space dimensions---i.e., combining deep photometry with radial velocity, distance, and proper motion measurements---will enable and motivate improved dynamical models of the stream and more precise constraints on the Galactic mass distribution \citep[e.g.,][]{PriceWhelan:2013}.
 However, with \Gaia\ \DR{2}, at its present distance, main sequence stars are barely detected and have large astrometric uncertainties.
 Other stellar tracers (e.g., giant branch stars) are not numerous enough or precise enough distance indicators to provide useful relative distance information along the stream.
-% \sa{Maybe here mention that a "velocity" gradient has been detected along the stream (Kuzma 2015)? }
-% APW: Good idea, but then it would make sense to talk about the RV data in Ibata+2017. I'll try to fit both into the discussion.
-% Enter: RR Lyrae-type stars.
 
-RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence turn-off stars. Although about $\sim 10,000$ time less numerous than main sequence stars, RRLs are extremely useful probes of the Galactic halo as they are well established as standard candles; they can be observed to large distances \citep{Medina:2018,Sesar:2017c}; and are reliably identified based on their photometric variability, with little to no contamination from other types of variable stars \citep[e.g.][]{Holl:2018,Drake:2017,Mateu:2012}. Their distances can be estimated based on photometric data alone, with errors $\sim8\%$ in the optical, and can be as low as 3\% in the infrared \citep{Neeley:2017}. These properties have made RRLs a key tracer of structure and substructure across the Galaxy, having been used to trace the density profile of the halo, thick disk and bulge \citep[e.g.][and reference therein]{Iorio:2018,Mateu:2018b,Kunder:2008}, to identify new streams and accretion events \citep[e.g.]{Duffau:2006,Sesar:2010,Mateu:2018,Iorio:2019} and even to argue against the extragalactic origin of overdensities in the disk \citep{Mateu:2009,Price-Whelan:2015}.
+RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence turn-off stars. Although about $\sim 10,000$ time less numerous than main sequence stars, RRLs are extremely useful probes of the Galactic halo as they are well established as standard candles; they can be observed to large distances \citep{Medina:2018,Sesar:2017c}; and are reliably identified based on their photometric variability, with little to no contamination from other types of variable stars \citep[e.g.][]{Holl:2018,Drake:2017,Mateu:2012}. Their distances can be estimated based on photometric data alone, with errors $\sim8\%$ in the optical, and can be as low as 3\% in the infrared \citep{Neeley:2017}. These properties have made RRLs a key tracer of structure and substructure across the Galaxy, having been used to trace the density profile of the halo, thick disk and bulge \citep[e.g.][and reference therein]{Iorio:2018,Mateu:2018b,Kunder:2008}, to identify new streams and accretion events \citep[e.g.]{Duffau:2006,Sesar:2010,Mateu:2018,Iorio:2019} and even to argue against the extragalactic origin of overdensities in the disk \citep{Mateu:2009, Price-Whelan:2015}.
 
 Previous studies have found RRLs in Pal5's tails: the first two were found by \citet{Vivas:2001} in the QUEST survey; and more recently \citep{Ibata:2017} found about ten new RRLs using the catalog of PS1 candidate RRLs from \citet{Hernitschek:2016}. At its current distance, Pal~5's horizontal branch is bright enough ($\G\sim17.3$) to be observed by \Gaia. Therefore, combining \Gaia~DR2 proper motions with the newer PS1 RRL catalog from \citet{Sesar:2017b} --with improved classification probabilities and light curve periods--  will allow us to make the first precise distance and proper motion measurements along the full extent of the Pal~5 stream. Both will prove to be key ingredients for dynamical modelling of the Pal~5 stream.
 
-In this Article, we construct a probabilistic model for kinematic properties of RRLs in the vicinity of the Pal 5 stream to determine membership probabilities and thus map the distance and proper motion trends in the stream. 
+In this Article, we construct a probabilistic model for kinematic properties of RRLs in the vicinity of the Pal 5 stream to determine membership probabilities and thus map the distance and proper motion trends in the stream.
 In \sectionname~\ref{sec:data}, we describe the source RRL catalog we use to search for Pal 5 members.
 In \sectionname~\ref{sec:membership}, we implement a probabilistic membership model to identify candidate members of the stream using distance and astrometric information.
-In \sectionname~\ref{sec:results}, we discuss the population and kinematics of the RRL members found and use these to provide an estimate of the system's stellar mass and luminosity.  
+In \sectionname~\ref{sec:results}, we discuss the population and kinematics of the RRL members found and use these to provide an estimate of the system's stellar mass and luminosity.
 We present our conclusions in \sectionname~\ref{sec:conclusions}.
 
 \section{Data} \label{sec:data}
@@ -113,8 +109,6 @@ We present our conclusions in \sectionname~\ref{sec:conclusions}.
 \includegraphics[width=\textwidth]{proper-motion.pdf}
 \caption{\textbf{Left}: Proper motions of RRLs in the region $215^\circ < \alpha < 255^\circ$, $-15^\circ < \delta < 10^\circ$ with distances in the range $18 < d < 25~\kpc$.
 The distance selection here is purely illustrative: We do not use a distance cut in our membership model.
-% \sa{Might be worth looking at closer distances (leading arm in a MW potential comes as close as $\sim$15 kpc), especially if you want to find members at a dec of $-15\deg$.}
-% APW: Hm, my models only go to ~18 at the edge of the sky footprint, but this distance cut is only used for illustrative purposes. I added a sentence to clarify.
 \textbf{Middle}: The same, but for RRLs within $1\degr$ of the mean sky track of Pal 5 \citep{Bonaca:2019}.
 The over-density of stars near $(-2.7, -2.7)$ is the stream, and the two colored points show the Pal 5 cluster proper motions from \citet{Vasiliev:2019} and \citet{Fritz:2015}, respectively.
 \textbf{Right}: The same, but for RRLs excluding $2\degr$ around the Pal 5 sky track.}
@@ -124,9 +118,7 @@ The over-density of stars near $(-2.7, -2.7)$ is the stream, and the two colored
 
 The PanSTARRS-1 (PS1) catalog of RRLs \citep{Sesar:2017b} contains 229K stars spanning $\sim$3/4 of the sky (all sky north of declination $\delta > -30\degr$), with multi-epoch $grizy$ data up to a limiting magnitude $r\sim21$ (corresponding to $G \sim 21$ for the typical colors of RRLs). These stars were identified as RRLs using machine-learning methods based on a template fitting algorithm that can find pulsation periods overcoming the sparse sampling of the PS1 survey ($\sim12$ epochs per filter).
 
-Two all-sky RRL catalogs have also been released as part of \Gaia~\DR{2} \citep[VariClassifier and Specific Object Studies][]{Holl2018, Rimoldini2018, Clementini2018}. At present, however, these catalogs are subject to more significant and spatially-varying incompleteness in this particular area of the sky due to the \Gaia\ scanning law \citep[see][though many of these issues will go away with future \Gaia\ data releases]{Rimoldini2018}.
-% \sa{Mention if DR3 will help?}
-% APW: done!
+Two all-sky RRL catalogs have also been released as part of \Gaia~\DR{2} \citep[VariClassifier and Specific Object Studies][]{Holl2018, Rimoldini2018, Clementini2018}. At present, however, these catalogs are subject to more significant and spatially-varying incompleteness in this particular area of the sky due to the \Gaia\ scanning law \citep[see][though many of these issues will improve with future \Gaia\ data releases]{Rimoldini2018}.
 
 Out of the 229K RRLs in the PS1 catalog, $\sim60$K are also reported as RRLs by \Gaia~\DR{2}, the vast majority of which (49K) are part of the subset defined by \citet{Sesar:2017b} as \emph{bona fide}. This subset is comprised of 61K RRLs above classification score thresholds set by \citet{Sesar:2017b} to ensure its high purity ($>90$\%) and completeness ($>80$\%). An extra $\sim6$K stars with lower classification scores in PS1 were also found to be RRLs by \Gaia~\DR{2} and have reported pulsation periods in the SOS catalog. Most of these RRLs have matching classifications and consistent periods in the two surveys, which increases our confidence that these are true RRLs.
 
@@ -144,19 +136,12 @@ In what follows, we use the $i$-band PLZ distances for the RRLs.
 We cross-match the full PS1 RRL catalog with \Gaia~DR2 \citep{Gaia:2018}, using a 1" sky separation tolerance, in order to retrieve astrometric information for these stars.
 Although not all PS1 RRLs have been identified as RRLs from \Gaia\ photometry, all of the PS1 RRLs are present in the main point source catalog.
 \figurename~\ref{fig:pm} demonstrates that Pal 5 stream members appear in the RRL catalog: This figure shows the \Gaia\ \DR{2} proper motions for all RRLs in the \textcolor{red}{selected} sky window within the distance range $18 < d < 25~\kpc$, then the same for RRLs in a tight selection around the observed stream track (within $1\degr$ of the stream track, \textcolor{red}{see \sectionname~\ref{sec:membership} for details}), and then finally the same for RRLs \emph{excluding} the stream region (excluding stars within $2\degr$ of the stream track).
-% \sa{Do we want to show this stream track? Or state how wide it is? (it's inthe  figure, but mention here too).}
-% APW: Noted.
 
 \citet{Sesar:2017b} provide an estimate of their catalog's completeness as a function of distance, at high galactic latitude, based on simulations. They estimate the mean completeness to be 92\% for \rrab~and 79\% for \rrc, up to a distance of 40~kpc, well beyond the distance of Pal~5 and its tails. At the average ratio of 3 \rrc~stars per every 10 \rrab~\citep{Layden:1995}, this represents a mean completeness of 89\%. We can also produce an estimate per line of sight using the methodology described in \citet{Rybizki:2018}, which requires two independent catalogs to assess the completeness of both in a probabilistic manner. Comparing PS1 against the \Gaia~DR2 catalogue, comprised of the outer join of the VariClassifier \citep{Holl2018,Rimoldini2018} and Specific Objects Study \citep{Clementini2018} catalogs, we find a median completeness of 92\% with a standard deviation of 16\% with no evident spatial trend across the sky selection window.
-% \sa{I got a little confused in the section above as Fig 3 is referenced but Fig 2 never mentioned. }
-% APW: I moved this paragraph up from the discussion and forgot to edit - thanks!
 
 \section{Determining stream membership} \label{sec:membership}
 
 In order to search for new RRL stars in the Pal 5 stellar stream, we construct a probabilistic model of the stream and background stellar distribution (simultaneously) using proper motion $(\mu_\alpha, \mu_\delta)$ and distance $d$ data for all RRLs in the sky window $215^\circ < \alpha < 255^\circ$, $-15^\circ < \delta < 10^\circ$, where $(\alpha, \delta)$ are right ascension and declination.
-% \sa{Is it worth it to show the whole region in fig 3, and/or maybe extend to even more negative $\delta $?}
-% APW: I don't think so? And what do you mean by the "whole region"?
-%SP meant whether you found any RRLs below $\delta<-10$ (now found answer below so never mind)
 We \emph{do not} include the known spatial extent or morphology of the Pal 5 stream in our membership model for the stream: We instead later use the sky positions to validate the modeling procedure and selection criteria we then use to define a sample of probable Pal 5 stream RRLs.
 This model ultimately enables us to compute stream membership probabilities for RRL stars in a way that fully incorporates \Gaia\ error properties, while simultaneously modeling and marginalizing over uncertainties in the background RRL distribution.
 
@@ -164,8 +149,6 @@ To start, we use the sky track and width of Pal 5 from \citet{Bonaca:2019} to ma
 We use RRL stars in the background region to construct an error-deconvolved density model in the 3D space of proper motion components and distance.
 We use proper motions and uncertainties from \Gaia---using the provided covariance matrix between proper motion components---and distances and uncertainties from the PS1 RRL catalog (\sectionname~\ref{sec:data}).
 We optimize the parameters of a Gaussian Mixture Model (GMM) representation of the (deconvolved) background RRL density using \project{extreme deconvolution} \citep[\acronym{XD};][]{Bovy:XD}.
-% \sa{minor: three sentences in a row start with "we use".}
-% APW: changed one of them
 We first fit the background model (with \acronym{XD}) using between $3$--$12$ mixture components and evaluate the Bayesian Information Criterion (BIC) for the optimal parameters in each case.
 From this, we find that the BIC is minimized for 6 mixture components: We therefore use 6 mixture components and fix the GMM model parameters to the \acronym{XD}-optimized values and use this as our background model.
 We evaluate the background likelihood of all stars in the full sky region (defined above) and refer to this as $p_{{\rm bg}, n}$ (for the $n$th star) below.
@@ -175,8 +158,6 @@ We evaluate the background likelihood of all stars in the full sky region (defin
 \includegraphics[width=\textwidth]{tracks.pdf}
 \caption{RRL stars in the vicinity of the Pal 5 stream (with $\textrm{prob.} > 0.01$), colored by membership probability, and under-plotted with the inferred stream trends used in the membership model.
 We note again that the membership probability does not depend on position or proximity to the stream, and only on distance and proper motions.
-% \sa{Could be worth emphasizing here too that the probability does not depend on positional info (i.e. being close to the stream itself) for people only skimming through figures.}
-% APW: added!
 \textbf{Upper left}: Sky positions (in the Pal 5 stream coordinate frame) of RRLs, with arrows showing the \Gaia\ \DR{2} proper motion vector direction.
 \textbf{Upper right}: Distance as a function of Pal 5 longitude, $\phi_1$, for the RRLs. The shaded (orange) band shows the 16--84th percentile confidence region for the inferred distance trend of the stream, and the solid line shows the median posterior sample, all assuming a quadratic function of $\phi_1$.
 \textbf{Lower panels}: Same as upper right, but for the proper motion in right ascension, $\mu_\alpha$, and declination, $\mu_\delta$.
@@ -207,7 +188,7 @@ where $\mathcal{N}(\cdot \given \bs{x}, \mat{C})$ is the multivariate normal dis
 \begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\textwidth]{members.pdf}
-\caption{Sky positions of RRLs with Pal 5 membership probabilities $>0.01$ \todo{CM: APW check this number, I think it might be 0.1?}, colored by membership probability \sout{(large markers)}. The background greyscale shows the surface density of CMD-filtered main sequence stars from \citet{Bonaca:2019}. Note that the membership probability does not incorporate sky position information, but a clear over-density of high-probability RRL members do trace the stream on the sky.}
+\caption{Sky positions of RRLs with Pal 5 membership probabilities $>0.01$ \todo{CM: APW check this number, I think it might be 0.1?}, colored by membership probability (markers). The background greyscale shows the surface density of CMD-filtered main sequence stars from \citet{Bonaca:2019}. Note that the membership probability does not incorporate sky position information, but a clear over-density of high-probability RRL members do trace the stream on the sky.}
 \label{fig:members}
 \end{center}
 \end{figure*}
@@ -218,7 +199,7 @@ We use Markov Chain Monte Carlo (MCMC) to generate samples over the parameters $
 \end{equation}
 where $p(\bs{\theta}, f)$ is the prior probability distribution over the parameters.
 We assume that our prior is separable in all of our parameters: We use a uniform prior for the mixture weight, $f$, such that $p(f) = \mathcal{U}(0, 1)$, Gaussian priors on the mean proper motion and distance using the Pal 5 cluster proper motion measurements from \citet{Vasiliev:2019} and the Pal 5 distance from \citet{Kuepper:2015}.
-We use broad uniform priors on the linear and quadratic polynomial coefficients defined in \equationname~\ref{eq:meanpoly}.
+We use broad uniform priors (i.e. $-100 < b, c < 100$ for each coefficient) on the linear and quadratic polynomial coefficients defined in \equationname~\ref{eq:meanpoly}.
 We use the affine-invariant ensemble MCMC sampler \texttt{emcee} \citep{emcee} to sample from the posterior probability distribution given above.
 We run \texttt{emcee} with 80 walkers for an initial 1024 steps to ``burn-in'' the sampler, then reset and restart the sampler for another 2048 steps.
 We compute the Gelman-Rubin convergence statistic $\mathcal{R}$ \citep{Gelman:1992} to verify that $\mathcal{R} < 1.1$ for all walkers and assume that the chains have converged.
@@ -239,16 +220,13 @@ We find a total of 9 RRLs within the estimated Jacobi radius of the cluster ($\a
 \figurename~\ref{fig:members} shows the sky positions of all RRLs with membership probability $>0.01$ over-plotted on the density of filtered main sequence stars from \citet{Bonaca:2019}.
 We note that there are a few RRLs outside of the main stream track that appear to be at a consistent distance with consistent proper motions (e.g., the two stars near $\alpha = 230\degr$, $\delta = 0\degr$ in \figurename~\ref{fig:members}) that are not included in the tally above.
 No theoretical models of Pal 5 have predicted tidal debris at such locations, so follow-up spectroscopy to confirm or rule out their origin would be very informative.
-% \sa{What about RRLs at more negative $\delta$, wasn't your region larger than the figure extent?}
-% APW: There aren't any stars with prob > 0.01 below dec ~ -11 near the stream, so I trimmed the axis.
-
 
 \subsection{Kinematics of the cluster and stream}
 
 Past distance measurements to the Pal 5 cluster have ranged from $20.9~\kpc$ \citep{Dotter:2011} to $23.2~\kpc$ \citep{Harris:1996}, with a previous measurement from a small number of RRLs in between at $22.3~\kpc$ \citep{Vivas:2006}. % \sa{worth mentioning with which technique?}
 We find a mean Pal 5 cluster distance of $20.9 \pm 0.2~\kpc$ using the PS1 RRLs and the membership model described in \sectionname~\ref{sec:membership}.
 This is closer than most past measurements of the cluster distance, but consistent with the measurement from \citet{Dotter:2011}.
-We find a proper motion $(\mu_\alpha\,\cos\delta, \mu_\delta) = (-2.69, -2.70) \pm (0.04, 0.03)~\masyr$, consistent with the measurement in \citet{Vasiliev:2019}. % \sa{state that this is larger than most before next sentence?}
+We find a proper motion $(\mu_\alpha\,\cos\delta, \mu_\delta) = (-2.69, -2.70) \pm (0.04, 0.03)~\masyr$, consistent with the measurement in \citet{Vasiliev:2019}.
 The larger proper motion (relative to \citealt{Fritz:2015} and other earlier measurements) and the closer distance means that the tangential velocity of Pal 5 is $\approx 30~\kms$ larger than most previous models have assumed.
 This is a noteworthy update to consider for future stream modeling efforts and will likely change the inferred Milky Way parameters as compared to past models \citep[e.g.,][]{Kuepper:2015, Bovy:2016}.
 
@@ -259,7 +237,7 @@ While the proper motion in right ascension appears consistent with constant or o
 
 \subsection{Properties of the RRL population}
 
-Assuming a Jacobi radius of $11'$---computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.2\times10^4~\msun$ \citep{Kuepper:2015} and using the Milky Way mass model in \citet{gala}---we find 9 RRLs in the cluster itself (2 type~\typeab\ and 7 type~\typec) and 15 in the cluster's tails (11 type~\typeab\ and 4 type~\typec), all  with membership probabilities larger than 0.5. In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.2$, a typical ratio found Oosterhoff I populations \citep{Smith:1995}.  
+Assuming a Jacobi radius of $11'$---computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.2\times10^4~\msun$ \citep{Kuepper:2015} and using the Milky Way mass model in \citet{gala}---we find 9 RRLs in the cluster itself (2 type~\typeab\ and 7 type~\typec) and 15 in the cluster's tails (11 type~\typeab\ and 4 type~\typec), all  with membership probabilities larger than 0.5. In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.2$, a typical ratio found Oosterhoff I populations \citep{Smith:1995}.
 \figurename~\ref{fig:PA_diagram} shows the period-amplitude diagram for the RRL stars in Pal~5.
 The full sample of PS1 RRLs is shown in the background for comparison, as a grayscale density histogram. The distribution of the \typeab~RRLs clearly indicate that Pal~5 is an Oosterhoff I cluster, consistent with having a mean period of $0.54~d$.
 Our findings of the updated ratio of \rrab~to~\rrc, mean period, and Period-Amplitude distribution of the \rrab\ RRLs all support an Oosterhoff I classification for Pal~5, consistent with the cluster's metallicity, $\FeH=-1.4$ \citep{Dotter:2011}.
@@ -277,7 +255,7 @@ Out of our newly found \rrab\ RRLs, two are High Amplitude Short Period (HASP, $
 
 \subsection{Stellar Mass and Luminosity}
 
-To estimate the expected absolute magnitude of Pal 5 we follow the same procedure as in \citet{Mateu:2018}, who use a linear fit of the relation between the absolute magnitude $M_V$ and the number of \typeab\ RRL, based on data from Galactic dwarf galaxies and globular clusters, here including the RR\typec~stars.  The $\log{N_{RR}}-M_V$ relation has a large scatter so, particularly for such low numbers of RRLs, it will only allow us to give rough limits on the cluster's absolute magnitude and, therefore, of its luminosity. Correcting the observed number of 24~RRLs by the median completeness of 92\%, we get a total expected number of 26~RRLs, for which we find a total luminosity $L_V=3.9_{-2.5}^{+7.4}\times 10^4 \mathrm{L}_\sun$.%, which correspond to the mode and 16/84th percentiles of the posterior probability distribution. 
+To estimate the expected absolute magnitude of Pal 5 we follow the same procedure as in \citet{Mateu:2018}, who use a linear fit of the relation between the absolute magnitude $M_V$ and the number of \typeab\ RRL, based on data from Galactic dwarf galaxies and globular clusters, here including the RR\typec~stars.  The $\log{N_{RR}}-M_V$ relation has a large scatter so, particularly for such low numbers of RRLs, it will only allow us to give rough limits on the cluster's absolute magnitude and, therefore, of its luminosity. Correcting the observed number of 24~RRLs by the median completeness of 92\%, we get a total expected number of 26~RRLs, for which we find a total luminosity $L_V=3.9_{-2.5}^{+7.4}\times 10^4 \mathrm{L}_\sun$.%, which correspond to the mode and 16/84th percentiles of the posterior probability distribution.
 We then estimate a stellar mass of $0.8_{-0.5}^{+1.5}\times 10^5 \msun$, by assuming a V-band mass-to-light ratio $M/L=2.$ corresponding to a simple stellar population with the age (12 Gyr) and metallicity ($\FeH=-1.4$) of the cluster \citep{Dotter:2011}, computed from the \citet{Bruzual:2003} models \footnote{We have used Z=0.0004 ($\FeH=-1.6$), the nearest to Pal~5’s metallicity available in the models.}. Our mass estimate is larger than that of \citet{Ibata:2017}, who report a current mass of $1.2\pm 0.4 \times10^4\msun$ for the cluster and tails; although their estimate for the initial mass ($4.7\pm 1.5\times10^4\msun$) of the system is at the lower end of our confidence limits.
 
 
@@ -300,13 +278,7 @@ Two of these stars (IDs 403 and 405) are separated by just $\sim10'$ and $11'$ f
 Using a catalog of RRLs identified using multi-epoch, multi-band photometry from the Pan-STARRS PS1 survey and cross-matched to \Gaia\ \DR{2}, we construct a probabilistic model to determine membership with the Pal 5 cluster and stream.
 We find 24 RRLs with membership probability $>0.5$ (13 type~\typeab\ and 11 type~\typec) over $\approx 18\degr$ of the stream.
 From these stars, we infer the distance to the cluster, finding a closer value, $d = 20.9 \pm 0.2~\kpc$, than many past studies, and detect a distance gradient of $\sim 0.4~\kpc~{\rm deg}^{-1}$ between the trailing and leading tail (between $-5^\circ < \phi_1 < 5^\circ$).
-% \sa{you mean only the cluster stars, right?}
-% APW: no, I mean all! Because of our quadratic model, even stars in the nearby part of the stream technically inform the cluster position
-%SP: cool, does the distance estimate change at all if you only use cluster stars?
-% APW: they are consistent
 We also, for the first time, detect trends in proper motion along the stream, predicted by models of the stream \citep[e.g.,][]{Pearson:2017}.
-% \sa{which has been suggested in/reported in/consistent with modeling of the stream...? fig 2, pearson 17}
-% APW: Not really worth saying consistent or not because of the distance difference, but I added the citation!
 We release the full RRL catalog in the region around Pal 5 (containing distance information from PS1 and astrometry from \Gaia) with our derived membership probabilities.
 These data will be instrumental for improving dynamical models of Pal 5, both for using Pal 5 to constrain the global matter distribution of the Milky Way and in interpreting the observed, complex density structure of the stream.
 % \sa{not sure where in text, but could be worth mentioning that you don't find stars beyond the current footprint of the stream (i.e. that leading stream does appear to be shorter than trailing..., although looking at fig 3, you actually don't find trailin stream RRLs much further from the prog. than you find leading arm RRLs.}
@@ -373,7 +345,7 @@ Star \verb+source_id=4418731829516302848+ is reported in PS1 and \Gaia~as an \rr
 4424705647988505600 &          & 0.335502 & 0.41 & RRc & 20.9 & 0.99 & 513.0 \\
 4426221707021159424 &          & 0.533313 & 1.14 & RRab & 22.0 & 0.93 & 550.1 \\
 \bottomrule
-\end{tabular} 
+\end{tabular}
 \begin{tablenotes}
 \centering
      \item[*] References: K62=\citet{Kinman:1962}, V04=\citet{Vivas:2004}, W05=\citet{Wu:2005}
