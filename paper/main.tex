@@ -3,13 +3,13 @@
 % - Over-plot the sky track borders on MSTO plot
 % - Add PM and distance dispersion as parameters to fit, or cite out to the values I fix them to
 % - Compute the autocorrelation time for emcee instead, thin by the acor length
-%
+
 
 % \documentclass[modern]{aastex63}
 \documentclass[twocolumn]{aastex63}
 
 \shorttitle{RR Lyrae stars in the Pal 5 stream}
-\shortauthors{People et al.}
+\shortauthors{Price-Whelan et al.}
 \newcommand{\sa}[1]{{\color{teal} SP: #1}}
 
 \input{defs.tex}
@@ -32,14 +32,14 @@
 \affiliation{Departamento de Astronom\'ia, Facultad de Ciencias, Universidad de la Rep\'ublica, Igu\'a 4225, 14000, Montevideo, Uruguay}
 
 
-\author{Giuliano~Iorio}
+\author[0000-0003-0293-503X]{Giuliano~Iorio}
 \affiliation{Institute of Astronomy, University of Cambridge, Madingley Road, Cambridge CB3 0HA, UK}
 
 \author[0000-0003-0256-5446]{Sarah~Pearson}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute,
              Simons Foundation, 162 Fifth Avenue, New York, NY 10010, USA}
 
-\author{Vasily~Belokurov}
+\author[0000-0002-0038-9584]{Vasily~Belokurov}
 \affiliation{Institute of Astronomy, University of Cambridge, Madingley Road, Cambridge CB3 0HA, UK}
 
 
@@ -135,7 +135,7 @@ In what follows, we use the $i$-band PLZ distances for the RRLs.
 
 We cross-match the full PS1 RRL catalog with \Gaia~DR2 \citep{Gaia:2018}, using a 1" sky separation tolerance, in order to retrieve astrometric information for these stars.
 Although not all PS1 RRLs have been identified as RRLs from \Gaia\ photometry, all of the PS1 RRLs are present in the main point source catalog.
-\figurename~\ref{fig:pm} demonstrates that Pal 5 stream members appear in the RRL catalog: This figure shows the \Gaia\ \DR{2} proper motions for all RRLs in the \textcolor{red}{selected} sky window within the distance range $18 < d < 25~\kpc$, then the same for RRLs in a tight selection around the observed stream track (within $1\degr$ of the stream track, \textcolor{red}{see \sectionname~\ref{sec:membership} for details}), and then finally the same for RRLs \emph{excluding} the stream region (excluding stars within $2\degr$ of the stream track).
+\figurename~\ref{fig:pm} demonstrates that Pal 5 stream members appear in the RRL catalog: This figure shows the \Gaia\ \DR{2} proper motions for all RRLs in the selected sky window within the distance range $18 < d < 25~\kpc$, then the same for RRLs in a tight selection around the observed stream track (within $1\degr$ of the stream track, see \sectionname~\ref{sec:membership} for details), and then finally the same for RRLs \emph{excluding} the stream region (excluding stars within $2\degr$ of the stream track).
 
 \citet{Sesar:2017b} provide an estimate of their catalog's completeness as a function of distance, at high galactic latitude, based on simulations. They estimate the mean completeness to be 92\% for \rrab~and 79\% for \rrc, up to a distance of 40~kpc, well beyond the distance of Pal~5 and its tails. At the average ratio of 3 \rrc~stars per every 10 \rrab~\citep{Layden:1995}, this represents a mean completeness of 89\%. We can also produce an estimate per line of sight using the methodology described in \citet{Rybizki:2018}, which requires two independent catalogs to assess the completeness of both in a probabilistic manner. Comparing PS1 against the \Gaia~DR2 catalogue, comprised of the outer join of the VariClassifier \citep{Holl2018,Rimoldini2018} and Specific Objects Study \citep{Clementini2018} catalogs, we find a median completeness of 92\% with a standard deviation of 16\% with no evident spatial trend across the sky selection window.
 
