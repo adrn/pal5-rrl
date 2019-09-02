@@ -1,7 +1,7 @@
 % \documentclass[modern]{aastex63}
 \documentclass[twocolumn]{aastex63}
 
-\shorttitle{RR Lyrae in the Pal 5 stream}
+\shorttitle{RRL in the Pal 5 stream}
 \shortauthors{People et al.}
 \newcommand{\sa}[1]{{\color{teal} SP: #1}}
 
@@ -10,7 +10,7 @@
 
 \begin{document}
 
-\title{Kinematics of the Palomar 5 stellar stream from RR Lyrae stars}
+\title{Kinematics of the Palomar 5 stellar stream from RRLs}
 
 
 \author[0000-0003-0872-7098]{Adrian~M.~Price-Whelan}
@@ -96,22 +96,15 @@ Other stellar tracers (e.g., giant branch stars) are not numerous enough or prec
 % APW: Good idea, but then it would make sense to talk about the RV data in Ibata+2017. I'll try to fit both into the discussion.
 % Enter: RR Lyrae-type stars.
 
-RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence turn-off stars. Although about $\sim 10,000$ time less numerous than main sequence stars, RRLs are extremely useful probes of the Galactic halo as they are well established as standard candles; they can be observed to large distances \citep{Medina:2018,Sesar:2017c}; and are reliably identified based on their photometric variability, with little to no contamination from other types of variable stars \citep[e.g.]{Holl:2018,Drake:2017,Mateu:2012}.  Their distances can be estimated based on photometric data alone, with errors that go from $\sim8\%$ in the optical to as low as 3\% in the infrared \citep{Neeley:2017, Sesar:2017a}.
+RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence turn-off stars. Although about $\sim 10,000$ time less numerous than main sequence stars, RRLs are extremely useful probes of the Galactic halo as they are well established as standard candles; they can be observed to large distances \citep{Medina:2018,Sesar:2017c}; and are reliably identified based on their photometric variability, with little to no contamination from other types of variable stars \citep[e.g.][]{Holl:2018,Drake:2017,Mateu:2012}. Their distances can be estimated based on photometric data alone, with errors $\sim8\%$ in the optical, and can be as low as 3\% in the infrared \citep{Neeley:2017}. These properties have made RRLs a key tracer of structure and substructure across the Galaxy, having been used to trace the density profile of the halo, thick disk and bulge \citep[e.g.][and reference therein]{Iorio:2018,Mateu:2018b,Kunder:2008}, to identify new streams and accretion events \citep[e.g.]{Duffau:2006,Sesar:2010,Mateu:2018,Iorio:2019} and even to argue against the extragalactic origin of overdensities in the disk \citep{Mateu:2009,Price-Whelan:2015}.
 
-Previous studies have found RRLs in Pal5's tails: the first two were found by \citet{Vivas:2001} in the QUEST survey; and more recently \citep{Ibata:2017} found about ten new RRLs using the catalog of PS1 candidate RRLs from \citet{Hernitschek:2016}. At its current distance, Pal~5's horizontal branch is bright enough ($\G\sim17.3$) to be observed by \Gaia. Therefore, combining \Gaia~DR2 proper motions with the newer PS1 RRL catalog from \citet{Sesar:2017b} --with improved classification probabilities and light curve periods--  will allow us to make precise distance and proper motion measurements along the full extent of the Pal~5 stream. Both, key ingredients for dynamical modelling of the Pal~5 stream...
-%meaning we can measure kinematic properties of the full stream...
-\citep{Ibata:2017} found some RRLs in pal 5, but no proper motions.
-This is useful for modeling...
-Many stream candidates found in RRLs alone \citep{Mateu:2018}.
+Previous studies have found RRLs in Pal5's tails: the first two were found by \citet{Vivas:2001} in the QUEST survey; and more recently \citep{Ibata:2017} found about ten new RRLs using the catalog of PS1 candidate RRLs from \citet{Hernitschek:2016}. At its current distance, Pal~5's horizontal branch is bright enough ($\G\sim17.3$) to be observed by \Gaia. Therefore, combining \Gaia~DR2 proper motions with the newer PS1 RRL catalog from \citet{Sesar:2017b} --with improved classification probabilities and light curve periods--  will allow us to make the first precise distance and proper motion measurements along the full extent of the Pal~5 stream. Both will prove to be key ingredients for dynamical modelling of the Pal~5 stream.
 
-
-%---yes, I rewrite things many times. C.---
-%RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence stars, but about $\sim 10,000$ time less numerous. At its current distance, Pal~5's horizontal branch is bright enough ($\G\sim17.3$) to be observed by \Gaia, so it's full extent can be traced and it's kinematic properties measured using RRLs. These stars can be reliably identified based on their photometric variability, with little to no contamination from other types of variable stars \citep[e.g.]{Holl2018,Drake2017,Mateu2012}, and are well known standard candles. Their distances can be estimated based on photometric data alone by means of their period-luminosity relation, with distance errors that go from $\sim8\%$ in the optical to as low as 3\% in the infrared \citep{Neeley:2017, Sesar:2017a}.  Previous studies have found RRLs in Pal5's tails: In the QUEST survey, \citet{Vivas2005} found 2 RRLs; while  \citep{Ibata:2017} found 12 RRLs using the catalog of PS1 candidate RRLs from \citet{Hernitschek2015}. Combining \Gaia~DR2 proper motions with the newer PS1 RRL catalog from \citet{Sesar2017b} --with improved classification probabilities and light curve periods--  will allow for precise distance and proper motion measurements along the full extent of the Pal~5 stream.
-In this Article, we construct a probabilistic model for kinematic properties of RRLs in the vicinity of the Pal 5 stream to determine membership probabilities and thus map the distance and proper motion trends in the stream.
-In \sectionname~\ref{sec:data}, we describe the source RR Lyrae catalog we use to search for Pal 5 members.
+In this Article, we construct a probabilistic model for kinematic properties of RRLs in the vicinity of the Pal 5 stream to determine membership probabilities and thus map the distance and proper motion trends in the stream. 
+In \sectionname~\ref{sec:data}, we describe the source RRL catalog we use to search for Pal 5 members.
 In \sectionname~\ref{sec:membership}, we implement a probabilistic membership model to identify candidate members of the stream using distance and astrometric information.
-In \sectionname~\ref{sec:results}, we ...
-
+In \sectionname~\ref{sec:results}, we discuss the population and kinematics of the RRL members found and use these to provide an estimate of the system's stellar mass and luminosity.  
+We present our conclusions in \sectionname~\ref{sec:conclusions}.
 
 \section{Data} \label{sec:data}
 
@@ -131,13 +124,13 @@ The over-density of stars near $(-2.7, -2.7)$ is the stream, and the two colored
 
 The PanSTARRS-1 (PS1) catalog of RRLs \citep{Sesar:2017b} contains 229K stars spanning $\sim$3/4 of the sky (all sky north of declination $\delta > -30\degr$), with multi-epoch $grizy$ data up to a limiting magnitude $r\sim21$ (corresponding to $G \sim 21$ for the typical colors of RRLs). These stars were identified as RRLs using machine-learning methods based on a template fitting algorithm that can find pulsation periods overcoming the sparse sampling of the PS1 survey ($\sim12$ epochs per filter).
 
-Two all-sky RR Lyrae catalogs have also been released as part of \Gaia~\DR{2} \citep[VariClassifier and Specific Object Studies][]{Holl2018, Rimoldini2018, Clementini2018}. At present, however, these catalogs are subject to more significant and spatially-varying incompleteness in this particular area of the sky due to the \Gaia\ scanning law \citep[see][though many of these issues will go away with future \Gaia\ data releases]{Rimoldini2018}.
+Two all-sky RRL catalogs have also been released as part of \Gaia~\DR{2} \citep[VariClassifier and Specific Object Studies][]{Holl2018, Rimoldini2018, Clementini2018}. At present, however, these catalogs are subject to more significant and spatially-varying incompleteness in this particular area of the sky due to the \Gaia\ scanning law \citep[see][though many of these issues will go away with future \Gaia\ data releases]{Rimoldini2018}.
 % \sa{Mention if DR3 will help?}
 % APW: done!
 
 Out of the 229K RRLs in the PS1 catalog, $\sim60$K are also reported as RRLs by \Gaia~\DR{2}, the vast majority of which (49K) are part of the subset defined by \citet{Sesar:2017b} as \emph{bona fide}. This subset is comprised of 61K RRLs above classification score thresholds set by \citet{Sesar:2017b} to ensure its high purity ($>90$\%) and completeness ($>80$\%). An extra $\sim6$K stars with lower classification scores in PS1 were also found to be RRLs by \Gaia~\DR{2} and have reported pulsation periods in the SOS catalog. Most of these RRLs have matching classifications and consistent periods in the two surveys, which increases our confidence that these are true RRLs.
 
-For our present work, therefore, we use the superset of 68\,085 stars consisting of the 61\,795 \emph{bona fide} PS1 RRLs, plus the 6\,459 non-\emph{bona fide} PS1 stars also reported in the SOS \Gaia~\DR{2} catalog. Out of these, 68\,085 RRLs (99.8\%) have astrometric information available in \Gaia~\DR{2} and all---by construction---have photometric data and pulsation periods from PS1.
+For our present work, therefore, we use the superset of 68\,254 stars consisting of the 61\,795 \emph{bona fide} PS1 RRLs, plus the 6\,459 non-\emph{bona fide} PS1 stars also reported in the SOS \Gaia~\DR{2} catalog. Out of these, 68\,085 RRLs (99.8\%) have astrometric information available in \Gaia~\DR{2} and all---by construction---have photometric data and pulsation periods from PS1.
 
 %distances---
 \citet{Sesar:2017b} provide distances to the RRLs based on an $i$-band Period-Luminosity-Metallicity (PLZ) relation.
@@ -148,31 +141,15 @@ This is corrected by using the `fundamentalized' period in the PLZ relation for 
 In what follows, we use the $i$-band PLZ distances for the RRLs.
 \citet{Sesar:2017b} estimate their overall distance precision to be 3\%, of which $\sim2$\% and $\sim1$\% correspond to systematic and random uncertainties, respectively.
 
-We cross-match the full PS1 RRL catalog with \Gaia~DR2 \citep{Gaia:2018}, using a 3" sky separation tolerance, in order to retrieve astrometric information for these stars.
+We cross-match the full PS1 RRL catalog with \Gaia~DR2 \citep{Gaia:2018}, using a 1" sky separation tolerance, in order to retrieve astrometric information for these stars.
 Although not all PS1 RRLs have been identified as RRLs from \Gaia\ photometry, all of the PS1 RRLs are present in the main point source catalog.
-\figurename~\ref{fig:pm} demonstrates that Pal 5 stream members appear in the RRL catalog: This figure shows the \Gaia\ \DR{2} proper motions for all RRLs in the sky window defined above within the distance range $18 < d < 25~\kpc$, then the same for RRLs in a tight selection around the observed stream track (within $1\degr$ of the stream track), and then finally the same for RRLs \emph{excluding} the stream region (excluding stars within $2\degr$ of the stream track).
+\figurename~\ref{fig:pm} demonstrates that Pal 5 stream members appear in the RRL catalog: This figure shows the \Gaia\ \DR{2} proper motions for all RRLs in the \textcolor{red}{selected} sky window within the distance range $18 < d < 25~\kpc$, then the same for RRLs in a tight selection around the observed stream track (within $1\degr$ of the stream track, \textcolor{red}{see \sectionname~\ref{sec:membership} for details}), and then finally the same for RRLs \emph{excluding} the stream region (excluding stars within $2\degr$ of the stream track).
 % \sa{Do we want to show this stream track? Or state how wide it is? (it's inthe  figure, but mention here too).}
 % APW: Noted.
 
-\citet{Sesar:2017b} provide an estimate of their catalog's completeness as a function of distance, at high galactic latitude, based on simulations. They estimate the mean completeness to be 92\% for \rrab~and 79\% for \rrc, up to a distance of 40~kpc, well beyond the distance of Pal~5 and its tails. At the average ratio of 3 \rrc~stars per every 10 \rrab~\citep{Layden1995}, this represents a mean completeness of 89\%. We can also produce an estimate per line of sight using the methodology described in \citet{Rybizki2018}, which requires two independent catalogs to assess the completeness of both in a probabilistic manner. Using the \Gaia~DR2 VariClassifier \citet{Holl2018,Rimoldini2018} and Specific Objects Study \citep{Clementini2018} catalogs, we find a median completeness of 92\% with a standard deviation of 16\% with no evident spatial trend across the sky selection window.
+\citet{Sesar:2017b} provide an estimate of their catalog's completeness as a function of distance, at high galactic latitude, based on simulations. They estimate the mean completeness to be 92\% for \rrab~and 79\% for \rrc, up to a distance of 40~kpc, well beyond the distance of Pal~5 and its tails. At the average ratio of 3 \rrc~stars per every 10 \rrab~\citep{Layden:1995}, this represents a mean completeness of 89\%. We can also produce an estimate per line of sight using the methodology described in \citet{Rybizki:2018}, which requires two independent catalogs to assess the completeness of both in a probabilistic manner. Comparing PS1 against the \Gaia~DR2 catalogue, comprised of the outer join of the VariClassifier \citep{Holl2018,Rimoldini2018} and Specific Objects Study \citep{Clementini2018} catalogs, we find a median completeness of 92\% with a standard deviation of 16\% with no evident spatial trend across the sky selection window.
 % \sa{I got a little confused in the section above as Fig 3 is referenced but Fig 2 never mentioned. }
 % APW: I moved this paragraph up from the discussion and forgot to edit - thanks!
-
-% \subsection{RRL Distances}
-
-% We assume a single intrinsic magnitude $M_G=+0.63$ for all RRLs, corresponding to the mean halo metallicity $\FeH=-1.5$ according to the calibration by \citet{Muraveva2018}, and compute distances to all stars based on their $G$-band intensity-averaged magnitudes: we use \verb+int_average_g+ for stars in VC+SOS and the intensity-averaged $g$ reported by \citet{Sesar2017b} converted to the G-band using the transformation of Eq.~XX from \citet{Evans2018}. To correct for the effect of dust extinction in the apparent magnitudes, we obtain the colour excess $E(B-V)$ for each RRL from the \citet{Schlegel1998} maps, and compute the V-band extinction as $A_V=2.742E(B-V)$ assuming an $R_V$=3.1 \citep{Schlafly2011}. Finally, the extinction is transformed to the $G$ band using the calibration from Carrasco (2018, private communication):
-% \begin{equation}
-% \begin{split}
-% f(\Gbp-\Grp, A_V) \equiv & a + b \ (\Gbp-\Grp) + c \ (\Gbp-\Grp)^2 \\
-%                          & +\ d \  A_V + e\  A_V \ (\Gbp-\Grp)
-% \end{split}
-% \end{equation}
-% \begin{equation}
-%  A_G = f(\Gbp-\Grp, A_V) \cdot A_V
-% \end{equation}
-% where $a=0.97883$, $b=-0.14365$, $c=0.011077$, $d=0.034842$, and $e=-0.0041448$; assuming a mean colour $BP-RP=0.7$ for RRLs.
-
-% \todo{Describe uncertainties and justification of relative precision vs. absolute error}
 
 \section{Determining stream membership} \label{sec:membership}
 
@@ -230,7 +207,7 @@ where $\mathcal{N}(\cdot \given \bs{x}, \mat{C})$ is the multivariate normal dis
 \begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\textwidth]{members.pdf}
-\caption{Sky positions of RR Lyrae stars with Pal 5 membership probabilities $>0.01$, colored by membership probability (large markers). The background greyscale shows the surface density of CMD-filtered main sequence stars from \citet{Bonaca:2019}. Note that the membership probability does not incorporate sky position information, but a clear over-density of high-probability RRL members do trace the stream on the sky.}
+\caption{Sky positions of RRLs with Pal 5 membership probabilities $>0.01$ \todo{CM: APW check this number, I think it might be 0.1?}, colored by membership probability \sout{(large markers)}. The background greyscale shows the surface density of CMD-filtered main sequence stars from \citet{Bonaca:2019}. Note that the membership probability does not incorporate sky position information, but a clear over-density of high-probability RRL members do trace the stream on the sky.}
 \label{fig:members}
 \end{center}
 \end{figure*}
@@ -253,13 +230,14 @@ For each star, we also compute posterior membership probabilities using the samp
 
 \section{Results and Discussion} \label{sec:results}
 
-\subsection{RR Lyra stars associated with Pal 5 and its tails}
+\subsection{RRLs associated with Pal 5 and its tails}
 %SP: changed RR Lyrae stars to RR Lyra stars a few places, maybe check whole manuscript (otherwise plural twice).
-We find a total of 24 RR Lyrae stars with membership probability $> 0.5$ that lie within $1\degr$ of the stream track \citep[again using the track from][]{Bonaca:2019}.
+%CM: Sarah, I see your point, but I've never seen it written like that in the literature. Anyway, since we're using RRLs as an abbreviation, I've changed all instances to this in the whole manuscript.
+We find a total of 24 RRLs with membership probability $> 0.5$ that lie within $1\degr$ of the stream track \citep[again using the track from][]{Bonaca:2019}.
 Of those, 13 are classified as type \typeab\ and 11 are classified as type \typec\ RRLs.
-We find a total of 10 RRLs within the estimated Jacobi radius of the cluster ($\approx 12'$), meaning that 15 RRLs are spread between the leading and trailing tails.
+We find a total of 9 RRLs within the estimated Jacobi radius of the cluster ($\approx 12'$), meaning that 15 RRLs are spread between the leading and trailing tails.
 \figurename~\ref{fig:members} shows the sky positions of all RRLs with membership probability $>0.01$ over-plotted on the density of filtered main sequence stars from \citet{Bonaca:2019}.
-We note that there are a few RRLs outside of the main stream track that appear to be at a consistent distance with consistent proper motions (e.g., the two stars near $\alpha = 230\degr$, $\delta = 0\degr$) that are not included in the tally above.
+We note that there are a few RRLs outside of the main stream track that appear to be at a consistent distance with consistent proper motions (e.g., the two stars near $\alpha = 230\degr$, $\delta = 0\degr$ in \figurename~\ref{fig:members}) that are not included in the tally above.
 No theoretical models of Pal 5 have predicted tidal debris at such locations, so follow-up spectroscopy to confirm or rule out their origin would be very informative.
 % \sa{What about RRLs at more negative $\delta$, wasn't your region larger than the figure extent?}
 % APW: There aren't any stars with prob > 0.01 below dec ~ -11 near the stream, so I trimmed the axis.
@@ -267,7 +245,7 @@ No theoretical models of Pal 5 have predicted tidal debris at such locations, so
 
 \subsection{Kinematics of the cluster and stream}
 
-Past distance measurements to the Pal 5 cluster have ranged from $20.9~\kpc$ \citep{Dotter:2011} to $23.2~\kpc$ \citep{Harris:1996}, with a previous measurement from a small number of RR Lyrae stars in between at $22.3~\kpc$ \citep{Vivas:2006}. % \sa{worth mentioning with which technique?}
+Past distance measurements to the Pal 5 cluster have ranged from $20.9~\kpc$ \citep{Dotter:2011} to $23.2~\kpc$ \citep{Harris:1996}, with a previous measurement from a small number of RRLs in between at $22.3~\kpc$ \citep{Vivas:2006}. % \sa{worth mentioning with which technique?}
 We find a mean Pal 5 cluster distance of $20.9 \pm 0.2~\kpc$ using the PS1 RRLs and the membership model described in \sectionname~\ref{sec:membership}.
 This is closer than most past measurements of the cluster distance, but consistent with the measurement from \citet{Dotter:2011}.
 We find a proper motion $(\mu_\alpha\,\cos\delta, \mu_\delta) = (-2.69, -2.70) \pm (0.04, 0.03)~\masyr$, consistent with the measurement in \citet{Vasiliev:2019}. % \sa{state that this is larger than most before next sentence?}
@@ -279,62 +257,47 @@ While the proper motion in right ascension appears consistent with constant or o
 % \sa{worth mentioning Pearson 2017, fig 2 where this same trend is also seen (flatter gradient in RA proper motion than in dec proper motion?}
 % APW: What were mu_1 and mu_2? Were those proper motions in RA/Dec?
 
-\subsection{RR Lyrae population }
+\subsection{Properties of the RRL population}
 
-Assuming a Jacobi radius of $11'$---computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.2\times10^4~\msun$ \citep{Kuepper:2015} and using the Milky Way mass model in \citet{gala}---we find 9 RRLs in the cluster itself (2 type~\typeab\ and 7 type~\typec) and 15 in the cluster's tails (11 type~\typeab\ and 4 type~\typec), all  with membership probabilities larger than 0.5. In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.2$, a typical ratio found Oosterhoff I populations \citep{Smith1995}.  
+Assuming a Jacobi radius of $11'$---computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.2\times10^4~\msun$ \citep{Kuepper:2015} and using the Milky Way mass model in \citet{gala}---we find 9 RRLs in the cluster itself (2 type~\typeab\ and 7 type~\typec) and 15 in the cluster's tails (11 type~\typeab\ and 4 type~\typec), all  with membership probabilities larger than 0.5. In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.2$, a typical ratio found Oosterhoff I populations \citep{Smith:1995}.  
 \figurename~\ref{fig:PA_diagram} shows the period-amplitude diagram for the RRL stars in Pal~5.
 The full sample of PS1 RRLs is shown in the background for comparison, as a grayscale density histogram. The distribution of the \typeab~RRLs clearly indicate that Pal~5 is an Oosterhoff I cluster, consistent with having a mean period of $0.54~d$.
-Our findings of the updated ratio of \rrab~to~\rrc, mean period, and Period-Amplitude distribution of the \rrab\ RRLs all support an Oosterhoff I classification for Pal~5, consistent with the cluster's metallicity, $\FeH=-1.32$ \citep{TODO}.
-Out of our newly found \rrab\ RRLs, three are High Amplitude Short Period (HASP, $P <0.48$~d, $A_V>0.75$~mag $=A_g>$) stars, again consistent with Pal~5's metallicity,  as this type of RRL is only found in relatively metal-rich globular clusters  \citep[$\FeH>-1.5$;][]{Monelli:2017}.
+Our findings of the updated ratio of \rrab~to~\rrc, mean period, and Period-Amplitude distribution of the \rrab\ RRLs all support an Oosterhoff I classification for Pal~5, consistent with the cluster's metallicity, $\FeH=-1.4$ \citep{Dotter:2011}.
+Out of our newly found \rrab\ RRLs, two are High Amplitude Short Period (HASP, $P <0.48$~d, $A_V>0.75$~mag $=A_g>$) stars, again consistent with Pal~5's metallicity,  as this type of RRL is only found in relatively metal-rich globular clusters  \citep[$\FeH>-1.5$;][]{Monelli:2017}.
 
 %. and the Sagittarius dwarf galaxy, but not in any other dwarf spheroidal galaxy. \todo{CM:( any other point to be made about this?)}. \sa{as someone who doesn't know much about RRLs, how weird is the above? maybe some more discussion/elaboration? } \cm{well, it's not weird at all. I've added a sentence saying so.}
 
 \begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\textwidth]{rrls_PA.pdf}
-\caption{Amplitude ($g$-band) versus Period for RRLs in the Pal~5 field. The distribution of the RRLs found in the cluster and it's tails is consistent with an Oosterhoff type I. }
+\caption{Amplitude ($g$-band) versus Period for RRLs in the Pal~5 field membership probabilities $>0.1$ (small markers) inside the Pal~5 track (large markers), colored by membership probability. The distribution of the RRLs found in the cluster and it's tails is consistent with an Oosterhoff type I (dashed line). }
 \label{fig:PA_diagram}
 \end{center}
 \end{figure*}
 
 \subsection{Stellar Mass and Luminosity}
 
-%We can provide an estimate on the cluster's luminosity based on the observed number of RRLs. For that, the first step is to assess how complete our observed sample is.
+To estimate the expected absolute magnitude of Pal 5 we follow the same procedure as in \citet{Mateu:2018}, who use a linear fit of the relation between the absolute magnitude $M_V$ and the number of \typeab\ RRL, based on data from Galactic dwarf galaxies and globular clusters, here including the RR\typec~stars.  The $\log{N_{RR}}-M_V$ relation has a large scatter so, particularly for such low numbers of RRLs, it will only allow us to give rough limits on the cluster's absolute magnitude and, therefore, of its luminosity. Correcting the observed number of 24~RRLs by the median completeness of 92\%, we get a total expected number of 26~RRLs, for which we find a total luminosity $L_V=3.9_{-2.5}^{+7.4}\times 10^4 \mathrm{L}_\sun$.%, which correspond to the mode and 16/84th percentiles of the posterior probability distribution. 
+We then estimate a stellar mass of $0.8_{-0.5}^{+1.5}\times 10^5 \msun$, by assuming a V-band mass-to-light ratio $M/L=2.$ corresponding to a simple stellar population with the age (12 Gyr) and metallicity ($\FeH=-1.4$) of the cluster \citep{Dotter:2011}, computed from the \citet{Bruzual:2003} models \footnote{We have used Z=0.0004 ($\FeH=-1.6$), the nearest to Pal~5’s metallicity available in the models.}. Our mass estimate is larger than that of \citet{Ibata:2017}, who report a current mass of $1.2\pm 0.4 \times10^4\msun$ for the cluster and tails; although their estimate for the initial mass ($4.7\pm 1.5\times10^4\msun$) of the system is at the lower end of our confidence limits.
 
-%we obtain the completeness map shown in Figure~\ref{fig:completeness_map}, for RRLs of type \typeab~and \typec. The mean completeness estimated this way is 92\% with a standard deviation of 16\% and, as the figure shows, there is no evident spatial trend. The two estimates are remarkably consistent and, in what follows, we will adopt a completeness of 90\%-XX.
 
-To estimate the expected absolute magnitude of Pal 5 we follow the same procedure as in \citet{Mateu:2018}, who use a linear fit of the relation between the absolute magnitude $M_V$ and the number of \typeab\ RRL, based on data from Galactic dwarf galaxies and globular clusters, here including the RR\typec~stars.  The $\log{N_{RR}}-M_V$ relation has a large scatter so, particularly for such low numbers of RRLs, it will only allow us to give rough limits on the cluster's absolute magnitude. Correcting the observed number of 26~RRLs by the median completeness of 92\%, we get a total expected number of 28~RRLs, for which we find an absolute magnitude $M_V=-8.1\pm 1.1$, which correspond to the mode and 16/84th percentiles of the posterior probability distribution.
-We therefore find that the initial mass of Pal 5 \todo{...}.
-
-% \begin{figure}
-% \begin{center}
-% \includegraphics[width=\columnwidth]{ps1_completeness.pdf}
-% \caption{PS1 RRL estimated completeness. The Pal 5 stream's track is shown with the solid line.}\label{fig:completeness_map}
-% \end{center}
-% \end{figure}
-
-% \todo{CM: estimate luminosity based on number of RRLs. Compare to estimate from $M_V-\FeH$ relation. Derive stellar mass from stellar luminosity. Compare to dynamical mass estimates.}
 
 
 % - there are $\sim4$-XX times as many RRLs in the tails as there are in the cluster.
 % - how much mass did we already know to be in the tails compared to the cluster? (\sa{according to Ibata 2016 the mass in the present day cluster is 4297 $\pm~ 98$ M$_{\odot}$, and the streams excluding the cluster have $\sim$7903 M$_{\odot}$. So under a factor of 2 more stars in the tails than in the remnant cluster}. The cluster is thought to have had an initial mass of $\sim47000$ M$_{\odot}$). Probably not as much as a factor of 4. This makes it unexpected to have found this many RRLs in the tails. Based on prior knowledge of the mass loss undergone by the cluster we would have expected this to be XX (Sarah?/Adrian?) Similarly,
 
 
-\subsection{Previously known Pal 5 RR Lyrae}
+\subsection{Previously known Pal 5 RRLs}
 
-The Pal~5 cluster has 5 previously known RRL stars (named V1--V5), all of type which are \typec, as reported in the \citet{Clement:2001} compilation of variable stars in Galactic globular clusters and dating back to \citet{SawyerHogg:1973}.
-In their analysis of the halo density profile with RRLs, \citet{Vivas:2006} report an overdensity (``Group~6'') that they claim could be associated with Pal~5's tidal tails.
-Two of these stars (IDs 403 and 405) are separated by just $\sim10'$ and $11'$ from the cluster's center, which places them within the cluster's Jacobi radius, and an additional star (star 393) outside of the Jacobi radius but at a similar distance could be associated with the stream \citep{Vivas:2006}. We confirm the three stars are highly probable members. More recently, \citet{Ibata:2017} use a prior iteration of the PS1 RRL catalog \citep{Hernitschek:2016}, which contained \emph{plausible} RRLs, to identify 6 and 12 candidate members of the Pal 5 cluster and tails, respectively, based on sky position and distance alone. However, without a published catalog, we cannot compare our sample to theirs.
+The Pal~5 cluster has 5 previously known RRL stars (named V1--V5), all of type which are \typec, as reported in the \citet{Clement:2001} compilation of variable stars in Galactic globular clusters and dating back to \citet{Kinman:1962}.
+In their analysis of the halo density profile with QUEST RRLs, \citet{Vivas:2006} report an overdensity (``Group~6'') that they claim could be associated with Pal~5's tidal tails.
+Two of these stars (IDs 403 and 405) are separated by just $\sim10'$ and $11'$ from the cluster's center, which places them within the cluster's Jacobi radius; and an additional star (star 393) outside of the Jacobi radius, but at a similar distance, that could be associated with the stream \citep{Vivas:2006}. We confirm the three stars are highly probable members. \citet{Wu:2005} reports another RRL star (133) as possibly associated, which we also find is a highly probable member. More recently, \citet{Ibata:2017} use a prior iteration of the PS1 RRL catalog \citep{Hernitschek:2016}, which contained \emph{plausible} RRLs, to identify 6 and 12 candidate members of the Pal 5 cluster and tails, respectively, based on sky position and distance alone. However, without a published catalog, we cannot compare our sample to theirs.
 
-% The QUEST IDs of the stars in their Group~6 are: 403, 405, 407, 411, 416 and 422.
-% The first two stars --403 and 405-- are located at distances of  $9\farcm8$ and $11'$ from the cluster's center, which \citet{Vivas2004} notes places them within the cluster's tidal radius, assuming the value of $r_t\sim16'$ reported by \citet{Odenkirchen:2002}.
-
-% In summary,  previous studies report 7 known RRLs associated to the cluster itself (1 \typeab~and 6 \typec) plus 5 more reported as possibly associated to the tails (4 \typeab~and 2 \typec).
 
 
 \section{Conclusions} \label{sec:conclusions}
 
-Using a catalog of RR Lyrae stars identified using multi-epoch, multi-band photometry from the Pan-STARRS PS1 survey and cross-matched to \Gaia\ \DR{2}, we construct a probabilistic model to determine membership with the Pal 5 cluster and stream.
+Using a catalog of RRLs identified using multi-epoch, multi-band photometry from the Pan-STARRS PS1 survey and cross-matched to \Gaia\ \DR{2}, we construct a probabilistic model to determine membership with the Pal 5 cluster and stream.
 We find 24 RRLs with membership probability $>0.5$ (13 type~\typeab\ and 11 type~\typec) over $\approx 18\degr$ of the stream.
 From these stars, we infer the distance to the cluster, finding a closer value, $d = 20.9 \pm 0.2~\kpc$, than many past studies, and detect a distance gradient of $\sim 0.4~\kpc~{\rm deg}^{-1}$ between the trailing and leading tail (between $-5^\circ < \phi_1 < 5^\circ$).
 % \sa{you mean only the cluster stars, right?}
@@ -372,44 +335,50 @@ participating in the {\it Gaia} Multilateral Agreement.
 
 %Star 422 is reported as an \rrc~in \citet{Vivas2004}, with a period of 0.61925~d and $V$ amplitude 0.51~mag. In PS1 it is classified as an \rrc~with a period of 0.3832276153~d. The period reported in \citet{Vivas2004} is an alias of this one, more likely to be the true period given the variability amplitude\footnote{\citet{Vivas2004} also cautions that derived periods for QUEST \rrc~stars are known to be prone to aliasing due to the observing cadence of $\sim1$~d.}. Therefore, we keep PS1's classification henceforth for RRL 422.
 
-Star \verb+source_id=6339498589346000768+ is reported both in PS1 and \Gaia~as an \rrc~, with a period 0.4714315854~d in PS1 and 0.320110123108~d in \Gaia~SOS, the two are a pair of 1~d aliases \citep[see e.g.]{Lafler1965}. In what follows we adopt the shorter period reported in \Gaia~as the correct one as it is the more probable one for an \rrc~star.
+Star \verb+source_id=6339498589346000768+ is reported both in PS1 and \Gaia~as an \rrc~, with a period 0.4714315854~d in PS1 and 0.320110123108~d in \Gaia~SOS, the two are a pair of 1~d aliases \citep[see e.g.]{Lafler:1965}. In what follows we adopt the shorter period reported in \Gaia~as the correct one as it is the more probable one for an \rrc~star.
 
-Star \verb+source_id=4418731829516302848+ is reported in PS1 and \Gaia~as an \rrab~with a period around 0.646~d and similarly low amplitudes $A_G=0.2$ and $A_g=0.3$ in both surveys. This star is reported in CRTS \citep{Drake2014} (ID CSS\_J151623.2-000831) as an \rrc~with a period 0.28164~d. We adopt the CRTS period for this star in what follows, as it is based on many more observations ($\gtrsim200$) than \Gaia~and PS1's (about a dozen per filter in each case) and the \rrc~classification and short period are more likely for such a short amplitude star.
+Star \verb+source_id=4418731829516302848+ is reported in PS1 and \Gaia~as an \rrab~with a period around 0.646~d and similarly low amplitudes $A_G=0.2$ and $A_g=0.3$ in both surveys. This star is reported in CRTS \citep{Drake:2017} (ID CSS\_J151623.2-000831) as an \rrc~with a period 0.28164~d. We adopt the CRTS period for this star in what follows, as it is based on many more observations ($\gtrsim200$) than \Gaia~and PS1's (about a dozen per filter in each case) and the \rrc~classification and short period are more likely for such a short amplitude star.
 
 \begin{table*}[t]
 \caption{RRL members of the Pal 5 stream.}\label{t:rrl_members}
 \begin{footnotesize}
+\begin{threeparttable}[t]
 \begin{tabular}{llllllll}
 \toprule
 \Gaia~DR2               & Other & Period & Amp-$g$ & Type & D & member & separation  \\
-\verb+source_id+        & ID   & (d)    & (mag)   &     &(kpc)& prob & (") \\
+\verb+source_id+        & ID\tnote{*}   & (d)    & (mag)   &     &(kpc)& prob & (") \\
 \midrule
-4418920808077110784 & V5 & 0.337934 & 0.46 & RRc & 20.7 & 1.00 & 2.0 \\
-4418920846732620032 &    & 0.643239 & 0.27 & RRab & 21.7 & 1.00 & 2.0 \\
-4418914863842345856 & V1 & 0.293229 & 0.56 & RRc & 20.4 & 0.97 & 2.0 \\
-4418726027016125056 & V3 & 0.329948 & 0.51 & RRc & 20.7 & 1.00 & 3.9 \\
-4418725889577171328 & V4 & 0.286366 & 0.59 & RRc & 20.3 & 0.99 & 4.5 \\
-4418913218870688768 & V2 & 0.332473 & 0.40 & RRc & 20.3 & 1.00 & 5.1 \\
-4418734165978521728 &    & 0.380859 & 0.52 & RRc & 22.8 & 0.92 & 7.7 \\
-4418724034151291776 &403 & 0.551705 & 1.14 & RRab & 21.2 & 1.00 & 9.8 \\
-4418732791593809152 &405 & 0.329670 & 0.45 & RRc & 20.7 & 1.00 & 11.0 \\
-4419052204012341760 &    & 0.530006 & 1.01 & RRab & 20.8 & 1.00 & 44.5 \\
-4418142117622280192 &393 & 0.462671 & 1.36 & RRab & 20.0 & 0.92 & 118.8 \\
-6339498589346000768 &    & 0.320110 & 0.46 & RRc & 18.9 & 0.99 & 217.8 \\
-6339499379619987200 &    & 0.329577 & 0.47 & RRc & 19.4 & 1.00 & 218.6 \\
-6339478312804685824 &    & 0.465883 & 1.12 & RRab & 19.9 & 1.00 & 242.9 \\
-4421078432143578496 &    & 0.520749 & 1.11 & RRab & 22.0 & 1.00 & 246.1 \\
-6339398155830632448 &    & 0.688316 & 0.75 & RRab & 19.8 & 1.00 & 258.9 \\
-4427253907921168000 &    & 0.496334 & 1.35 & RRab & 21.8 & 0.99 & 362.6 \\
-4427220338456828416 &    & 0.600796 & 0.81 & RRab & 22.0 & 1.00 & 384.4 \\
-4427234700827469952 &    & 0.517911 & 1.24 & RRab & 21.9 & 1.00 & 392.4 \\
-6337302795905934336 &    & 0.519462 & 1.02 & RRab & 17.3 & 0.89 & 404.6 \\
-6337233350579111680 &    & 0.542383 & 0.96 & RRab & 19.0 & 0.93 & 450.7 \\
-4427646704153765632 &    & 0.385552 & 0.37 & RRc & 19.9 & 0.81 & 456.6 \\
-4424705647988505600 &    & 0.335502 & 0.41 & RRc & 20.9 & 0.99 & 513.0 \\
-4426221707021159424 &    & 0.533313 & 1.14 & RRab & 22.0 & 0.93 & 550.1 \\
+4418920808077110784 & V5 (K62) & 0.337934 & 0.46 & RRc & 20.7 & 1.00 & 2.0 \\
+4418920846732620032 &          & 0.643239 & 0.27 & RRab & 21.7 & 1.00 & 2.0 \\
+4418914863842345856 & V1 (K62) & 0.293229 & 0.56 & RRc & 20.4 & 0.97 & 2.0 \\
+4418726027016125056 & V3 (K62) & 0.329948 & 0.51 & RRc & 20.7 & 1.00 & 3.9 \\
+4418725889577171328 & V4 (K62) & 0.286366 & 0.59 & RRc & 20.3 & 0.99 & 4.5 \\
+4418913218870688768 & V2 (K62) & 0.332473 & 0.40 & RRc & 20.3 & 1.00 & 5.1 \\
+4418734165978521728 &          & 0.380859 & 0.52 & RRc & 22.8 & 0.92 & 7.7 \\
+4418724034151291776 & 403 (V04)& 0.551705 & 1.14 & RRab & 21.2 & 1.00 & 9.8 \\
+4418732791593809152 & 405 (V04)& 0.329670 & 0.45 & RRc & 20.7 & 1.00 & 11.0 \\
+4419052204012341760 & 133 (W05)& 0.530006 & 1.01 & RRab & 20.8 & 1.00 & 44.5 \\
+4418142117622280192 & 393 (V04)& 0.462671 & 1.36 & RRab & 20.0 & 0.92 & 118.8 \\
+6339498589346000768 &          & 0.320110 & 0.46 & RRc & 18.9 & 0.99 & 217.8 \\
+6339499379619987200 &          & 0.329577 & 0.47 & RRc & 19.4 & 1.00 & 218.6 \\
+6339478312804685824 &          & 0.465883 & 1.12 & RRab & 19.9 & 1.00 & 242.9 \\
+4421078432143578496 &          & 0.520749 & 1.11 & RRab & 22.0 & 1.00 & 246.1 \\
+6339398155830632448 &          & 0.688316 & 0.75 & RRab & 19.8 & 1.00 & 258.9 \\
+4427253907921168000 &          & 0.496334 & 1.35 & RRab & 21.8 & 0.99 & 362.6 \\
+4427220338456828416 &          & 0.600796 & 0.81 & RRab & 22.0 & 1.00 & 384.4 \\
+4427234700827469952 &          & 0.517911 & 1.24 & RRab & 21.9 & 1.00 & 392.4 \\
+6337302795905934336 &          & 0.519462 & 1.02 & RRab & 17.3 & 0.89 & 404.6 \\
+6337233350579111680 &          & 0.542383 & 0.96 & RRab & 19.0 & 0.93 & 450.7 \\
+4427646704153765632 &          & 0.385552 & 0.37 & RRc & 19.9 & 0.81 & 456.6 \\
+4424705647988505600 &          & 0.335502 & 0.41 & RRc & 20.9 & 0.99 & 513.0 \\
+4426221707021159424 &          & 0.533313 & 1.14 & RRab & 22.0 & 0.93 & 550.1 \\
 \bottomrule
-\end{tabular}
+\end{tabular} 
+\begin{tablenotes}
+\centering
+     \item[*] References: K62=\citet{Kinman:1962}, V04=\citet{Vivas:2004}, W05=\citet{Wu:2005}
+\end{tablenotes}
+\end{threeparttable}%
 \end{footnotesize}
 \end{table*}
 
