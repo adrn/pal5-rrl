@@ -1,17 +1,18 @@
-% TODO:
-% - Check whether I use p > 0.01 or p > 0.1 for sky plot figure
-% - Over-plot the sky track borders on MSTO plot
-% - Add PM and distance dispersion as parameters to fit, or cite out to the values I fix them to
-%     - APW: I tried running with these as parameters, but they are unconstrained, so doesn't help. I'll just set the dispersions to small (<uncertainties) values and explain.
-% - Compute the autocorrelation time for emcee instead, thin by the acor length
-
-
 % \documentclass[modern]{aastex63}
 \documentclass[twocolumn]{aastex63}
 
 \shorttitle{RR Lyrae stars in the Pal 5 stream}
 \shortauthors{Price-Whelan et al.}
 \newcommand{\sa}[1]{{\color{teal} SP: #1}}
+
+% Measurements:
+\newcommand{\cld}{\ensuremath{20.6~\kpc}}
+\newcommand{\clderr}{\ensuremath{20.6 \pm 0.2~\kpc}}
+\newcommand{\NRRL}{27}    % N total, prob > 0.5
+\newcommand{\NRRab}{16}   % N type ab, total
+\newcommand{\NRRc}{11}    % N type c, total
+\newcommand{\NRRcl}{9}    % N in cluster
+\newcommand{\NRRtails}{18} % N in tails
 
 \input{defs.tex}
 \graphicspath{paper/}
@@ -55,8 +56,8 @@ We use a large catalog of RR Lyrae-type stars (RRLs) with astrometric data from 
 RRLs are useful because they are intrinsically-luminous standard candles and their distances can be inferred with small relative precision ($\sim3\%$).
 % Methods
 % Results
-By building a probabilistic model of the Pal 5 cluster and stream in proper motion and distance, we find 24 RRLs consistent with being members of the cluster (9) and stream (15).
-Using these RRLs, we detect gradients in distance and proper motion along the stream, and provide an updated measurement of the distance to the Pal 5 cluster using the RRLs.
+By building a probabilistic model of the Pal 5 cluster and stream in proper motion and distance, we find \NRRL\ RRLs consistent with being members of the cluster (\NRRcl) and stream (\NRRtails).
+Using these RRLs, we detect gradients in distance and proper motion along the stream, and provide an updated measurement of the distance to the Pal 5 cluster using the RRLs, $d = \clderr$.
 % Conclusions
 We provide a catalog of Pal 5 RRLs with inferred membership probabilities for future modeling work.
 \end{abstract}
@@ -93,9 +94,9 @@ Mapping the stream in all six phase-space dimensions---i.e., combining deep phot
 However, with \Gaia\ \DR{2}, at its present distance, main sequence stars are barely detected and have large astrometric uncertainties.
 Other stellar tracers (e.g., giant branch stars) are not numerous enough or precise enough distance indicators to provide useful relative distance information along the stream.
 
-RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence turn-off stars. Although about $\sim 10,000$ time less numerous than main sequence stars, RRLs are extremely useful probes of the Galactic halo as they are well established as standard candles; they can be observed to large distances \citep{Medina:2018,Sesar:2017c}; and are reliably identified based on their photometric variability, with little to no contamination from other types of variable stars \citep[e.g.][]{Holl:2018,Drake:2017,Mateu:2012}. Their distances can be estimated based on photometric data alone, with errors $\sim8\%$ in the optical, and can be as low as 3\% in the infrared \citep{Neeley:2017}. These properties have made RRLs a key tracer of structure and substructure across the Galaxy, having been used to trace the density profile of the halo, thick disk and bulge \citep[e.g.][and reference therein]{Iorio:2018,Mateu:2018b,Kunder:2008}, to identify new streams and accretion events \citep[e.g.]{Duffau:2006,Sesar:2010,Mateu:2018,Iorio:2019} and even to argue against the extragalactic origin of overdensities in the disk \citep{Mateu:2009, Price-Whelan:2015}.
+RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more luminous than main sequence turn-off stars. Although about $\sim 10,000$ time less numerous than main sequence stars, RRLs are extremely useful probes of the Galactic halo as they are well-established as standard candles; they can be observed to large distances \citep{Medina:2018,Sesar:2017c}; and are reliably identified based on their photometric variability, with little to no contamination from other types of variable stars \citep[e.g.,][]{Holl:2018,Drake:2017,Mateu:2012}. Their distances can be estimated based on photometric data alone, with errors $\sim8\%$ in the optical, and can be as low as 3\% in the infrared \citep{Neeley:2017}. These properties have made RRLs a key tracer of structure and substructure across the Galaxy, having been used to trace the density profile of the halo, thick disk and bulge \citep[e.g.,][and reference therein]{Iorio:2018,Mateu:2018b,Kunder:2008}, to identify new streams and accretion events \citep[e.g.]{Duffau:2006,Sesar:2010,Mateu:2018,Iorio:2019} and even to argue against the extragalactic origin of overdensities in the disk \citep{Mateu:2009, Price-Whelan:2015}.
 
-Previous studies have found RRLs in Pal5's tails: the first two were found by \citet{Vivas:2001} in the QUEST survey; and more recently \citep{Ibata:2017} found about ten new RRLs using the catalog of PS1 candidate RRLs from \citet{Hernitschek:2016}. At its current distance, Pal~5's horizontal branch is bright enough ($\G\sim17.3$) to be observed by \Gaia. Therefore, combining \Gaia~DR2 proper motions with the newer PS1 RRL catalog from \citet{Sesar:2017b} --with improved classification probabilities and light curve periods--  will allow us to make the first precise distance and proper motion measurements along the full extent of the Pal~5 stream. Both will prove to be key ingredients for dynamical modelling of the Pal~5 stream.
+Previous studies have found RRLs in Pal5's tails: the first two were found by \citet{Vivas:2001} in the QUEST survey, and more recently \citep{Ibata:2017} found about ten new RRLs using a catalog of PS1 candidate RRLs from \citet{Hernitschek:2016}. At its current distance, Pal~5's horizontal branch is bright enough ($\G\sim17.3$) to be observed by \Gaia. Therefore, combining \Gaia~DR2 proper motions with the newer PS1 RRL catalog from \citet{Sesar:2017b}---with improved classification probabilities and light curve periods---enables us to make the first precise distance and proper motion measurements along the full extent of the Pal~5 stream. Both will prove to be key ingredients for dynamical modelling of the Pal~5 stream.
 
 In this Article, we construct a probabilistic model for kinematic properties of RRLs in the vicinity of the Pal 5 stream to determine membership probabilities and thus map the distance and proper motion trends in the stream.
 In \sectionname~\ref{sec:data}, we describe the source RRL catalog we use to search for Pal 5 members.
@@ -136,17 +137,17 @@ In what follows, we use the $i$-band PLZ distances for the RRLs.
 
 We cross-match the full PS1 RRL catalog with \Gaia~DR2 \citep{Gaia:2018}, using a 1" sky separation tolerance, in order to retrieve astrometric information for these stars.
 Although not all PS1 RRLs have been identified as RRLs from \Gaia\ photometry, all of the PS1 RRLs are present in the main point source catalog.
-\figurename~\ref{fig:pm} demonstrates that Pal 5 stream members appear in the RRL catalog: This figure shows the \Gaia\ \DR{2} proper motions for all RRLs in the selected sky window within the distance range $18 < d < 25~\kpc$, then the same for RRLs in a tight selection around the observed stream track (within $1\degr$ of the stream track, see \sectionname~\ref{sec:membership} for details), and then finally the same for RRLs \emph{excluding} the stream region (excluding stars within $2\degr$ of the stream track).
+\figurename~\ref{fig:pm} demonstrates that Pal 5 stream members appear in the RRL catalog: This figure shows the \Gaia\ \DR{2} proper motions for all RRLs in the selected sky window (indicated in the caption) within the distance range $18 < d < 25~\kpc$, then the same for RRLs in a tight selection around the observed stream track (see \sectionname~\ref{sec:membership} for details), and then finally the same for RRLs \emph{excluding} the stream region.
 
 \citet{Sesar:2017b} provide an estimate of their catalog's completeness as a function of distance, at high galactic latitude, based on simulations. They estimate the mean completeness to be 92\% for \rrab~and 79\% for \rrc, up to a distance of 40~kpc, well beyond the distance of Pal~5 and its tails. At the average ratio of 3 \rrc~stars per every 10 \rrab~\citep{Layden:1995}, this represents a mean completeness of 89\%. We can also produce an estimate per line of sight using the methodology described in \citet{Rybizki:2018}, which requires two independent catalogs to assess the completeness of both in a probabilistic manner. Comparing PS1 against the \Gaia~DR2 catalogue, comprised of the outer join of the VariClassifier \citep{Holl2018,Rimoldini2018} and Specific Objects Study \citep{Clementini2018} catalogs, we find a median completeness of 92\% with a standard deviation of 16\% with no evident spatial trend across the sky selection window.
 
 \section{Determining stream membership} \label{sec:membership}
 
-In order to search for new RRL stars in the Pal 5 stellar stream, we construct a probabilistic model of the stream and background stellar distribution (simultaneously) using proper motion $(\mu_\alpha, \mu_\delta)$ and distance $d$ data for all RRLs in the sky window $215^\circ < \alpha < 255^\circ$, $-15^\circ < \delta < 10^\circ$, where $(\alpha, \delta)$ are right ascension and declination.
+In order to search for new RRL stars in the Pal 5 stellar stream, we construct a probabilistic model of the stream and background stellar distribution (simultaneously) using proper motion $(\mu_1, \mu_2) = (\mu_{\phi_1}\cos\phi_2, \mu_{\phi_2})$ and distance $d$ data for all RRLs in the sky window $215^\circ < \alpha < 255^\circ$, $-15^\circ < \delta < 10^\circ$, where $(\alpha, \delta)$ are right ascension and declination and $\phi_1, \phi_2$ are a rotated spherical coordinate system aligned with the stream \citep{Bonaca:2019}.
 We \emph{do not} include the known spatial extent or morphology of the Pal 5 stream in our membership model for the stream: We instead later use the sky positions to validate the modeling procedure and selection criteria we then use to define a sample of probable Pal 5 stream RRLs.
 This model ultimately enables us to compute stream membership probabilities for RRL stars in a way that fully incorporates \Gaia\ error properties, while simultaneously modeling and marginalizing over uncertainties in the background RRL distribution.
 
-To start, we use the sky track and width of Pal 5 from \citet{Bonaca:2019} to mask out a $\sim4^\circ$-wide region around the stream---and an extrapolation of the known extent of the stream---in order to define a ``background'' region that should be devoid of Pal 5 member stars.
+To start, we use the sky track and width of Pal 5 from \citet{Bonaca:2019} to mask out a wide region around the stream---and an extrapolation of the known extent of the stream---in order to define a ``background'' region that should be devoid of Pal 5 member stars (see purple lines in \figurename~\ref{fig:members}).
 We use RRL stars in the background region to construct an error-deconvolved density model in the 3D space of proper motion components and distance.
 We use proper motions and uncertainties from \Gaia---using the provided covariance matrix between proper motion components---and distances and uncertainties from the PS1 RRL catalog (\sectionname~\ref{sec:data}).
 We optimize the parameters of a Gaussian Mixture Model (GMM) representation of the (deconvolved) background RRL density using \project{extreme deconvolution} \citep[\acronym{XD};][]{Bovy:XD}.
@@ -160,27 +161,29 @@ We evaluate the background likelihood of all stars in the full sky region (defin
 \caption{RRL stars in the vicinity of the Pal 5 stream (with $\textrm{prob.} > 0.01$), colored by membership probability, and under-plotted with the inferred stream trends used in the membership model.
 We note again that the membership probability does not depend on position or proximity to the stream, and only on distance and proper motions.
 \textbf{Upper left}: Sky positions (in the Pal 5 stream coordinate frame) of RRLs, with arrows showing the \Gaia\ \DR{2} proper motion vector direction.
-\textbf{Upper right}: Distance as a function of Pal 5 longitude, $\phi_1$, for the RRLs. The shaded (orange) band shows the 16--84th percentile confidence region for the inferred distance trend of the stream, and the solid line shows the median posterior sample, all assuming a quadratic function of $\phi_1$.
-\textbf{Lower panels}: Same as upper right, but for the proper motion in right ascension, $\mu_\alpha$, and declination, $\mu_\delta$.
+\textbf{Upper right}: Distance as a function of Pal 5 longitude, $\phi_1$, for the RRLs. The shaded (orange) band shows the 5--95th percentile confidence region for the inferred distance trend of the stream, and the solid line shows the median posterior sample, all assuming a quadratic function of $\phi_1$.
+\textbf{Lower panels}: Same as upper right, but for the proper motion components in the Pal 5 coordinate system, $\mu_1$ and $\mu_2$.
 }
 \label{fig:trackmembers}
 \end{center}
 \end{figure*}
 
-To represent the Pal 5 stream, we use a single Gaussian component with a fixed dispersion of $0.05~\masyr$ for the proper motion components ($\approx 5~\kms$ at the distance of Pal 5) and $0.2~\kpc$ in distance.
-However, we allow the mean to vary independently in each component as a function of $\phi_1$, a longitude coordinate (along the stream) as defined in \citet{Bonaca:2019}.
-Based on the Pal 5 stream models from \citet{Bonaca:2019}, over the range of $\phi_1 \in (-20^\circ, 15^\circ)$, the mean stream trends in $\mu_\alpha$, $\mu_\delta$, and distance can be well-approximated (within our observational uncertainties) by a quadratic function in $\phi_1$.
+To represent the Pal 5 stream, we use a single Gaussian component with a fixed dispersion of $0.05~\masyr$ for the proper motion components and $0.2~\kpc$ in distance.
+We have tried including the dispersions as additional parameters in our model but find that they are unconstrained; We therefore fix these values as mentioned to be smaller than the typical uncertainties.
+We allow the mean of the Gaussian component to vary independently in each component as a function of $\phi_1$.
+Based on the Pal 5 stream models from \citet{Bonaca:2019}, over the range of $\phi_1 \in (-20^\circ, 15^\circ)$, the mean stream trends in $\mu_1, \mu_2$, and distance $d$ can be well-approximated (within our observational uncertainties) by a quadratic function in $\phi_1$.
 The mean of our stream component, $\bs{x}$, is therefore given by
 \begin{equation}
     \bs{x} = \begin{pmatrix}
-        \mu_\alpha^* + b_\alpha \, \phi_1 + c_\alpha \, \phi_1^2\\
-        \mu_\delta^* + b_\delta \, \phi_1 + c_\delta \, \phi_1^2\\
-        d^* + b_d \, \phi_1 + c_d \, \phi_1 \label{eq:meanpoly}
+        \mu_1^* + b_1 \, (\phi_1 - x_1) + c_1 \, (\phi_1 - x_1)^2\\
+        \mu_2^* + b_2 \, (\phi_1 - x_2) + c_2 \, (\phi_1 - x_2)^2\\
+        d^* + b_d \, (\phi_1 - x_d) + c_d \, (\phi_1 - x_d)^2
+        \label{eq:meanpoly}
     \end{pmatrix}
 \end{equation}
-where $\bs{\theta} = (\mu_\alpha^*, \mu_\delta^*, d^*, b_\alpha, b_\delta, b_d, c_\alpha, c_\delta, c_d)$ are free parameters.
+where $\bs{\theta} = (\mu_1^*, \mu_2^*, d^*, b_1, b_2, b_d, c_1, c_2, c_d, x_1, x_2, x_d)$ are free parameters.
 
-Given the above background model, and this model for the stream track, the full likelihood for an RRL star, $n$, with data $D_n = (\mu_\alpha, \mu_\delta, d)_n$ is represented as a mixture of the two components with mixture weight $f$,
+Given the above background model, and this model for the stream track, the full likelihood for an RRL star, $n$, with data $D_n = (\mu_1, \mu_2, d)_n$ is represented as a mixture of the two components with mixture weight $f$,
 \begin{equation}
     p(D_n \given \bs{\theta}, f) = f \, \mathcal{N}(D_n \given \bs{x}, \mat{C}) + (1-f)\,p_{{\rm bg}, n}
 \end{equation}
@@ -189,7 +192,10 @@ where $\mathcal{N}(\cdot \given \bs{x}, \mat{C})$ is the multivariate normal dis
 \begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\textwidth]{members.pdf}
-\caption{Sky positions of RRLs with Pal 5 membership probabilities $>0.1$, colored by membership probability (markers). The background greyscale shows the surface density of CMD-filtered main sequence stars from \citet{Bonaca:2019}. Note that the membership probability does not incorporate sky position information, but a clear over-density of high-probability RRL members do trace the stream on the sky.}
+\caption{Sky positions of RRLs with Pal 5 membership probabilities $>0.1$, colored by membership probability (markers).
+The background greyscale shows the surface density of CMD-filtered main sequence stars from \citet{Bonaca:2019}.
+Note that the membership probability does not incorporate sky position information, but a clear over-density of high-probability RRL members do trace the stream on the sky.
+Purple lines outline the stream track window defined in \citet{Bonaca:2019} and used here to exclude stream stars when constructing the background model.}
 \label{fig:members}
 \end{center}
 \end{figure*}
@@ -200,12 +206,11 @@ We use Markov Chain Monte Carlo (MCMC) to generate samples over the parameters $
 \end{equation}
 where $p(\bs{\theta}, f)$ is the prior probability distribution over the parameters.
 We assume that our prior is separable in all of our parameters: We use a uniform prior for the mixture weight, $f$, such that $p(f) = \mathcal{U}(0, 1)$, Gaussian priors on the mean proper motion and distance using the Pal 5 cluster proper motion measurements from \citet{Vasiliev:2019} and the Pal 5 distance from \citet{Kuepper:2015}.
-We use broad uniform priors (i.e. $-100 < b, c < 100$ for each coefficient) on the linear and quadratic polynomial coefficients defined in \equationname~\ref{eq:meanpoly}.
+We use broad uniform priors (i.e. $-100 < b, c < 100$ for each coefficient, and $-20^\circ < x < 15^\circ$ for each polynomial centroid) for the trend parameters defined in \equationname~\ref{eq:meanpoly}.
 We use the affine-invariant ensemble MCMC sampler \texttt{emcee} \citep{emcee} to sample from the posterior probability distribution given above.
-We run \texttt{emcee} with 80 walkers for an initial 1024 steps to ``burn-in'' the sampler, then reset and restart the sampler for another 2048 steps.
-We compute the Gelman-Rubin convergence statistic $\mathcal{R}$ \citep{Gelman:1992} to verify that $\mathcal{R} < 1.1$ for all walkers and assume that the chains have converged.
-We then thin the chains by saving only every 128th step, leaving us with 1,280 posterior samples in our membership model parameters, $\bs{\theta}$.
-For each star, we also compute posterior membership probabilities using the samples following \citet{DFM:blog}.
+We run \texttt{emcee} with 104 walkers for an initial 1024 steps to ``burn-in'' the sampler, then reset and restart the sampler for another 65536 steps.
+We estimate the maximum (over parameters) autocorrelation length using \texttt{emcee}, $\tau_{\rm max} \approx 1200$, and thin the chains by keeping only every 1200th step, leaving us with 5616 posterior samples in our membership model parameters, $\bs{\theta}$.
+For each star, we use these samples to compute posterior membership probabilities following \citet{DFM:blog}.
 
 \figurename~\ref{fig:trackmembers} shows a summary of the inferred membership model properties in sky position (shown in Pal 5 coordinates $\phi_1, \phi_2$), distance, and proper motion components.
 \tablename~\ref{t:rrl_members} shows an abbreviated version of our catalog of RRL in the region around Pal 5, with PS1 and \Gaia~ data and membership probabilities appended.
@@ -213,32 +218,30 @@ For each star, we also compute posterior membership probabilities using the samp
 \section{Results and Discussion} \label{sec:results}
 
 \subsection{RRLs associated with Pal 5 and its tails}
-%SP: changed RR Lyrae stars to RR Lyra stars a few places, maybe check whole manuscript (otherwise plural twice).
-%CM: Sarah, I see your point, but I've never seen it written like that in the literature. Anyway, since we're using RRLs as an abbreviation, I've changed all instances to this in the whole manuscript.
-We find a total of 24 RRLs with membership probability $> 0.5$ that lie within $1\degr$ of the stream track \citep[again using the track from][]{Bonaca:2019}.
-Of those, 13 are classified as type \typeab\ and 11 are classified as type \typec\ RRLs.
-We find a total of 9 RRLs within the estimated Jacobi radius of the cluster ($\approx 12'$), meaning that 15 RRLs are spread between the leading and trailing tails.
+We find a total of \NRRL\ RRLs with membership probability $> 0.5$ that lie within the stream track \citep[again using the track from][see lines in Figure~\ref{fig:members}]{Bonaca:2019}.
+Of those, \NRRab\ are classified as type \typeab\ and \NRRc\ are classified as type \typec\ RRLs.
+We find a total of \NRRcl\ RRLs within the estimated Jacobi radius of the cluster ($\approx 11'$), meaning that \NRRtails\ RRLs are spread between the leading and trailing tails.
 \figurename~\ref{fig:members} shows the sky positions of all RRLs with membership probability $>0.1$ over-plotted on the density of filtered main sequence stars from \citet{Bonaca:2019}.
 We note that there are a few RRLs outside of the main stream track that appear to be at a consistent distance with consistent proper motions (e.g., the two stars near $\alpha = 230\degr$, $\delta = 0\degr$ in \figurename~\ref{fig:members}) that are not included in the tally above.
 No theoretical models of Pal 5 have predicted tidal debris at such locations, so follow-up spectroscopy to confirm or rule out their origin would be very informative.
 
 \subsection{Kinematics of the cluster and stream}
 
-Past distance measurements to the Pal 5 cluster have ranged from $20.9~\kpc$ \citep{Dotter:2011} to $23.2~\kpc$ \citep{Harris:1996}, with a previous measurement from a small number of RRLs in between at $22.3~\kpc$ \citep{Vivas:2006}. % \sa{worth mentioning with which technique?}
-We find a mean Pal 5 cluster distance of $20.9 \pm 0.2~\kpc$ using the PS1 RRLs and the membership model described in \sectionname~\ref{sec:membership}.
-This is closer than most past measurements of the cluster distance, but consistent with the measurement from \citet{Dotter:2011}.
-We find a proper motion $(\mu_\alpha\,\cos\delta, \mu_\delta) = (-2.69, -2.70) \pm (0.04, 0.03)~\masyr$, consistent with the measurement in \citet{Vasiliev:2019}.
-The larger proper motion (relative to \citealt{Fritz:2015} and other earlier measurements) and the closer distance means that the tangential velocity of Pal 5 is $\approx 30~\kms$ larger than most previous models have assumed.
+Past distance measurements to the Pal 5 cluster have ranged from $20.9~\kpc$ \citep{Dotter:2011} to $23.2~\kpc$ \citep{Harris:1996}, with a previous measurement from a small number of RRLs in between at $22.3~\kpc$ \citep{Vivas:2006}.
+We find a mean Pal 5 cluster distance of \clderr\ using the PS1 RRLs and the membership model described in \sectionname~\ref{sec:membership}.
+This is closer to the sun than most past measurements of the cluster distance, but consistent with the measurement from \citet{Dotter:2011}.
+We find a proper motion $(\mu_{\phi_1}\cos\phi_2, \mu_{\phi_2}) = (3.78, 0.71) \pm (0.02, 0.03)~\masyr$ or $(\mu_\alpha\,\cos\delta, \mu_\delta) = (-2.75, -2.69)~\masyr$, consistent with the measurement in \citet{Vasiliev:2019} within our uncertainties.
+The larger proper motion (relative to \citealt{Fritz:2015} and other earlier measurements) and the updated distance means that the tangential velocity of Pal 5 is $\approx 16~\kms$ larger than most previous models have assumed.
 This is a noteworthy update to consider for future stream modeling efforts and will likely change the inferred Milky Way parameters as compared to past models \citep[e.g.,][]{Kuepper:2015, Bovy:2016}.
 
-We also detect a distance trend from the closer leading tail ($d \approx 19~\kpc$ at $\phi_1 \approx 5\degr$) to the more distant trailing tail ($d \approx 22~\kpc$ at $\phi_1 \approx -5\degr$).
+We also detect a distance trend from the closer leading tail ($d \approx 19.4~\kpc$ at $\phi_1 \approx 5\degr$) to the more distant trailing tail ($d \approx 21.3~\kpc$ at $\phi_1 \approx -5\degr$).
 While the proper motion in right ascension appears consistent with constant or only a mild gradient over the extent of the stream, we see a significant gradient in the declination component, with a difference of about $\approx 1~\masyr$ from trailing to leading tail.
 % \sa{worth mentioning Pearson 2017, fig 2 where this same trend is also seen (flatter gradient in RA proper motion than in dec proper motion?}
 % APW: What were mu_1 and mu_2? Were those proper motions in RA/Dec?
 
 \subsection{Properties of the RRL population}
 
-Assuming a Jacobi radius of $11'$---computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.2\times10^4~\msun$ \citep{Kuepper:2015} and using the Milky Way mass model in \citet{gala}---we find 9 RRLs in the cluster itself (2 type~\typeab\ and 7 type~\typec) and 15 in the cluster's tails (11 type~\typeab\ and 4 type~\typec), all  with membership probabilities larger than 0.5. In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.2$, a typical ratio found Oosterhoff I populations \citep{Smith:1995}.
+Assuming a Jacobi radius of $11'$---computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.2\times10^4~\msun$ \citep{Kuepper:2015} and using the Milky Way mass model in \citet{gala}---we find \NRRcl\ RRLs in the cluster itself (3 type~\typeab\ and 6 type~\typec) and \NRRtails\ in the cluster's tails (13 type~\typeab\ and 5 type~\typec), all with membership probabilities larger than 0.5. In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.5$, \todo{APW: still typical?} a typical ratio found Oosterhoff I populations \citep{Smith:1995}.
 \figurename~\ref{fig:PA_diagram} shows the period-amplitude diagram for the RRL stars in Pal~5.
 The full sample of PS1 RRLs is shown in the background for comparison, as a grayscale density histogram. The distribution of the \typeab~RRLs clearly indicate that Pal~5 is an Oosterhoff I cluster, consistent with having a mean period of $0.54~d$.
 Our findings of the updated ratio of \rrab~to~\rrc, mean period, and Period-Amplitude distribution of the \rrab\ RRLs all support an Oosterhoff I classification for Pal~5, consistent with the cluster's metallicity, $\FeH=-1.4$ \citep{Dotter:2011}.
@@ -256,6 +259,7 @@ Out of our newly found \rrab\ RRLs, two are High Amplitude Short Period (HASP, $
 
 \subsection{Stellar Mass and Luminosity}
 
+\todo{APW: update numbers with new catalog}
 To estimate the expected absolute magnitude of Pal 5 we follow the same procedure as in \citet{Mateu:2018}, who use a linear fit of the relation between the absolute magnitude $M_V$ and the number of \typeab\ RRL, based on data from Galactic dwarf galaxies and globular clusters, here including the RR\typec~stars.  The $\log{N_{RR}}-M_V$ relation has a large scatter so, particularly for such low numbers of RRLs, it will only allow us to give rough limits on the cluster's absolute magnitude and, therefore, of its luminosity. Correcting the observed number of 24~RRLs by the median completeness of 92\%, we get a total expected number of 26~RRLs, for which we find a total luminosity $L_V=3.9_{-2.5}^{+7.4}\times 10^4 \mathrm{L}_\sun$.%, which correspond to the mode and 16/84th percentiles of the posterior probability distribution.
 We then estimate a stellar mass of $0.8_{-0.5}^{+1.5}\times 10^5 \msun$, by assuming a V-band mass-to-light ratio $M/L=2.$ corresponding to a simple stellar population with the age (12 Gyr) and metallicity ($\FeH=-1.4$) of the cluster \citep{Dotter:2011}, computed from the \citet{Bruzual:2003} models \footnote{We have used Z=0.0004 ($\FeH=-1.6$), the nearest to Pal~5’s metallicity available in the models.}. Our mass estimate is larger than that of \citet{Ibata:2017}, who report a current mass of $1.2\pm 0.4 \times10^4\msun$ for the cluster and tails; although their estimate for the initial mass ($4.7\pm 1.5\times10^4\msun$) of the system is at the lower end of our confidence limits.
 
@@ -277,11 +281,12 @@ Two of these stars (IDs 403 and 405) are separated by just $\sim10'$ and $11'$ f
 \section{Conclusions} \label{sec:conclusions}
 
 Using a catalog of RRLs identified using multi-epoch, multi-band photometry from the Pan-STARRS PS1 survey and cross-matched to \Gaia\ \DR{2}, we construct a probabilistic model to determine membership with the Pal 5 cluster and stream.
-We find 24 RRLs with membership probability $>0.5$ (13 type~\typeab\ and 11 type~\typec) over $\approx 18\degr$ of the stream.
-From these stars, we infer the distance to the cluster, finding a closer value, $d = 20.9 \pm 0.2~\kpc$, than many past studies, and detect a distance gradient of $\sim 0.4~\kpc~{\rm deg}^{-1}$ between the trailing and leading tail (between $-5^\circ < \phi_1 < 5^\circ$).
+We find \NRRL\ RRLs with membership probability $>0.5$ (\NRRab\ type~\typeab\ and \NRRc\ type~\typec) over $\approx 18\degr$ of the stream.
+From these stars, we infer the distance to the cluster \clderr\ and detect a distance gradient of $\sim 0.2~\kpc~{\rm deg}^{-1}$ between the trailing and leading tail (between $-5^\circ < \phi_1 < 5^\circ$).
 We also, for the first time, detect trends in proper motion along the stream, predicted by models of the stream \citep[e.g.,][]{Pearson:2017}.
 We release the full RRL catalog in the region around Pal 5 (containing distance information from PS1 and astrometry from \Gaia) with our derived membership probabilities.
-These data will be instrumental for improving dynamical models of Pal 5, both for using Pal 5 to constrain the global matter distribution of the Milky Way and in interpreting the observed, complex density structure of the stream.
+We note that past models of the Pal 5 stream have typically used larger cluster distances and slower proper motion values, meaning that any past model streams will be offset from the measurements and analysis presented here \citep[e.g.,][]{Kuepper:2015, Erkal:2017, Pearson:2017}.
+These data will be instrumental for improving and updating dynamical models of Pal 5, both for using Pal 5 to constrain the global matter distribution of the Milky Way and in interpreting the observed, complex density structure of the stream.
 % \sa{not sure where in text, but could be worth mentioning that you don't find stars beyond the current footprint of the stream (i.e. that leading stream does appear to be shorter than trailing..., although looking at fig 3, you actually don't find trailin stream RRLs much further from the prog. than you find leading arm RRLs.}
 
 
