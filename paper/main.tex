@@ -4,6 +4,7 @@
 \shorttitle{RR Lyrae stars in the Pal 5 stream}
 \shortauthors{Price-Whelan et al.}
 \newcommand{\sa}[1]{{\color{teal} SP: #1}}
+\newcommand{\ab}[1]{{\color{magenta} AB: #1}}
 
 % Measurements:
 \newcommand{\cld}{\ensuremath{20.6~\kpc}}
@@ -217,7 +218,7 @@ We run \texttt{emcee} with 104 walkers for an initial 1024 steps to ``burn-in'' 
 We estimate the maximum (over parameters) autocorrelation length using \texttt{emcee}, $\tau_{\rm max} \approx 2200$, and thin the chains by keeping only every 2200th step, leaving us with 6196 posterior samples in our membership model parameters, $\bs{\theta}$.
 For each star, we use these samples to compute posterior membership probabilities following \citet{DFM:blog}.
 
-\figurename~\ref{fig:trackmembers} shows a summary of the inferred membership model properties in sky position (shown in Pal 5 coordinates $\phi_1, \phi_2$), distance, and proper motion components.
+\figurename~\ref{fig:trackmembers} shows a summary of the inferred membership model properties in sky position (shown in Pal 5 coordinates $\phi_1, \phi_2$), distance, $d$, and proper motion components.
 \tablename~\ref{t:rrl_members} shows an abbreviated version of our catalog of RRL in the region around Pal 5, with PS1 and \Gaia~ data and membership probabilities appended.
 
 \section{Results and Discussion} \label{sec:results}
@@ -229,12 +230,15 @@ We find a total of \NRRcl\ RRLs within the estimated Jacobi radius of the cluste
 \figurename~\ref{fig:members} shows the sky positions of all RRLs with membership probability $>0.1$ over-plotted on the density of filtered main sequence stars from \citet{Bonaca:2019}.
 We note that there are a few RRLs outside of the main stream track that appear to be at a consistent distance with consistent proper motions (e.g., the two stars near $\alpha = 230\degr$, $\delta = 0\degr$ in \figurename~\ref{fig:members}) that are not included in the tally above.
 No theoretical models of Pal 5 have predicted tidal debris at such locations, so follow-up spectroscopy to confirm or rule out their origin would be very informative.
+\ab{mention RRL overdensities along the tails don't correspond to MS overdensities?}
 
 \subsection{Kinematics of the cluster and stream}
 
+\ab{this section is mostly about the distances -- include in the subtitle?}
 Past distance measurements to the Pal 5 cluster have ranged from $20.9~\kpc$ \citep{Dotter:2011} to $23.2~\kpc$ \citep{Harris:1996}, with a previous measurement from a small number of RRLs in between at $22.3~\kpc$ \citep{Vivas:2006}.
 We find a mean Pal 5 cluster distance of \clderr\ using the PS1 RRLs and the membership model described in \sectionname~\ref{sec:membership}.
 This is closer to the sun than most past measurements of the cluster distance, but consistent with the measurement from \citet{Dotter:2011}.
+\ab{can we work this point a bit more? I thought it was mainly the HST CMD measurement from Aaron that was an outlier, and everything else at a larger distance. then I think in Nitya + Tobias paper they found that to match pms, they require a smaller distance, and now we find it in PS1 RRL. I don't think we need to recount the whole history in a letter, but it might be helpful to comment on the difference wrt Kathy's RRL result}
 We find a proper motion $(\mu_{\phi_1}\cos\phi_2, \mu_{\phi_2}) = (3.78, 0.71) \pm (0.02, 0.03)~\masyr$ or $(\mu_\alpha\,\cos\delta, \mu_\delta) = (-2.75, -2.69)~\masyr$, consistent with the measurement in \citet{Vasiliev:2019} within our uncertainties.
 The larger proper motion (relative to \citealt{Fritz:2015} and other earlier measurements) and the updated distance means that the tangential velocity of Pal 5 is $\approx 16~\kms$ larger than most previous models have assumed.
 This is a noteworthy update to consider for future stream modeling efforts and will likely change the inferred Milky Way parameters as compared to past models \citep[e.g.,][]{Kuepper:2015, Bovy:2016}.
@@ -250,8 +254,10 @@ While the proper motion in right ascension appears consistent with constant or o
 %CM: yes, Nab/Nc has a long tail towards large values
 Assuming a Jacobi radius of $11'$---computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.2\times10^4~\msun$ \citep{Kuepper:2015} and using the Milky Way mass model in \citet{gala}---we find \NRRcl\ RRLs in the cluster itself (2 type~\typeab\ and 8 type~\typec) and \NRRtails\ in the cluster's tails (13 type~\typeab\ and 4 type~\typec), all with membership probabilities larger than 0.5. In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.25$,a typical ratio found Oosterhoff I populations \citep{Smith:1995}.
 \figurename~\ref{fig:PA_diagram} shows the period-amplitude diagram for the RRL stars in Pal~5.
+\ab{can we provide a sentence for what it (physically) means to be an oosterhoff I population?}
 The full sample of PS1 RRLs is shown in the background for comparison, as a grayscale density histogram. The distribution of the \typeab~RRLs clearly indicate that Pal~5 is an Oosterhoff I cluster, consistent with having a mean period of $0.54~d$.
 Our findings of the updated ratio of \rrab~to~\rrc, mean period, and Period-Amplitude distribution of the \rrab\ RRLs all support an Oosterhoff I classification for Pal~5, consistent with the cluster's metallicity, $\FeH=-1.4$ \citep{Dotter:2011}. Interestingly, there seems to be a strong segregation of the RRL types: all but two of the \rrab~are found in the cluster tails and two thirds of the \rrc~are found in the cluster itself.
+\ab{this is interesting indeed -- can we provide a hypothesis?}
 Out of our newly found \rrab\ RRLs, three are High Amplitude Short Period (HASP, $P <0.48$~d, $A_V>0.75$~mag $=A_g>$) stars, again consistent with Pal~5's metallicity,  as this type of RRL is only found in relatively metal-rich globular clusters  \citep[$\FeH>-1.5$;][]{Monelli:2017}.
 
 %. and the Sagittarius dwarf galaxy, but not in any other dwarf spheroidal galaxy. \todo{CM:( any other point to be made about this?)}. \sa{as someone who doesn't know much about RRLs, how weird is the above? maybe some more discussion/elaboration? } \cm{well, it's not weird at all. I've added a sentence saying so.}
@@ -259,7 +265,7 @@ Out of our newly found \rrab\ RRLs, three are High Amplitude Short Period (HASP,
 \begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\textwidth]{rrls_PA.pdf}
-\caption{Amplitude ($g$-band) versus Period for RRLs in the Pal~5 field membership probabilities $>0.1$ (small markers) inside the Pal~5 track (large markers), colored by membership probability. The distribution of the RRLs found in the cluster and it's tails is consistent with an Oosterhoff type I (dashed line). }
+\caption{Amplitude ($g$-band) versus Period for RRLs in the Pal~5 field membership probabilities $>0.1$ (small markers) inside the Pal~5 track (large markers), colored by membership probability. The distribution of the RRLs found in the cluster and its tails is consistent with an Oosterhoff type I (dashed line). }
 \label{fig:PA_diagram}
 \end{center}
 \end{figure*}
