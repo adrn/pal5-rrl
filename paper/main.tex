@@ -9,10 +9,15 @@
 \newcommand{\cld}{\ensuremath{20.6~\kpc}}
 \newcommand{\clderr}{\ensuremath{20.6 \pm 0.2~\kpc}}
 \newcommand{\NRRL}{27}     % N total, prob > 0.5
-\newcommand{\NRRab}{16}    % N type ab, total
-\newcommand{\NRRc}{11}     % N type c, total
-\newcommand{\NRRcl}{9}     % N in cluster
-\newcommand{\NRRtails}{18} % N in tails
+% \newcommand{\NRRab}{16}    % N type ab, total
+% \newcommand{\NRRc}{11}     % N type c, total
+% \newcommand{\NRRcl}{9}     % N in cluster
+% \newcommand{\NRRtails}{18} % N in tails
+
+\newcommand{\NRRab}{15}    % N type ab, total
+\newcommand{\NRRc}{12}     % N type c, total
+\newcommand{\NRRcl}{10}     % N in cluster
+\newcommand{\NRRtails}{17} % N in tails
 
 \input{defs.tex}
 \graphicspath{paper/}
@@ -208,8 +213,8 @@ where $p(\bs{\theta}, f)$ is the prior probability distribution over the paramet
 We assume that our prior is separable in all of our parameters: We use a uniform prior for the mixture weight, $f$, such that $p(f) = \mathcal{U}(0, 1)$, Gaussian priors on the mean proper motion and distance using the Pal 5 cluster proper motion measurements from \citet{Vasiliev:2019} and the Pal 5 distance from \citet{Kuepper:2015}.
 We use broad uniform priors (i.e. $-100 < b, c < 100$ for each coefficient, and $-20^\circ < x < 15^\circ$ for each polynomial centroid) for the trend parameters defined in \equationname~\ref{eq:meanpoly}.
 We use the affine-invariant ensemble MCMC sampler \texttt{emcee} \citep{emcee} to sample from the posterior probability distribution given above.
-We run \texttt{emcee} with 104 walkers for an initial 1024 steps to ``burn-in'' the sampler, then reset and restart the sampler for another 65536 steps.
-We estimate the maximum (over parameters) autocorrelation length using \texttt{emcee}, $\tau_{\rm max} \approx 1200$, and thin the chains by keeping only every 1200th step, leaving us with 5616 posterior samples in our membership model parameters, $\bs{\theta}$.
+We run \texttt{emcee} with 104 walkers for an initial 1024 steps to ``burn-in'' the sampler, then reset and restart the sampler for another 131072 steps.
+We estimate the maximum (over parameters) autocorrelation length using \texttt{emcee}, $\tau_{\rm max} \approx 2200$, and thin the chains by keeping only every 2200th step, leaving us with 6196 posterior samples in our membership model parameters, $\bs{\theta}$.
 For each star, we use these samples to compute posterior membership probabilities following \citet{DFM:blog}.
 
 \figurename~\ref{fig:trackmembers} shows a summary of the inferred membership model properties in sky position (shown in Pal 5 coordinates $\phi_1, \phi_2$), distance, and proper motion components.
@@ -241,11 +246,13 @@ While the proper motion in right ascension appears consistent with constant or o
 
 \subsection{Properties of the RRL population}
 
-Assuming a Jacobi radius of $11'$---computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.2\times10^4~\msun$ \citep{Kuepper:2015} and using the Milky Way mass model in \citet{gala}---we find \NRRcl\ RRLs in the cluster itself (3 type~\typeab\ and 6 type~\typec) and \NRRtails\ in the cluster's tails (13 type~\typeab\ and 5 type~\typec), all with membership probabilities larger than 0.5. In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.5$, \todo{APW: still typical?} a typical ratio found Oosterhoff I populations \citep{Smith:1995}.
+% \todo{APW: still typical?} 
+%CM: yes, Nab/Nc has a long tail towards large values 
+Assuming a Jacobi radius of $11'$---computed assuming $\textrm{M}_{\rm Pal 5} \approx 1.2\times10^4~\msun$ \citep{Kuepper:2015} and using the Milky Way mass model in \citet{gala}---we find \NRRcl\ RRLs in the cluster itself (2 type~\typeab\ and 8 type~\typec) and \NRRtails\ in the cluster's tails (13 type~\typeab\ and 4 type~\typec), all with membership probabilities larger than 0.5. In total, we find the number ratio of RRL types to be $N_{ab} / N_{c} \approx 1.25$,a typical ratio found Oosterhoff I populations \citep{Smith:1995}. 
 \figurename~\ref{fig:PA_diagram} shows the period-amplitude diagram for the RRL stars in Pal~5.
 The full sample of PS1 RRLs is shown in the background for comparison, as a grayscale density histogram. The distribution of the \typeab~RRLs clearly indicate that Pal~5 is an Oosterhoff I cluster, consistent with having a mean period of $0.54~d$.
-Our findings of the updated ratio of \rrab~to~\rrc, mean period, and Period-Amplitude distribution of the \rrab\ RRLs all support an Oosterhoff I classification for Pal~5, consistent with the cluster's metallicity, $\FeH=-1.4$ \citep{Dotter:2011}.
-Out of our newly found \rrab\ RRLs, two are High Amplitude Short Period (HASP, $P <0.48$~d, $A_V>0.75$~mag $=A_g>$) stars, again consistent with Pal~5's metallicity,  as this type of RRL is only found in relatively metal-rich globular clusters  \citep[$\FeH>-1.5$;][]{Monelli:2017}.
+Our findings of the updated ratio of \rrab~to~\rrc, mean period, and Period-Amplitude distribution of the \rrab\ RRLs all support an Oosterhoff I classification for Pal~5, consistent with the cluster's metallicity, $\FeH=-1.4$ \citep{Dotter:2011}. Interestingly, there seems to be a strong segregation of the RRL types: all but two of the \rrab~are found in the cluster tails and two thirds of the \rrc~are found in the cluster itself. 
+Out of our newly found \rrab\ RRLs, three are High Amplitude Short Period (HASP, $P <0.48$~d, $A_V>0.75$~mag $=A_g>$) stars, again consistent with Pal~5's metallicity,  as this type of RRL is only found in relatively metal-rich globular clusters  \citep[$\FeH>-1.5$;][]{Monelli:2017}.
 
 %. and the Sagittarius dwarf galaxy, but not in any other dwarf spheroidal galaxy. \todo{CM:( any other point to be made about this?)}. \sa{as someone who doesn't know much about RRLs, how weird is the above? maybe some more discussion/elaboration? } \cm{well, it's not weird at all. I've added a sentence saying so.}
 
@@ -259,9 +266,9 @@ Out of our newly found \rrab\ RRLs, two are High Amplitude Short Period (HASP, $
 
 \subsection{Stellar Mass and Luminosity}
 
-\todo{APW: update numbers with new catalog}
-To estimate the expected absolute magnitude of Pal 5 we follow the same procedure as in \citet{Mateu:2018}, who use a linear fit of the relation between the absolute magnitude $M_V$ and the number of \typeab\ RRL, based on data from Galactic dwarf galaxies and globular clusters, here including the RR\typec~stars.  The $\log{N_{RR}}-M_V$ relation has a large scatter so, particularly for such low numbers of RRLs, it will only allow us to give rough limits on the cluster's absolute magnitude and, therefore, of its luminosity. Correcting the observed number of 24~RRLs by the median completeness of 92\%, we get a total expected number of 26~RRLs, for which we find a total luminosity $L_V=3.9_{-2.5}^{+7.4}\times 10^4 \mathrm{L}_\sun$.%, which correspond to the mode and 16/84th percentiles of the posterior probability distribution.
-We then estimate a stellar mass of $0.8_{-0.5}^{+1.5}\times 10^5 \msun$, by assuming a V-band mass-to-light ratio $M/L=2.$ corresponding to a simple stellar population with the age (12 Gyr) and metallicity ($\FeH=-1.4$) of the cluster \citep{Dotter:2011}, computed from the \citet{Bruzual:2003} models \footnote{We have used Z=0.0004 ($\FeH=-1.6$), the nearest to Pal~5’s metallicity available in the models.}. Our mass estimate is larger than that of \citet{Ibata:2017}, who report a current mass of $1.2\pm 0.4 \times10^4\msun$ for the cluster and tails; although their estimate for the initial mass ($4.7\pm 1.5\times10^4\msun$) of the system is at the lower end of our confidence limits.
+%\todo{APW: update numbers with new catalog}
+To estimate the expected absolute magnitude of Pal 5 we follow the same procedure as in \citet{Mateu:2018}, who use a linear fit of the relation between the absolute magnitude $M_V$ and the number of \typeab\ RRL, based on data from Galactic dwarf galaxies and globular clusters, here including the RR\typec~stars.  The $\log{N_{RR}}-M_V$ relation has a large scatter so, particularly for such low numbers of RRLs, it will only allow us to give rough limits on the cluster's absolute magnitude and, therefore, of its luminosity. Correcting the observed number of 27~RRLs by the median completeness of 92\%, we get a total expected number of 29~RRLs, for which we find a total luminosity $L_V=4.6_{-3.0}^{+8.8}\times 10^4 \mathrm{L}_\sun$.
+We then estimate a stellar mass of $0.9_{-0.6}^{+1.8}\times 10^5 \msun$, by assuming a V-band mass-to-light ratio $M/L=2$ corresponding to a simple stellar population with the age (12 Gyr) and metallicity ($\FeH=-1.4$) of the cluster \citep{Dotter:2011}, computed from the \citet{Bruzual:2003} models \footnote{We have used Z=0.0004 ($\FeH=-1.6$), the nearest to the cluster's metallicity available in the models.}. Our mass estimate is larger than that of \citet{Ibata:2017}, who report a current mass of $1.2\pm 0.4 \times10^4\msun$ for the cluster and tails; although their estimate for the initial mass ($4.7\pm 1.5\times10^4\msun$) of the system is at the lower end of our confidence limits.
 
 
 
@@ -301,10 +308,13 @@ has been provided by national institutions, in particular the institutions
 participating in the {\it Gaia} Multilateral Agreement.
 
 \software{
-    Astropy \citep{astropy, astropy:2018},
+    astropy \citep{astropy, astropy:2018},
     emcee \citep{emcee},
     gala \citep{gala},
-    IPython \citep{ipython}
+    IPython \citep{ipython},
+    matplotlib \citep{mpl},
+    numpy \citep{numpy},
+    scipy \citep{scipy}
 }
 \clearpage
 \appendix
@@ -327,29 +337,32 @@ Star \verb+source_id=4418731829516302848+ is reported in PS1 and \Gaia~as an \rr
 \verb+source_id+        & ID\tnote{*}   & (d)    & (mag)   &     &(kpc)& prob & (") \\
 \midrule
 4418920808077110784 & V5 (K62) & 0.337934 & 0.46 & RRc & 20.7 & 1.00 & 2.0 \\
-4418920846732620032 &          & 0.643239 & 0.27 & RRab & 21.7 & 1.00 & 2.0 \\
-4418914863842345856 & V1 (K62) & 0.293229 & 0.56 & RRc & 20.4 & 0.97 & 2.0 \\
+4418920846732620032 &          & 0.643239 & 0.27 & RRab & 21.7 & 0.99 & 2.0 \\
+4418914863842345856 & V1 (K62) & 0.293229 & 0.56 & RRc & 20.4 & 0.95 & 2.0 \\
 4418726027016125056 & V3 (K62) & 0.329948 & 0.51 & RRc & 20.7 & 1.00 & 3.9 \\
-4418725889577171328 & V4 (K62) & 0.286366 & 0.59 & RRc & 20.3 & 0.99 & 4.5 \\
+4418725889577171328 & V4 (K62) & 0.286366 & 0.59 & RRc & 20.3 & 1.00 & 4.5 \\
+4418731829516302848 &          & 0.281640 & 0.30 & RRc & 18.1 & 0.65 & 4.9 \\
 4418913218870688768 & V2 (K62) & 0.332473 & 0.40 & RRc & 20.3 & 1.00 & 5.1 \\
-4418734165978521728 &          & 0.380859 & 0.52 & RRc & 22.8 & 0.92 & 7.7 \\
+4418734165978521728 &          & 0.380859 & 0.52 & RRc & 22.8 & 0.91 & 7.7 \\
 4418724034151291776 & 403 (V04)& 0.551705 & 1.14 & RRab & 21.2 & 1.00 & 9.8 \\
-4418732791593809152 & 405 (V04)& 0.329670 & 0.45 & RRc & 20.7 & 1.00 & 11.0 \\
-4419052204012341760 & 133 (W05)& 0.530006 & 1.01 & RRab & 20.8 & 1.00 & 44.5 \\
-4418142117622280192 & 393 (V04)& 0.462671 & 1.36 & RRab & 20.0 & 0.92 & 118.8 \\
-6339498589346000768 &          & 0.320110 & 0.46 & RRc & 18.9 & 0.99 & 217.8 \\
-6339499379619987200 &          & 0.329577 & 0.47 & RRc & 19.4 & 1.00 & 218.6 \\
-6339478312804685824 &          & 0.465883 & 1.12 & RRab & 19.9 & 1.00 & 242.9 \\
-4421078432143578496 &          & 0.520749 & 1.11 & RRab & 22.0 & 1.00 & 246.1 \\
-6339398155830632448 &          & 0.688316 & 0.75 & RRab & 19.8 & 1.00 & 258.9 \\
-4427253907921168000 &          & 0.496334 & 1.35 & RRab & 21.8 & 0.99 & 362.6 \\
-4427220338456828416 &          & 0.600796 & 0.81 & RRab & 22.0 & 1.00 & 384.4 \\
-4427234700827469952 &          & 0.517911 & 1.24 & RRab & 21.9 & 1.00 & 392.4 \\
-6337302795905934336 &          & 0.519462 & 1.02 & RRab & 17.3 & 0.89 & 404.6 \\
-6337233350579111680 &          & 0.542383 & 0.96 & RRab & 19.0 & 0.93 & 450.7 \\
-4427646704153765632 &          & 0.385552 & 0.37 & RRc & 19.9 & 0.81 & 456.6 \\
-4424705647988505600 &          & 0.335502 & 0.41 & RRc & 20.9 & 0.99 & 513.0 \\
-4426221707021159424 &          & 0.533313 & 1.14 & RRab & 22.0 & 0.93 & 550.1 \\
+4418732791593809152 & 405 (V04) & 0.329670 & 0.45 & RRc & 20.7 & 1.00 & 11.0 \\
+4419052204012341760 & 133 (W05) & 0.530006 & 1.01 & RRab & 20.8 & 1.00 & 44.5 \\
+4418142117622280192 & 393 (V04) & 0.462671 & 1.36 & RRab & 20.0 & 0.91 & 118.8 \\
+6339498589346000768 &  & 0.320110 & 0.46 & RRc & 18.9 & 0.99 & 217.8 \\
+6339499379619987200 &  & 0.329577 & 0.47 & RRc & 19.4 & 1.00 & 218.6 \\
+6339478312804685824 &  & 0.465883 & 1.12 & RRab & 19.9 & 1.00 & 242.9 \\
+4421078432143578496 &  & 0.520749 & 1.11 & RRab & 22.0 & 1.00 & 246.1 \\
+6339398155830632448 &  & 0.688316 & 0.75 & RRab & 19.8 & 1.00 & 258.9 \\
+4427253907921168000 &  & 0.496334 & 1.35 & RRab & 21.8 & 0.99 & 362.6 \\
+4427220338456828416 &  & 0.600796 & 0.81 & RRab & 22.0 & 1.00 & 384.4 \\
+4427234700827469952 &  & 0.517911 & 1.24 & RRab & 21.9 & 1.00 & 392.4 \\
+6337233350579111680 &  & 0.542383 & 0.96 & RRab & 19.0 & 0.98 & 450.7 \\
+4427646704153765632 &  & 0.385552 & 0.37 & RRc & 19.9 & 0.87 & 456.6 \\
+4424705647988505600 &  & 0.335502 & 0.41 & RRc & 20.9 & 1.00 & 513.0 \\
+4426221707021159424 &  & 0.533313 & 1.14 & RRab & 22.0 & 0.99 & 550.1 \\
+4450058431917932672 &  & 0.712626 & 1.15 & RRab & 21.1 & 0.57 & 857.8 \\
+4439927909737905280 &  & 0.724974 & 0.91 & RRab & 22.2 & 0.85 & 1124.3 \\
+4445607604551159040 &  & 0.456636 & 1.40 & RRab & 22.3 & 0.81 & 1394.3 \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
