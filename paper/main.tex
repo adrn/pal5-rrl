@@ -1,6 +1,10 @@
 % \documentclass[modern]{aastex63}
 \documentclass[twocolumn]{aastex63}
 
+% typography
+\usepackage[T1]{fontenc}
+\setlength{\parindent}{1.\baselineskip}
+
 \shorttitle{RR Lyrae stars in the Pal 5 stream}
 \shortauthors{Price-Whelan et al.}
 \newcommand{\sa}[1]{{\color{teal} SP: #1}}
@@ -23,7 +27,7 @@
 \input{defs.tex}
 \graphicspath{paper/}
 
-\begin{document}
+\begin{document}\sloppy\sloppypar\raggedbottom\frenchspacing % trust Hogg
 
 \title{Kinematics of the Palomar 5 stellar stream from RR Lyrae stars}
 
@@ -46,6 +50,9 @@
 \author[0000-0003-0256-5446]{Sarah~Pearson}
 \affiliation{Center for Computational Astrophysics, Flatiron Institute,
              Simons Foundation, 162 Fifth Avenue, New York, NY 10010, USA}
+
+\author[0000-0002-7846-9787]{Ana Bonaca}
+\affiliation{Center for Astrophysics | Harvard \& Smithsonian, 60 Garden St, Cambridge, MA 02138, USA}
 
 \author[0000-0002-0038-9584]{Vasily~Belokurov}
 \affiliation{Institute of Astronomy, University of Cambridge, Madingley Road, Cambridge CB3 0HA, UK}
@@ -227,18 +234,25 @@ For each star, we use these samples to compute posterior membership probabilitie
 We find a total of \NRRL\ RRLs with membership probability $> 0.5$ that lie within the stream track \citep[again using the track from][see lines in Figure~\ref{fig:members}]{Bonaca:2019}.
 Of those, \NRRab\ are classified as type \typeab\ and \NRRc\ are classified as type \typec\ RRLs.
 We find a total of \NRRcl\ RRLs within the estimated Jacobi radius of the cluster ($\approx 11'$), meaning that \NRRtails\ RRLs are spread between the leading and trailing tails.
-\figurename~\ref{fig:members} shows the sky positions of all RRLs with membership probability $>0.1$ over-plotted on the density of filtered main sequence stars from \citet{Bonaca:2019}.
-We note that there are a few RRLs outside of the main stream track that appear to be at a consistent distance with consistent proper motions (e.g., the two stars near $\alpha = 230\degr$, $\delta = 0\degr$ in \figurename~\ref{fig:members}) that are not included in the tally above.
+\figurename~\ref{fig:members} shows the sky positions of all RRLs with membership probability $>0.1$ over-plotted on the density of filtered main sequence stars from \citet{Bonaca:2019}:
+The RRLs trace the stream track defined by the main sequence stars, but interestingly the density of RRLs does not seem to match the density variations in the under-plotted density map.
+In particular, the bulk of the stream RRLs seem to be spread farther out (in angle) from the cluster relative to the main sequence stars, a possible manifestation of the internal dynamics of the initial cluster \citep[e.g., mass segregation][]{Koch:2004}.
+
+We note also that there are a few RRLs outside of the main stream track that appear to be at a consistent distance with consistent proper motions (e.g., the two stars near $\alpha = 230\degr$, $\delta = 0\degr$ in \figurename~\ref{fig:members}) that are not included in the tally above.
 No theoretical models of Pal 5 have predicted tidal debris at such locations, so follow-up spectroscopy to confirm or rule out their origin would be very informative.
-\ab{mention RRL overdensities along the tails don't correspond to MS overdensities?}
 
-\subsection{Kinematics of the cluster and stream}
+\subsection{Distance and kinematics of the cluster and stream}
 
-\ab{this section is mostly about the distances -- include in the subtitle?}
-Past distance measurements to the Pal 5 cluster have ranged from $20.9~\kpc$ \citep{Dotter:2011} to $23.2~\kpc$ \citep{Harris:1996}, with a previous measurement from a small number of RRLs in between at $22.3~\kpc$ \citep{Vivas:2006}.
 We find a mean Pal 5 cluster distance of \clderr\ using the PS1 RRLs and the membership model described in \sectionname~\ref{sec:membership}.
-This is closer to the sun than most past measurements of the cluster distance, but consistent with the measurement from \citet{Dotter:2011}.
-\ab{can we work this point a bit more? I thought it was mainly the HST CMD measurement from Aaron that was an outlier, and everything else at a larger distance. then I think in Nitya + Tobias paper they found that to match pms, they require a smaller distance, and now we find it in PS1 RRL. I don't think we need to recount the whole history in a letter, but it might be helpful to comment on the difference wrt Kathy's RRL result}
+While past distance measurements to Pal 5 are often reported ranging from $\sim 22.4~\kpc$ to $>23~\kpc$ (e.g., \citealt{Odenkirchen:2009, Erkal:2017}, using measurements from \citealt{Harris:1996, Dotter:2011}), these values are computed from distance modul that have not been corrected for dust extinction (\citealt{Harris:1996}, and see footnote 5 in \citealt{Fritz:2015}).
+Using the recalibrated \citet{Schlegel:1998} dustmap from \citet{Schlafly:2011}, and assuming $R_V=3.1$, we find in the region around Pal 5, $A_V = 0.17~\textrm{mag}$.
+Re-deriving distances based on published distance moduli, we find $d_{\rm Pal 5} = 21~\kpc$ \citep{Harris:1996} and $d_{\rm Pal 5} = 20.7~\kpc$ \citep{Dotter:2011}.
+Assuming a modest distance uncertainty of $\approx 5\%$ for these isochronal distances, our measurement is consistent with these past measurements.
+
+Using a small number of RRLs then thought to be associated with Pal 5, \citet{Vivas:2006} measured a distance to the cluster of $d = 22.3~\kpc$.
+However, this used a now imprecise $M_V$--$\feh$ relation to compute the distance modulus.
+Adopting $\feh = -1.35$ \citep{Ishigaki:2016} and using the updated RRL $M_V$--$\feh$ relation from \citet{Muraveva:2018}, we find instead that this past RRL-based distance to Pal 5 is instead $d = 21.2 \pm 0.6~\kpc$.
+
 We find a proper motion $(\mu_{\phi_1}\cos\phi_2, \mu_{\phi_2}) = (3.78, 0.71) \pm (0.02, 0.03)~\masyr$ or $(\mu_\alpha\,\cos\delta, \mu_\delta) = (-2.75, -2.69)~\masyr$, consistent with the measurement in \citet{Vasiliev:2019} within our uncertainties.
 The larger proper motion (relative to \citealt{Fritz:2015} and other earlier measurements) and the updated distance means that the tangential velocity of Pal 5 is $\approx 16~\kms$ larger than most previous models have assumed.
 This is a noteworthy update to consider for future stream modeling efforts and will likely change the inferred Milky Way parameters as compared to past models \citep[e.g.,][]{Kuepper:2015, Bovy:2016}.
@@ -315,6 +329,7 @@ participating in the {\it Gaia} Multilateral Agreement.
 
 \software{
     astropy \citep{astropy, astropy:2018},
+    dustmaps \citep{dustmaps},
     emcee \citep{emcee},
     gala \citep{gala},
     IPython \citep{ipython},
