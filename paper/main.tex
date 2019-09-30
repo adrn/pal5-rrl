@@ -9,6 +9,7 @@
 \shortauthors{Price-Whelan et al.}
 \newcommand{\sa}[1]{{\color{teal} SP: #1}}
 \newcommand{\ab}[1]{{\color{magenta} AB: #1}}
+\newcommand{\changes}[1]{{\textbf{#1}}}
 
 % Measurements:
 \newcommand{\cld}{\ensuremath{20.6~\kpc}}
@@ -86,7 +87,7 @@ Globular clusters are destroyed as they orbit within the Milky Way.
 The $\sim$150 bound globular clusters we presently see throughout the Galaxy \citep{Harris:2010} are therefore thought to be surviving relics of a much larger initial population, most of which were destroyed (primarily) through a combination of relaxation / evaporation and gravitational shocking from the disk and bulge \citep[e.g.,][]{Gnedin:1997, Gnedin:2014}.
 As stellar systems are destroyed---i.e., as stars are tidally stripped from their progenitor---the tidal debris forms tails of matter that both lead and trail the remnant cluster, producing a stellar stream that may persist even after the progenitor is fully destroyed \citep[e.g.,][]{Johnston:1996}.
 
-Stellar streams are useful objects because they almost \citep[see][]{Sanders:2013} delineate the past and future trajectory of their progenitor system, offering information about orbits that can be used to infer the mass distribution from the single kinematic snapshot of the Galaxy that we are afforded \citep[e.g.,][]{Johnston:1999, Sanders:2013, PriceWhelan:2014, Bonaca:2018}. % Binney:2008, Eyre:2009,
+Stellar streams are useful objects because they almost \citep[see][]{Sanders:2013} delineate the past and future trajectory of their progenitor system, offering information about orbits that can be used to infer the mass distribution from the single kinematic snapshot of the Galaxy that we are afforded \citep[e.g.,][]{Johnston:1999, Sanders:2013, PriceWhelan:2014, Bonaca:2018, Malhan:2019, Erkal:2019}. % Binney:2008, Eyre:2009,
 Many globular cluster stellar streams have been discovered over the last few decades \citep[see, e.g.,][]{Grillmair:2016, Shipp:2018}, in large part because of large-area, deep, multi-band imaging surveys such as the Sloan Digital Sky Survey \citep[SDSS;][]{York:2000}, Pan-STARRS PS1 survey \citep{Chambers:2016}, and Dark Energy Survey \citep{DES:2016}.
 A subset of the known streams have been precisely characterized and further studied \citep[e.g.,][]{PriceWhelan:2018, Malhan:2018, Shipp:2019} using kinematic data from the recent data release 2 (\DR{2}) of the \Gaia\ mission \citep{Gaia:2016, Gaia:2018}.
 Of the currently known $\sim$60 candidate stellar streams found throughout the Milky Way, few have known progenitor systems.
@@ -111,6 +112,19 @@ RR Lyrae stars (RRLs) are pulsating horizontal branch giants intrinsically more 
 
 Previous studies have found RRLs in Pal5's tails: the first two were found by \citet{Vivas:2001} in the QUEST survey, and more recently \citep{Ibata:2017} found about ten new RRLs using a catalog of PS1 candidate RRLs from \citet{Hernitschek:2016}. At its current distance, Pal~5's horizontal branch is bright enough ($\G\sim17.3$) to be observed by \Gaia. Therefore, combining \Gaia~DR2 proper motions with the newer PS1 RRL catalog from \citet{Sesar:2017b}---with improved classification probabilities and light curve periods---enables us to make the first precise distance and proper motion measurements along the full extent of the Pal~5 stream. Both will prove to be key ingredients for dynamical modelling of the Pal~5 stream.
 
+\begin{figure*}[t!]
+\begin{center}
+\includegraphics[width=0.95\textwidth, trim=0 20px 0 0]{proper-motion.pdf}
+\caption{\textbf{Left}: Proper motions of RRLs in the region $215^\circ < \alpha < 255^\circ$, $-15^\circ < \delta < 10^\circ$ with distances in the range $18 < d < 25~\kpc$.
+The distance selection here is purely illustrative: We do not use a distance cut in our membership model.
+\textbf{Middle}: The same, but for RRLs within $1\degr$ of the mean sky track of Pal 5 \citep{Bonaca:2019}.
+The square (blue) markers indicate RRLs that lie within the Jacobi radius of the cluster (see \sectionname~\ref{sec:results}).
+The over-density of stars near $(-2.7, -2.7)$ is the cluster and stream, and the two colored points show the Pal 5 cluster proper motions from \citet{Vasiliev:2019} and \citet{Fritz:2015}, respectively.
+\textbf{Right}: The same, but for RRLs excluding $2\degr$ around the Pal 5 sky track.}
+\label{fig:pm}
+\end{center}
+\end{figure*}
+
 In this Article, we construct a probabilistic model for kinematic properties of RRLs in the vicinity of the Pal 5 stream to determine membership probabilities and thus map the distance and proper motion trends in the stream.
 In \sectionname~\ref{sec:data}, we describe the source RRL catalog we use to search for Pal 5 members.
 In \sectionname~\ref{sec:membership}, we implement a probabilistic membership model to identify candidate members of the stream using distance and astrometric information.
@@ -118,18 +132,6 @@ In \sectionname~\ref{sec:results}, we discuss the population and kinematics of t
 We present our conclusions in \sectionname~\ref{sec:conclusions}.
 
 \section{Data} \label{sec:data}
-
-\begin{figure*}[t!]
-\begin{center}
-\includegraphics[width=\textwidth]{proper-motion.pdf}
-\caption{\textbf{Left}: Proper motions of RRLs in the region $215^\circ < \alpha < 255^\circ$, $-15^\circ < \delta < 10^\circ$ with distances in the range $18 < d < 25~\kpc$.
-The distance selection here is purely illustrative: We do not use a distance cut in our membership model.
-\textbf{Middle}: The same, but for RRLs within $1\degr$ of the mean sky track of Pal 5 \citep{Bonaca:2019}.
-The over-density of stars near $(-2.7, -2.7)$ is the stream, and the two colored points show the Pal 5 cluster proper motions from \citet{Vasiliev:2019} and \citet{Fritz:2015}, respectively.
-\textbf{Right}: The same, but for RRLs excluding $2\degr$ around the Pal 5 sky track.}
-\label{fig:pm}
-\end{center}
-\end{figure*}
 
 The PanSTARRS-1 (PS1) catalog of RRLs \citep{Sesar:2017b} contains 229K stars spanning $\sim$3/4 of the sky (all sky north of declination $\delta > -30\degr$), with multi-epoch $grizy$ data up to a limiting magnitude $r\sim21$ (corresponding to $G \sim 21$ for the typical colors of RRLs). These stars were identified as RRLs using machine-learning methods based on a template fitting algorithm that can find pulsation periods overcoming the sparse sampling of the PS1 survey ($\sim12$ epochs per filter).
 
@@ -150,7 +152,7 @@ In what follows, we use the $i$-band PLZ distances for the RRLs.
 
 We cross-match the full PS1 RRL catalog with \Gaia~DR2 \citep{Gaia:2018}, using a 1" sky separation tolerance, in order to retrieve astrometric information for these stars.
 Although not all PS1 RRLs have been identified as RRLs from \Gaia\ photometry, all of the PS1 RRLs are present in the main point source catalog.
-\figurename~\ref{fig:pm} demonstrates that Pal 5 stream members appear in the RRL catalog: This figure shows the \Gaia\ \DR{2} proper motions for all RRLs in the selected sky window (indicated in the caption) within the distance range $18 < d < 25~\kpc$, then the same for RRLs in a tight selection around the observed stream track (see \sectionname~\ref{sec:membership} for details), and then finally the same for RRLs \emph{excluding} the stream region.
+\figurename~\ref{fig:pm} demonstrates that Pal 5 cluster and stream members appear in the RRL catalog: This figure shows the \Gaia\ \DR{2} proper motions for all RRLs in the selected sky window (indicated in the caption) within the distance range $18 < d < 25~\kpc$, then the same for RRLs in a tight selection around the observed stream track (see \sectionname~\ref{sec:membership} for details), and then finally the same for RRLs \emph{excluding} the stream region.
 
 \citet{Sesar:2017b} provide an estimate of their catalog's completeness as a function of distance, at high galactic latitude, based on simulations. They estimate the mean completeness to be 92\% for \rrab~and 79\% for \rrc, up to a distance of 40~kpc, well beyond the distance of Pal~5 and its tails. At the average ratio of 3 \rrc~stars per every 10 \rrab~\citep{Layden:1995}, this represents a mean completeness of 89\%. We can also produce an estimate per line of sight using the methodology described in \citet{Rybizki:2018}, which requires two independent catalogs to assess the completeness of both in a probabilistic manner. Comparing PS1 against the \Gaia~DR2 catalogue, comprised of the outer join of the VariClassifier \citep{Holl2018,Rimoldini2018} and Specific Objects Study \citep{Clementini2018} catalogs, we find a median completeness of 92\% with a standard deviation of 16\% with no evident spatial trend across the sky selection window.
 
