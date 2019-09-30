@@ -70,7 +70,7 @@ We use a large catalog of RR Lyrae-type stars (RRLs) with astrometric data from 
 RRLs are useful because they are intrinsically-luminous standard candles and their distances can be inferred with small relative precision ($\sim3\%$).
 % Methods
 % Results
-By building a probabilistic model of the Pal 5 cluster and stream in proper motion and distance, we find \NRRL\ RRLs consistent with being members of the cluster (\NRRcl) and stream (\NRRtails).
+By building a probabilistic model of the Pal 5 \changes{cluster and stream} in proper motion and distance, we find \NRRL\ RRLs consistent with being members of the cluster (\NRRcl) and stream (\NRRtails).
 Using these RRLs, we detect gradients in distance and proper motion along the stream, and provide an updated measurement of the distance to the Pal 5 cluster using the RRLs, $d = \clderr$.
 % Conclusions
 We provide a catalog of Pal 5 RRLs with inferred membership probabilities for future modeling work.
@@ -163,7 +163,7 @@ We \emph{do not} include the known spatial extent or morphology of the Pal 5 str
 This model ultimately enables us to compute stream membership probabilities for RRL stars in a way that fully incorporates \Gaia\ error properties, while simultaneously modeling and marginalizing over uncertainties in the background RRL distribution.
 
 To start, we use the sky track and width of Pal 5 from \citet{Bonaca:2019} to mask out a wide region around the stream---and an extrapolation of the known extent of the stream---in order to define a ``background'' region that should be devoid of Pal 5 member stars (see purple lines in \figurename~\ref{fig:members}).
-We use RRL stars in the background region to construct an error-deconvolved density model in the 3D space of proper motion components and distance.
+\changes{We use 1,301 RRL stars in the background region (the full rectangular sky window excluding the stream track) to construct an error-deconvolved density model in the 3D space of proper motion components and distance.}
 We use proper motions and uncertainties from \Gaia---using the provided covariance matrix between proper motion components---and distances and uncertainties from the PS1 RRL catalog (\sectionname~\ref{sec:data}).
 We optimize the parameters of a Gaussian Mixture Model (GMM) representation of the (deconvolved) background RRL density using \project{extreme deconvolution} \citep[\acronym{XD};][]{Bovy:XD}.
 We first fit the background model (with \acronym{XD}) using between $3$--$12$ mixture components and evaluate the Bayesian Information Criterion (BIC) for the optimal parameters in each case.
@@ -173,8 +173,9 @@ We evaluate the background likelihood of all stars in the full sky region (defin
 \begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\textwidth]{tracks.pdf}
-\caption{RRL stars in the vicinity of the Pal 5 stream (with $\textrm{prob.} > 0.01$), colored by membership probability, and under-plotted with the inferred stream trends used in the membership model.
+\caption{RRL stars in the vicinity of the Pal 5 stream colored by membership probability and under-plotted with the inferred stream trends used in the membership model.
 We note again that the membership probability does not depend on position or proximity to the stream, and only on distance and proper motions.
+\changes{Stars with probability $<0.1$ are plotted with a smaller marker in all panels.}
 \textbf{Upper left}: Sky positions (in the Pal 5 stream coordinate frame) of RRLs, with arrows showing the \Gaia\ \DR{2} proper motion vector direction.
 \textbf{Upper right}: Distance as a function of Pal 5 longitude, $\phi_1$, for the RRLs. The shaded (orange) band shows the 5--95th percentile confidence region for the inferred distance trend of the stream, and the solid line shows the median posterior sample, all assuming a quadratic function of $\phi_1$.
 \textbf{Lower panels}: Same as upper right, but for the proper motion components in the Pal 5 coordinate system, $\mu_1$ and $\mu_2$.
@@ -207,7 +208,7 @@ where $\mathcal{N}(\cdot \given \bs{x}, \mat{C})$ is the multivariate normal dis
 \begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\textwidth]{members.pdf}
-\caption{Sky positions of RRLs with Pal 5 membership probabilities $>0.1$, colored by membership probability (markers).
+\caption{Sky positions of RRLs with Pal 5 colored by membership probability, \changes{but stars with probability $<0.1$ are plotted with a smaller marker.}
 The background greyscale shows the surface density of CMD-filtered main sequence stars from \citet{Bonaca:2019}.
 Note that the membership probability does not incorporate sky position information, but a clear over-density of high-probability RRL members do trace the stream on the sky.
 Purple lines outline the stream track window defined in \citet{Bonaca:2019} and used here to exclude stream stars when constructing the background model.}
@@ -220,7 +221,11 @@ We use Markov Chain Monte Carlo (MCMC) to generate samples over the parameters $
     p(\bs{\theta}, f \given \{D_n\}) \propto p(\bs{\theta}, f) \, \prod_n^N p(D_n \given \bs{\theta}, f)
 \end{equation}
 where $p(\bs{\theta}, f)$ is the prior probability distribution over the parameters.
-We assume that our prior is separable in all of our parameters: We use a uniform prior for the mixture weight, $f$, such that $p(f) = \mathcal{U}(0, 1)$, Gaussian priors on the mean proper motion and distance using the Pal 5 cluster proper motion measurements from \citet{Vasiliev:2019} and the Pal 5 distance from \citet{Kuepper:2015}.
+We assume that our prior is separable in all of our parameters.
+We adopt a uniform prior for the mixture weight, $f$, such that $p(f) = \mathcal{U}(0, 1)$.
+\changes{We use Gaussian priors on the mean proper motion and distance using the Pal 5 cluster proper motion measurements from \citet{Vasiliev:2019}, $\bs{\mu} = (-2.728, -2.687) \pm (0.022	0.025)~\masyr$ with a correlation coefficient $\rho_\mu = -0.39$, and the Pal 5 distance from \citet{Kuepper:2015}, $\bs{d} = 23.6 \pm 0.8~\kpc$.
+However, we inflate the distance errorbar by a factor of 5 and the proper motion errorbars by a factor of 10 to soften the impact of this prior on our analysis.}
+
 We use broad uniform priors (i.e. $-100 < b, c < 100$ for each coefficient, and $-20^\circ < x < 15^\circ$ for each polynomial centroid) for the trend parameters defined in \equationname~\ref{eq:meanpoly}.
 We use the affine-invariant ensemble MCMC sampler \texttt{emcee} \citep{emcee} to sample from the posterior probability distribution given above.
 We run \texttt{emcee} with 104 walkers for an initial 1024 steps to ``burn-in'' the sampler, then reset and restart the sampler for another 131072 steps.
@@ -286,8 +291,9 @@ However, the mass difference between \rrab\ and \rrc\ stars is expected to be sm
 
 \subsection{Stellar Mass and Luminosity}
 
-To estimate the expected total absolute magnitude of Pal 5 we follow the same procedure as in \citet{Mateu:2018}, who use a linear fit of the relation between the absolute magnitude $M_V$ and the number of \typeab\ RRL, based on data from Galactic dwarf galaxies and globular clusters, here including the RR\typec~stars.  The $\log{N_{RR}}-M_V$ relation has a large scatter so, particularly for such low numbers of RRLs, it will only allow us to give rough limits on the cluster's absolute magnitude and, therefore, of its luminosity. Correcting the observed number of 27~RRLs by the median completeness of 92\%, we get a total expected number of 29~RRLs, for which we find a total luminosity $L_V=4.6_{-3.0}^{+8.8}\times 10^4 \mathrm{L}_\sun$.
-We then estimate a stellar mass of $0.9_{-0.6}^{+1.8}\times 10^5 \msun$, by assuming a V-band mass-to-light ratio $M/L=2$ corresponding to a simple stellar population with the age (12 Gyr) and metallicity ($\FeH=-1.4$) of the cluster \citep{Dotter:2011}, computed from the \citet{Bruzual:2003} models.\footnote{We have used Z=0.0004 ($\FeH=-1.6$), the nearest to the cluster's metallicity available in the models.}
+To estimate the expected total absolute magnitude of Pal 5 we follow the same procedure as in \citet{Mateu:2018}, who use a linear fit of the relation between the absolute magnitude $M_V$ and the number of \typeab\ RRL, based on data from Galactic dwarf galaxies and globular clusters, here including the RR\typec~stars.
+The $\log{N_{RR}}-M_V$ relation has a large scatter so, particularly for such low numbers of RRLs, it will only allow us to give rough limits on the cluster's absolute magnitude and, therefore, of its luminosity. Correcting the observed number of 27~RRLs by the median completeness of 92\%, we get a total expected number of 29~RRLs, for which we find a total luminosity $L_V=4.6_{-3.0}^{+8.8}\times 10^4 \mathrm{L}_\sun$.
+We then estimate a stellar mass of $0.9_{-0.6}^{+1.8}\times 10^5 \msun$, by assuming a V-band mass-to-light ratio $M/L \approx 2$ \citep{Baumgardt:2019} corresponding to a simple stellar population with the age (12 Gyr) and metallicity ($\FeH=-1.4$) of the cluster \citep{Dotter:2011}, computed from the \citet{Bruzual:2003} models.\footnote{We have used Z=0.0004 ($\FeH=-1.6$), the nearest to the cluster's metallicity available in the models.}
 Our mass estimate is larger than that of \citet{Ibata:2017}, who report a current mass of $1.2\pm 0.4 \times10^4\msun$ for the cluster and tails, although their estimate for the initial mass ($4.7\pm 1.5\times10^4\msun$) of the system is at the lower end of our confidence limits.
 
 
