@@ -118,7 +118,7 @@ Previous studies have found RRLs in Pal5's tails: the first two were found by \c
 \caption{\textbf{Left}: Proper motions of RRLs in the region $215^\circ < \alpha < 255^\circ$, $-15^\circ < \delta < 10^\circ$ with distances in the range $18 < d < 25~\kpc$.
 The distance selection here is purely illustrative: We do not use a distance cut in our membership model.
 \textbf{Middle}: The same, but for RRLs within $1\degr$ of the mean sky track of Pal 5 \citep{Bonaca:2019}.
-The square (blue) markers indicate RRLs that lie within the Jacobi radius of the cluster (see \sectionname~\ref{sec:results}).
+\changes{The open circle markers indicate RRLs that lie within the Jacobi radius of the cluster (see \sectionname~\ref{sec:results}) that pass this simple selection.}
 The over-density of stars near $(-2.7, -2.7)$ is the cluster and stream, and the two colored points show the Pal 5 cluster proper motions from \citet{Vasiliev:2019} and \citet{Fritz:2015}, respectively.
 \textbf{Right}: The same, but for RRLs excluding $2\degr$ around the Pal 5 sky track.}
 \label{fig:pm}
@@ -175,7 +175,7 @@ We evaluate the background likelihood of all stars in the full sky region (defin
 \includegraphics[width=\textwidth]{tracks.pdf}
 \caption{RRL stars in the vicinity of the Pal 5 stream colored by membership probability and under-plotted with the inferred stream trends used in the membership model.
 We note again that the membership probability does not depend on position or proximity to the stream, and only on distance and proper motions.
-\changes{Stars with probability $<0.1$ are plotted with a smaller marker in all panels.}
+\changes{In all panels, RRLs within the stream sky track (see \figurename~\ref{fig:members}) are plotted as star markers, and RRLs with membership probability $<0.1$ are plotted with a smaller marker.}
 \textbf{Upper left}: Sky positions (in the Pal 5 stream coordinate frame) of RRLs, with arrows showing the \Gaia\ \DR{2} proper motion vector direction.
 \textbf{Upper right}: Distance as a function of Pal 5 longitude, $\phi_1$, for the RRLs. The shaded (orange) band shows the 5--95th percentile confidence region for the inferred distance trend of the stream, and the solid line shows the median posterior sample, all assuming a quadratic function of $\phi_1$.
 \textbf{Lower panels}: Same as upper right, but for the proper motion components in the Pal 5 coordinate system, $\mu_1$ and $\mu_2$.
@@ -208,10 +208,11 @@ where $\mathcal{N}(\cdot \given \bs{x}, \mat{C})$ is the multivariate normal dis
 \begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\textwidth]{members.pdf}
-\caption{Sky positions of RRLs with Pal 5 colored by membership probability, \changes{but stars with probability $<0.1$ are plotted with a smaller marker.}
+\caption{Sky positions of RRLs with Pal 5 colored by membership probability.
 The background greyscale shows the surface density of CMD-filtered main sequence stars from \citet{Bonaca:2019}.
 Note that the membership probability does not incorporate sky position information, but a clear over-density of high-probability RRL members do trace the stream on the sky.
 Purple lines outline the stream track window defined in \citet{Bonaca:2019} and used here to exclude stream stars when constructing the background model.
+\changes{As with \figurename~\ref{fig:trackmembers}, RRLs within the sky track are shown as star markers, and RRLs with probability $<0.1$ are plotted with a smaller marker.}
 The inset panel shows a $1.5^\circ$ by $1.5^\circ$ zoom-in around the Pal 5 cluster, with the Jacobi radius of the cluster shown as a large red circle.
 }
 \label{fig:members}
