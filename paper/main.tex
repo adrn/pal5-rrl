@@ -191,13 +191,13 @@ Based on the Pal 5 stream models from \citet{Bonaca:2019}, over the range of $\p
 The mean of our stream component, $\bs{x}$, is therefore given by
 \begin{equation}
     \bs{x} = \begin{pmatrix}
-        \mu_1^* + b_1 \, (\phi_1 - x_1) + c_1 \, (\phi_1 - x_1)^2\\
-        \mu_2^* + b_2 \, (\phi_1 - x_2) + c_2 \, (\phi_1 - x_2)^2\\
-        d^* + b_d \, (\phi_1 - x_d) + c_d \, (\phi_1 - x_d)^2
+        a_{\mu_1} + b_{\mu_1} \, (\phi_1 - x_{\mu_1}) + c_{\mu_1} \, (\phi_1 - x_{\mu_1})^2\\
+        a_{\mu_2} + b_{\mu_2} \, (\phi_1 - x_{\mu_2}) + c_{\mu_2} \, (\phi_1 - x_{\mu_2})^2\\
+        a_{d} + b_d \, (\phi_1 - x_d) + c_d \, (\phi_1 - x_d)^2
         \label{eq:meanpoly}
     \end{pmatrix}
 \end{equation}
-where $\bs{\theta} = (\mu_1^*, \mu_2^*, d^*, b_1, b_2, b_d, c_1, c_2, c_d, x_1, x_2, x_d)$ are free parameters.
+where $\bs{\theta} = (a_{\mu_1}, a_{\mu_2}, a_d, b_{\mu_1}, b_{\mu_2}, b_d, c_{\mu_1}, c_{\mu_2}, c_d, x_{\mu_1}, x_{\mu_2}, x_d)$ are free parameters.
 
 Given the above background model, and this model for the stream track, the full likelihood for an RRL star, $n$, with data $D_n = (\mu_1, \mu_2, d)_n$ is represented as a mixture of the two components with mixture weight $f$,
 \begin{equation}
@@ -237,6 +237,7 @@ For each star, we use these samples to compute posterior membership probabilitie
 
 \figurename~\ref{fig:trackmembers} shows a summary of the inferred membership model properties in sky position (shown in Pal 5 coordinates $\phi_1, \phi_2$), distance, $d$, and proper motion components.
 \tablename~\ref{t:rrl_members} shows an abbreviated version of our catalog of RRL in the region around Pal 5, with PS1 and \Gaia~ data and membership probabilities appended.
+\changes{\tablename~\ref{t:trendpars} contains the maximum a posteriori trend parameter values from the above analysis.}
 
 \section{Results and Discussion} \label{sec:results}
 
@@ -358,6 +359,24 @@ participating in the {\it Gaia} Multilateral Agreement.
 Star \verb+source_id=6339498589346000768+ is reported both in PS1 and \Gaia~as an \rrc~, with a period 0.4714315854~d in PS1 and 0.320110123108~d in \Gaia~SOS, the two are a pair of 1~d aliases \citep[see e.g.]{Lafler:1965}. In what follows we adopt the shorter period reported in \Gaia~as the correct one as it is the more probable one for an \rrc~star.
 
 Star \verb+source_id=4418731829516302848+ is reported in PS1 and \Gaia~as an \rrab~with a period around 0.646~d and similarly low amplitudes $A_G=0.2$ and $A_g=0.3$ in both surveys. This star is reported in CRTS \citep{Drake:2017} (ID CSS\_J151623.2-000831) as an \rrc~with a period 0.28164~d. We adopt the CRTS period for this star in what follows, as it is based on many more observations ($\gtrsim200$) than \Gaia~and PS1's (about a dozen per filter in each case) and the \rrc~classification and short period are more likely for such a short amplitude star.
+
+\begin{table}
+\begin{center}
+\caption{Maximum a posteriori proper motion and distance trend parameters (see \sectionname~\ref{sec:membership}). The constant terms have units $\masyr$ and $\kpc$ for proper motion and distance parameters, respectively. The angular units are in degrees such that, e.g., the linear coeff $b_d$ has units of $\kpc~\textrm{deg}^{-1}$.}\label{t:trendpars}
+\begin{footnotesize}
+\begin{tabular}{c c c c c}
+\toprule
+y & $x_{\textrm{y}}$ & $a_\textrm{y}$ & $b_\textrm{y}$ & $c_\textrm{y}$\\
+param. name & reference $\phi_1$ & constant & linear coeff. & quadratic coeff.\\
+\midrule
+$\mu_1$ &  $-1.072$ & 3.740  & $4.102 \times 10^{-2}$  & $-6.423 \times 10^{-4}$ \\
+$\mu_2$ & $-10.954$ & 0.686  & $-2.826 \times 10^{-2}$ & $2.832 \times 10^{-3}$ \\
+$d$     & $-16.081$ & 22.022 & $9.460 \times 10^{-3}$  & $-6.327 \times 10^{-3}$\\
+\bottomrule
+\end{tabular}
+\end{footnotesize}
+\end{center}
+\end{table}
 
 \begin{table*}[t]
 \caption{RRL members of the Pal 5 stream.}\label{t:rrl_members}
