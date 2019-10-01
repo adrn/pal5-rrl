@@ -1,0 +1,57 @@
+We thank the referee for a constructive and useful referee report that has improved the quality and clarity of this manuscript. Below, we have included the referee's comments preceded by ">>>" with our responses directly below. In the text, we have bolded text where we have edited or added anything significant to the manuscript.
+
+In addition to these changes, we have also added a new table (now Table 1) that contains the maximum a posteriori trend parameters for the proper motion components and distance, and have adjusted the parameter name of the constant term to be consistent with the linear and quadratic coefficients (see Equation 1).
+
+
+>>> 0. The canonical abbreviation for RR Lyrae is RR Ly, not RRL. This is not a key point, obviously, but I think there is already a sufficient degree of confusion in the astronomical nomenclature that I would recommend to avoid non-standard names, when possible.
+
+Indeed there is a variety of abbreviations used in the literature, but it seems different communities tend to prefer different abbreviations (or even none at all). We have chosen to keep this one, however, as it is one of the most commonly used ones in Galactic structure studies (halo, in particular) that use RR Lyrae stars as standard candle tracers (see e.g. Iorio et al. 2018, Medina et al. 2018, Duffau et al. 2016).
+
+
+>>> 1. Intro, second paragraph:
+>>> "...offering information about orbits that can be used to infer the mass distribution from the single kinematic snapshot of the Galaxy that we are afforded (e.g., Johnston et al. 1999; Sanders & Binney 2013; Price-Whelan et al. 2014; Bonaca & Hogg 2018). "
+>>> please add at least one reference to a study of tidal streams performed with Gaia DR2. I think that a minimal overview to introduce the reader to this topic must also show the impact of the Gaia mission on the field.
+
+We have added citations to Erkal et al. 2019 and Malhan et al. 2019, both use Gaia data for streams to infer the enclosed mass of the Milky Way.
+
+
+>>> 2. Sect. 2, 5th paragraph:
+>>> "Figure 1 demonstrates that Pal 5 stream members appear in the RRL catalog: "
+>>> This is not strictly true. Fig. 1 shows that *cluster or stream* members appear in the catalog. I think that it may be useful to re-word this sentence to be more precise, possibly referring to the following analysis where the distinction between stars within and outside the Jacobi radius is done. It may also be useful to plot stars within and outside the Jacobi radius with different symbols,
+in Fig. 1.
+
+Indeed this was confusing. We have changed the text to read “Figure 1 demonstrates that Pal 5 cluster and stream members appear in the RRL catalog: …” We have also added a new marker style for Figure 1 (open circles) to indicate stars within the Jacobi radius of the cluster. We have also added a zoomed-in inset plot to Fig. 2 to show the distribution of stars near the jacobi radius of the cluster.
+
+
+>>> 3. Sect. 3, 2nd paragraph:
+>>> "...We use RRL stars in the background region to construct an error-deconvolved density model in the 3D space of proper motion components and distance. "
+>>> Please specify how many RR Lyrae are used to fit the background and the area of the sky over which they are distributed. Have the authors made any attempt to adopt a simpler model for the background?
+
+We have modified the sentence describing the background to clarify: “We use 1,301 RRL stars in the background region (the full rectangular sky window excluding the stream track) to construct an error-deconvolved density model in the 3D space of proper motion components and distance.”
+
+We originally tried a power-law in distance and single Gaussian component in proper motion but found that the presence of the Sagittarius stream in this region of the sky makes the background quite structured in both proper motion and distance. Thankfully, Sagittarius is kinematically (and detectably) distinct from Pal 5 so that it gets absorbed into the background model.
+
+
+>>> 4. Figure 2. According to the caption, only RR Ly with membership probability >0.01 are plotted. This means that empty symbols have
+P>0.01? Why P=0.01? I think that ALL the RR Ly should be plotted in this figure, the probability of membership can be read from the color. If the authors prefer they can plot stars with P <=0.01 with a different symbol but all the the RR Ly of the sample that falls within the windows of the various panels of Fig. 2 should be plotted.
+
+We found it distracting to have a large number of vanishingly low-probability stars on this figure, so made an arbitrary cut on probability to clean it up. However, we have now added all points to this figure, showing the low probability stars (prob <0.1) with a smaller symbol. We have now made Figures 2 and 3 consistent in this way, and updated the captions.
+
+
+>>> 5. Sect. 3, pag. 5
+>>> "...Gaussian priors on the mean proper motion and distance using the Pal 5 cluster proper motion measurements from Vasiliev (2019) and the Pal 5 distance from Küpper et al. (2015). "
+>>> My guess is that the authors intend that they used, as priors, gaussian distributions with the measurements from Valisliev and Kupper as the mean and the errors provided by these authors as the standard deviation. If this is the case please report the actual numbers, i.e. the values of the means and of the sigmas, to provide the reader a direct quantitative feeling of how strong are these priors. Are they indeed significantly broader that the final results of the fit? A brief comment on this may be useful.
+
+We have added in the values and uncertainties, and noted that we increased the errorbar on the distance: “We use Gaussian priors on the mean proper motion and distance using the Pal 5 cluster proper motion measurements from \citet{Vasiliev:2019}, $\bs{\mu} = (-2.728, -2.687) \pm (0.022	0.025)~\masyr$ with a correlation coefficient $\rho_\mu = -0.39$, and the Pal 5 distance from \citet{Kuepper:2015}, $\bs{d} = 23.6 \pm 0.8~\kpc$. However, we inflate the distance errorbar by a factor of 5 and the proper motion error bars by a factor of 10 to soften the impact of this prior on our analysis.”
+
+
+>>> 6. Fig. 3. Analogously to point 4 above: why P>0.1? And, if this cut is adopted why the membership color scale goes to 0.0? This change of (arbitrary) thresholds (e.g. Fig. 2 to Fig. 3,4) and inconsistency between the declared cuts and the color scales is somehow confusing. In addition to this, in the text rows just below a P>0.5 cut is adopted. It should be easy for the authors to make more consistent and/or justified choices in the adopted probability thresholds. The same considerations apply to Fig. 4.
+
+We have updated all figures to use a consistent threshold of 0.1 to distinguish marker size, but we agree that this is an arbitrary threshold and is only adopted to make the visualizations nicer. We now show all RR Lyrae stars in figures 2–4, but have made the low probability stars gray in figure 4 to interfere less with the colored points. We have kept the 0.5 threshold for reporting numbers because this conceptually means that the stars have a higher probability of belonging to the stream versus the background.
+
+
+>>> 7. Sect. 4, first paragraph, on the same issue:
+>>> "We find a total of 27 RRLs with membership probability > 0.5 that lie within the stream track (again using the track from Bonaca et al. 2019, see lines in Figure 3). ...We find a total of 10 RRLs within the estimated Jacobi radius of the cluster ... meaning that 17 RRLs are spread between the leading and trailing tails. "
+>>> However, looking at Fig. 3, I can count, at most. only 16 RR Ly along the stream and, above all, according to the color coding, some of them seem to have P<0.5.
+
+Two stars along the stream (at RA ~ 227) are only ~3 arcmin separated, so they appear as a single marker. Understanding that, I count 17 in the stream, and with the new zoomed-in inset panel, I count 10 within the cluster (3 in the cluster are quite close near the northwestern part of the central clump).
